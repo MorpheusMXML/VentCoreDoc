@@ -107,15 +107,12 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final SystemState systemState = Get.find&lt;SystemState&gt;();
 
   return ElevatedButton(
     onPressed: () =&gt; systemState.graphList.addGraph.toggle(),
-    style: ElevatedButton.styleFrom(
-      primary: Colors.grey[800],
-      fixedSize: const Size(80, 80),
-      shape: const CircleBorder(),
-    ),
+    style: theme.graphAdderButtonStyle,
     child: const Icon(Icons.add, size: 40),
   );
 }</code></pre>

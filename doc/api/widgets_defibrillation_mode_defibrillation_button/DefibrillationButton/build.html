@@ -107,23 +107,21 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final DefibrillationController defibrillationController = Get.find&lt;DefibrillationController&gt;();
 
   return Expanded(
     child: Container(
         margin: const EdgeInsets.all(8),
         child: Obx(() {
-          ButtonStyle buttonStyle;
-          defibrillationController.selectedDefiButton.value != name
-              ? buttonStyle = ElevatedButton.styleFrom(primary: Theme.of(context).cardColor, onPrimary: Theme.of(context).dividerColor)
-              : buttonStyle = ButtonStyle(
-                  side: MaterialStateProperty.all(const BorderSide(color: Colors.green)),
-                  foregroundColor: MaterialStateProperty.all(Colors.green),
-                );
           return ElevatedButton(
-            style: buttonStyle,
+            style: defibrillationController.selectedDefiButton.value != name
+                ? theme.defiRegularButtonStyle
+                : theme.defiSelectedButtonStyle,
             child: Text(name),
-            onPressed: defibrillationController.selectedDefiButton.value != name ? () =&gt; defibrillationController.setSelectedDefiButton(name) : null,
+            onPressed: defibrillationController.selectedDefiButton.value != name
+                ? () =&gt; defibrillationController.setSelectedDefiButton(name)
+                : null,
           );
         })),
   );

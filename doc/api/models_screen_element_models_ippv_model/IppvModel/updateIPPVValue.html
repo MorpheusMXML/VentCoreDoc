@@ -62,7 +62,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>updates the current <a href="../../models_screen_element_models_ippv_model/IppvModel/ippvValues.html">ippvValues</a></p>
+  <p>Updates the current <a href="../../models_screen_element_models_ippv_model/IppvModel/ippvValues.html">ippvValues</a>.</p>
 <p><code>value</code> is required to be 1 or -1</p>
 </section>
 
@@ -86,14 +86,12 @@
         newValue += 5 * value;
         break;
       default:
-        throw Exception(
-            &quot;Patient type not valid (most likely patientTypeEnum.none) during updateIPPVValue&quot;);
+        throw Exception(&quot;Patient type not valid (most likely patientTypeEnum.none) during updateIPPVValue&quot;);
     }
   } else if (name == &quot;PEEP&quot;) {
     newValue += 5 * value;
   } else {
-    throw Exception(
-        &quot;name was $name during updateIPPVValue which is no valid IPPv name&quot;);
+    throw Exception(&quot;name was $name during updateIPPVValue which is no valid IPPv name&quot;);
   }
 
   ippvValues[name]!.value = newValue;

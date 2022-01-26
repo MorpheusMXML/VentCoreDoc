@@ -107,18 +107,17 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final SystemState systemState = Get.find&lt;SystemState&gt;();
   final AlarmController alarmController = Get.find&lt;AlarmController&gt;();
 
   return Material(
     color: Colors.transparent,
     child: Container(
-      margin: const EdgeInsets.only(
-          bottom: AbsoluteAlarmFieldConst.verticalMargin),
-      color: Theme.of(context).cardColor,
+      margin: const EdgeInsets.only(bottom: AbsoluteAlarmFieldConst.verticalMargin),
+      color: theme.primarySwatch[40],
       padding: const EdgeInsets.only(
-          top: AbsoluteAlarmFieldConst.verticalMargin &#47; 4,
-          bottom: AbsoluteAlarmFieldConst.verticalMargin &#47; 4),
+          top: AbsoluteAlarmFieldConst.verticalMargin &#47; 4, bottom: AbsoluteAlarmFieldConst.verticalMargin &#47; 4),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -140,17 +139,15 @@ Widget build(BuildContext context) {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
-              minimumSize:
-                  Size(60, AbsoluteAlarmFieldConst.ippvHeight &#47; 4 - 20),
-              maximumSize:
-                  Size(60, AbsoluteAlarmFieldConst.ippvHeight &#47; 4 - 20),
+              minimumSize: Size(60, AbsoluteAlarmFieldConst.ippvHeight &#47; 4 - 20),
+              maximumSize: Size(60, AbsoluteAlarmFieldConst.ippvHeight &#47; 4 - 20),
               primary: Get.find&lt;DataModelAbsolute&gt;(tag: sensorKey.name).color,
-              onPrimary: Theme.of(context).dividerColor,
+              onPrimary: theme.contrastColor,
             ),
-            onPressed: () =&gt; {alarmController.triggerConfirm(sensorKey)},
-            child: const Icon(
+            onPressed: () =&gt; alarmController.triggerConfirm(sensorKey),
+            child: Icon(
               Icons.check,
-              color: Colors.black,
+              color: theme.inverseContrastColor,
             ),
           ),
         ],

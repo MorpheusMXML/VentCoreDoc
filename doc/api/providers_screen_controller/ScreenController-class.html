@@ -47,13 +47,15 @@
 <h1><span class="kind-class">ScreenController</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
+    <span class="category providers cp-13 linked" title="This is part of the Providers Topic."><a href="../topics/Providers-topic.html">Providers</a></span>
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>handles the settings of the alarmboundaries with <a href="../providers_screen_controller/ScreenController/setUpperBoundary.html">setUpperBoundary</a> and <a href="../providers_screen_controller/ScreenController/setLowerBoundary.html">setLowerBoundary</a> within the <a href="../models_data_models_model_absolute/DataModelAbsolute-class.html">DataModelAbsolute</a>
-Further handles the Changing of the Scenarios, starts the DataStreams and triggeres the necessary Runs for General Alarms, Data reading into the Graphs etc.
-Also handles the Continue, Skip and other Button Behaviours of the <a href="../screens_start_screen/StartScreen-class.html">StartScreen</a></p>
+  <p>Handles user input and various button behavior.</p>
+<p>Handles the settings of the alarmboundaries with <a href="../providers_screen_controller/ScreenController/setUpperBoundary.html">setUpperBoundary</a> and <a href="../providers_screen_controller/ScreenController/setLowerBoundary.html">setLowerBoundary</a> within the <a href="../models_data_models_model_absolute/DataModelAbsolute-class.html">DataModelAbsolute</a>
+Further handles the changing of the scenarios, starts the data streams and triggeres the necessary runs for general alarms, data reading into the graphs etc.
+Also handles the continue, skip and other button behaviours of the <a href="../screens_start_screen/StartScreen-class.html">StartScreen</a></p>
 </section>
 
 
@@ -212,6 +214,19 @@ Also handles the Continue, Skip and other Button Behaviours of the <a href="../s
 
 </dd>
 
+        <dt id="hideAlarmBoundaryOverlays" class="callable">
+  <span class="name"><a href="../providers_screen_controller/ScreenController/hideAlarmBoundaryOverlays.html">hideAlarmBoundaryOverlays</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  helper method to hide all overlays for alarm boundaries if interacted with menus and changes of the screen 
+  
+
+</dd>
+
         <dt id="menuExitButton" class="callable">
   <span class="name"><a href="../providers_screen_controller/ScreenController/menuExitButton.html">menuExitButton</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a>?</span>
@@ -259,7 +274,7 @@ Also handles the Continue, Skip and other Button Behaviours of the <a href="../s
 
 </dt>
 <dd>
-  resets <a href="../widgets_toggle_toggle_mode_button/ToggleModeButton-class.html">ToggleModeButton</a> to default 
+  resets <a href="../widgets_toggle_toggle_mode_button_container/ToggleModeButtonContainer-class.html">ToggleModeButtonContainer</a> to default 
   
 
 </dd>
@@ -298,7 +313,7 @@ Also handles the Continue, Skip and other Button Behaviours of the <a href="../s
 
 </dt>
 <dd>
-  beavior when using <a href="../widgets_toggle_toggle_mode_button/ToggleModeButton-class.html">ToggleModeButton</a> 
+  beavior when using <a href="../widgets_toggle_toggle_mode_button_container/ToggleModeButtonContainer-class.html">ToggleModeButtonContainer</a> 
   
 
 </dd>
@@ -435,6 +450,7 @@ Also handles the Continue, Skip and other Button Behaviours of the <a href="../s
     <li><a href="../providers_screen_controller/ScreenController/changeScenario.html">changeScenario</a></li>
     <li><a href="../providers_screen_controller/ScreenController/continueButton.html">continueButton</a></li>
     <li><a href="../providers_screen_controller/ScreenController/demoScreenButton.html">demoScreenButton</a></li>
+    <li><a href="../providers_screen_controller/ScreenController/hideAlarmBoundaryOverlays.html">hideAlarmBoundaryOverlays</a></li>
     <li><a href="../providers_screen_controller/ScreenController/menuExitButton.html">menuExitButton</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../providers_screen_controller/ScreenController/patientSettingButton.html">patientSettingButton</a></li>

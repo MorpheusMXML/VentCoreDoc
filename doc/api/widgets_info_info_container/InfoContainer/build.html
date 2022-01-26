@@ -107,11 +107,13 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
+
   return ListView.builder(
     itemCount: data.length,
     itemBuilder: (BuildContext context, int index) {
       return Container(
-        color: Theme.of(context).focusColor,
+        color: theme.primarySwatch[50],
         padding: const EdgeInsets.only(left: 8, right: 8, top: 4, bottom: 4),
         margin: const EdgeInsets.only(right: 8),
         child: InfoText(

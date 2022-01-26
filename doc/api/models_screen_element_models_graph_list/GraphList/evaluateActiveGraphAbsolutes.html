@@ -60,7 +60,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>evaluates the current <a href="../../models_screen_element_models_graph_list/GraphList/activeGraphAbsolutes.html">activeGraphAbsolutes</a></p>
+  <p>Evaluates the current <a href="../../models_screen_element_models_graph_list/GraphList/activeGraphAbsolutes.html">activeGraphAbsolutes</a>.</p>
 </section>
 
 
@@ -73,7 +73,8 @@
   for (var graphSensorKey in list) {
     sensorEnumAbsolute? sensorKey = SensorMapping.sensorMap[graphSensorKey];
     if (sensorKey != null &amp;&amp;
-        (systemState.alarmState[sensorKey]![&quot;status&quot;] != alarmStatus.none &amp;&amp; systemState.alarmState[sensorKey]![&quot;status&quot;] != alarmStatus.confirmed)) {
+        (systemState.alarmState[sensorKey]![&quot;status&quot;] != alarmStatus.none &amp;&amp;
+            systemState.alarmState[sensorKey]![&quot;status&quot;] != alarmStatus.confirmed)) {
       activeGraphAbsolutes.add(sensorKey);
     }
   }

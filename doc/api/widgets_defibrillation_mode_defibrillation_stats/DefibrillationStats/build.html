@@ -107,35 +107,35 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   DefibrillationController defibrillationController = Get.find&lt;DefibrillationController&gt;();
-
   defibrillationController.startTimerWatch();
 
   return Flexible(
     child: Container(
-      color: Theme.of(context).cardColor,
+      color: theme.primarySwatch[40],
       margin: const EdgeInsets.all(8),
       child: Column(
         children: [
           Row(
-            children: const [
+            children: [
               Expanded(
                   child: Text(
                 &#39;Last Shock&#39;,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
+                style: theme.defiStatsHeadlineTextStyle,
               )),
               Expanded(
                   child: Text(
                 &#39;# Shocks&#39;,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
+                style: theme.defiStatsHeadlineTextStyle,
               )),
               Expanded(
                   child: Text(
                 &#39;Timer&#39;,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
+                style: theme.defiStatsHeadlineTextStyle,
               )),
             ],
           ),
@@ -143,25 +143,13 @@ Widget build(BuildContext context) {
             children: [
               Expanded(
                   child: Obx(() =&gt; Text(defibrillationController.lastTimerString.value,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      )))),
+                      textAlign: TextAlign.center, style: theme.defiStatsValueTextStyle))),
               Expanded(
                   child: Obx(() =&gt; Text(&#39;${defibrillationController.numberOfShocks}&#39;,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      )))),
+                      textAlign: TextAlign.center, style: theme.defiStatsValueTextStyle))),
               Expanded(
                   child: Obx(() =&gt; Text(defibrillationController.startTimerString.value,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      )))),
+                      textAlign: TextAlign.center, style: theme.defiStatsValueTextStyle))),
             ],
           ),
         ],

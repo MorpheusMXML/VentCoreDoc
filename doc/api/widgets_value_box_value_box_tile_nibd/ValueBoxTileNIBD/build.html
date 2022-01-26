@@ -107,78 +107,84 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   &#47;&#47; sensorAbsolute is not null since IF sensorGraph == null, sensorAbsolute is required &#47;&#47; sensorAbsolute is not null since IF sensorGraph == null, sensorAbsolute is required
   DataModelAbsolute dataModelSYS = Get.find&lt;DataModelAbsolute&gt;(tag: sensorAbsoluteSYS.name);
   SystemState systemState = Get.find&lt;SystemState&gt;();
-  return Obx(
-    () =&gt; Container(
-      color: Theme.of(context).focusColor,
-      child: Column(
-        children: [
-          Flexible(
-            flex: 1,
 
-            &#47;&#47;&#47; [Container] used to render the ShortString of the [DataModelAbsolute] Results in the [String] &#39;NIBD&#39; if called with NIBD DataModel.
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
+  return Container(
+    color: theme.primarySwatch[50],
+    margin: const EdgeInsets.only(left: 4, right: 4, top: 4, bottom: 4),
+    child: Column(
+      children: [
+        Flexible(
+          flex: 1,
+
+          &#47;&#47;&#47; [Container] used to render the ShortString of the [DataModelAbsolute] Results in the [String] &#39;NIBD&#39; if called with NIBD DataModel.
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Obx(
+                () =&gt; Flexible(
                   flex: 1,
                   child: Container(
-                    margin: const EdgeInsets.only(left: 4),
                     color: evaluateBorderColor(context, sensorEnumAbsolute.sysAbsolute, systemState.alarmState),
                   ),
                 ),
-                SizedBox(
-                  width: 2 * 37 + 8,
-                  child: Center(
-                    child: Container(
-                      margin: const EdgeInsets.only(top: 4, bottom: 4),
-                      child: Text(
-                        dataModelSYS.displayShortString,
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          color: dataModelSYS.color,
-                          fontSize: 20,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+              ),
+              SizedBox(
+                width: 2 * 37 + 8,
+                child: Center(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 4, bottom: 4),
+                    child: Text(
+                      dataModelSYS.displayShortString,
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        color: dataModelSYS.color,
+                        fontSize: 20,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
                 ),
-                Flexible(
-                  flex: 1,
-                  child: Container(
-                    margin: const EdgeInsets.only(right: 4),
+              ),
+              Flexible(
+                flex: 1,
+                child: Obx(
+                  () =&gt; Container(
                     color: evaluateBorderColor(context, sensorEnumAbsolute.diaAbsolute, systemState.alarmState),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          Flexible(
-            flex: 3,
-            child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              &#47;&#47;Systolic Absolute Box
-              Expanded(
-                child: ValueBoxTile.withHeadline(
-                  sensorAbsolute: sensorEnumAbsolute.sysAbsolute,
-                  optAbreviationTitle: sensorAbsoluteSYS.abbreviation,
-                  superNIBD: true,
-                ),
+        ),
+        Flexible(
+          flex: 3,
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            &#47;&#47;Systolic Absolute Box
+            Expanded(
+              child: ValueBoxTile.withHeadline(
+                sensorAbsolute: sensorEnumAbsolute.sysAbsolute,
+                optAbreviationTitle: sensorAbsoluteSYS.abbreviation,
+                superNIBD: true,
               ),
-              &#47;&#47;Diastolic Absolute Box
-              Expanded(
-                child: ValueBoxTile.withHeadline(
-                  sensorAbsolute: sensorEnumAbsolute.diaAbsolute,
-                  optAbreviationTitle: sensorAbsoluteDIA.abbreviation,
-                  superNIBD: true,
-                ),
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            &#47;&#47;Diastolic Absolute Box
+            Expanded(
+              child: ValueBoxTile.withHeadline(
+                sensorAbsolute: sensorEnumAbsolute.diaAbsolute,
+                optAbreviationTitle: sensorAbsoluteDIA.abbreviation,
+                superNIBD: true,
               ),
-            ]),
-          )
-        ],
-      ),
+            ),
+          ]),
+        )
+      ],
     ),
   );
 }</code></pre>

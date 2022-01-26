@@ -59,6 +59,10 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Searches and confirms all active alarms.</p>
+<p>Active alarms are defined via <a href="../../models_screen_element_models_absolute_alarm_field_model/AbsAlarmFieldModel/activeList.html">AbsAlarmFieldModel.activeList</a> and <a href="../../models_screen_element_models_graph_list/GraphList/activeGraphAbsolutes.html">GraphList.activeGraphAbsolutes</a></p>
+</section>
 
 
     
@@ -75,8 +79,7 @@
     sensorEnumAbsolute? sensorKey = SensorMapping.sensorMap[graphSensorKey];
     if (sensorKey != null &amp;&amp;
         (systemState.alarmState[sensorKey]![&quot;enum&quot;] != alarmStatus.none ||
-            systemState.alarmState[sensorKey]![&quot;enum&quot;] !=
-                alarmStatus.confirmed)) {
+            systemState.alarmState[sensorKey]![&quot;enum&quot;] != alarmStatus.confirmed)) {
       alarmController.triggerConfirm(sensorKey);
     }
   }

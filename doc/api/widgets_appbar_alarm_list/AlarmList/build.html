@@ -107,6 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   GeneralAlarms generalAlarms = Get.find&lt;SystemState&gt;().generalAlarms;
   double statusBarHeight = MediaQuery.of(context).padding.top;
 
@@ -118,13 +119,15 @@ Widget build(BuildContext context) {
       ),
       child: Container(
         margin: const EdgeInsets.only(
-            bottom: StatusBarConstants.verticalMargin, right: StatusBarConstants.horizontalMargin, left: StatusBarConstants.horizontalMargin),
+            bottom: StatusBarConstants.verticalMargin,
+            right: StatusBarConstants.horizontalMargin,
+            left: StatusBarConstants.horizontalMargin),
         child: Column(
           children: [
             Container(
               width: StatusBarConstants.alarmListWidth - 2 * StatusBarConstants.horizontalMargin,
               height: StatusBarConstants.verticalMargin,
-              color: Theme.of(context).shadowColor,
+              color: theme.primarySwatch[10],
             ),
             Flexible(
               fit: FlexFit.loose,
@@ -143,8 +146,9 @@ Widget build(BuildContext context) {
                           right: StatusBarConstants.horizontalMargin,
                           left: StatusBarConstants.horizontalMargin,
                         ),
-                        color: Theme.of(context).shadowColor,
-                        child: AlarmFieldTile(data: generalAlarms.alarmList[index]));
+                        color: theme.primarySwatch[10],
+                        child: AlarmFieldTile(
+                            data: generalAlarms.alarmList[index]));
                   }),
             ),
           ],

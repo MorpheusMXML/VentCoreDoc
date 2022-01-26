@@ -107,27 +107,29 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final SystemState systemState = Get.find&lt;SystemState&gt;();
   if (sensorGraph == null) {
     &#47;&#47; could also be done via, but the relevant case disctinction here is whether there is a sensorGraph associated or not
     DataModelAbsolute dataModel = Get.find&lt;DataModelAbsolute&gt;(
         tag: sensorAbsolute
             ?.name); &#47;&#47; sensorAbsolute is not null since IF sensorGraph == null, sensorAbsolute is required
-    return type == &#39;regular&#39;
-        ? ValueBoxContainer(
-            dataModelAbsolute: dataModel,
-            optAbreviationTitle: optAbreviationTitle,
-          )
-        :
-        &#47;&#47; called with headline case
-        Obx(
-            () =&gt; ConstrainedBox(
-              constraints: BoxConstraints(
-                  maxWidth: (Get.width - 12 - 12) &#47; (2 + 1) * 1 &#47; 2 * 1 - 8),
-              child: Container(
-                color: evaluateBorderColor(context, systemState.alarmState),
-                margin: const EdgeInsets.only(right: 4, bottom: 8, left: 4),
-                child: Column(
+    return Container(
+      margin: (superNIBD || type == &#39;regular&#39;) ? null : const EdgeInsets.only(left: 4, right: 4, bottom: 8),
+      child: Stack(
+        alignment: AlignmentDirectional.topCenter,
+        children: [
+          Obx(() {
+            return Container(
+              color: evaluateBorderColor(context, systemState.alarmState),
+            );
+          }),
+          type == &#39;regular&#39;
+              ? ValueBoxContainer(
+                  dataModelAbsolute: dataModel,
+                  optAbreviationTitle: optAbreviationTitle,
+                )
+              : Column(
                   children: [
                     &#47;&#47; headtile
                     superNIBD
@@ -136,11 +138,7 @@ Widget build(BuildContext context) {
                             flex: 1,
                             child: ConstrainedBox(
                               constraints: BoxConstraints(
-                                maxWidth: (Get.width - 12 - 12) &#47;
-                                        (2 + 1) *
-                                        1 &#47;
-                                        2 *
-                                        1 -
+                                maxWidth: (Get.width - 12 - 12) &#47; (2 + 1) * 1 &#47; 2 * 1 -
                                     8 -
                                     37 -
                                     37, &#47;&#47; step in between solution with constansts, numbers from flexibles and paddings&#47;margins
@@ -151,7 +149,7 @@ Widget build(BuildContext context) {
                                   top: 4,
                                   bottom: 4,
                                 ), &#47;&#47;left: 35, right: 35),
-                                color: Theme.of(context).focusColor,
+                                color: theme.primarySwatch[50],
                                 child: Center(
                                   child: Text(
                                     dataModel.displayShortString,
@@ -175,17 +173,16 @@ Widget build(BuildContext context) {
                     ),
                   ],
                 ),
-              ),
-            ),
-          );
+        ],
+      ),
+    );
   } else if (sensorAbsolute == null) {
     return ValueBoxContainer.withoutAbsolute(
       dataModelGraph: Get.find&lt;DataModelGraph&gt;(tag: sensorGraph!.name),
       optAbreviationTitle: optAbreviationTitle,
     );
   } else {
-    throw Exception(
-        &quot;ValueBoxTile was given both a sensorAbsolute and sensorGraph&quot;);
+    throw Exception(&quot;ValueBoxTile was given both a sensorAbsolute and sensorGraph&quot;);
   }
 }</code></pre>
 </section>

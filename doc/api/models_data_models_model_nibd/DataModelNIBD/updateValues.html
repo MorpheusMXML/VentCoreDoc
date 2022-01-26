@@ -70,10 +70,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void updateValues(List&lt;dynamic&gt; valueList) {
   for (int i = 0; i &lt; valueList.length; i++) {
-    singleData.value = ChartData.asNIBD(
-        time: DateTime.now(),
-        value: valueList[i],
-        counter: singleData.value.counter + 1);
+    singleData.value =
+        ChartData.asNIBD(time: DateTime.now(), value: valueList[i], counter: singleData.value.counter + 1);
     graphData.add(singleData.value);
   }
 

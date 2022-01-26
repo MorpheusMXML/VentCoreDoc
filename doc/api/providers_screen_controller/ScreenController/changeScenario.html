@@ -84,7 +84,8 @@
   switch (scenario) {
     case scenariosEnum.standardScenario:
       runningScenario = StandardScenario();
-      systemState.graphList.setStandardGraphs(ScenarioEnumDisplayedGraphs.graphs[scenario] as Map&lt;screenStatusEnum, List&lt;sensorEnumGraph&gt;&gt;);
+      systemState.graphList.setStandardGraphs(
+          ScenarioEnumDisplayedGraphs.graphs[scenario] as Map&lt;screenStatusEnum, List&lt;sensorEnumGraph&gt;&gt;);
       runningScenario!.startScenario(scenarioPath: scenario.scenarioPath);
       break;
     case scenariosEnum.scenario1:
@@ -94,7 +95,8 @@
     case scenariosEnum.scenario3c:
     case scenariosEnum.scenario4:
       runningScenario = PatientScenario(scenarioType: scenario);
-      systemState.graphList.setStandardGraphs(ScenarioEnumDisplayedGraphs.graphs[scenario] as Map&lt;screenStatusEnum, List&lt;sensorEnumGraph&gt;&gt;);
+      systemState.graphList.setStandardGraphs(
+          ScenarioEnumDisplayedGraphs.graphs[scenario] as Map&lt;screenStatusEnum, List&lt;sensorEnumGraph&gt;&gt;);
       runningScenario!.startScenario(scenarioPath: scenario.scenarioPath);
       break;
     default:
@@ -144,6 +146,7 @@
     <li><a href="../../providers_screen_controller/ScreenController/changeScenario.html">changeScenario</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/continueButton.html">continueButton</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/demoScreenButton.html">demoScreenButton</a></li>
+    <li><a href="../../providers_screen_controller/ScreenController/hideAlarmBoundaryOverlays.html">hideAlarmBoundaryOverlays</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/menuExitButton.html">menuExitButton</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/patientSettingButton.html">patientSettingButton</a></li>

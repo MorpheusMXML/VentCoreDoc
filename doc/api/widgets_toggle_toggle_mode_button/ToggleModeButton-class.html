@@ -47,14 +47,14 @@
 <h1><span class="kind-class">ToggleModeButton</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
+    <span class="category toggle cp-19 linked" title="This is part of the Toggle Topic."><a href="../topics/Toggle-topic.html">Toggle</a></span>
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>This Class implements the <code>ToggleButtons</code> that provide the Mode Changing Functionality.</p>
-<p>It houses the Buttons for Defibrillator, Ventilator and Monitoring with the corresponding Icons stored in the <a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/iconLocationMap.html">iconLocationMap</a>.
-Further gets the Instance of the <a href="../models_system_state/SystemState-class.html">SystemState</a> to  track in which mode the App currently is.
-Also uses the <a href="../providers_defibrillation_controller/DefibrillationController-class.html">DefibrillationController</a> and <a href="../providers_screen_controller/ScreenController-class.html">ScreenController</a> to restrict the availability of this Button during the Load/Shock Animation of the Defi.</p>
+  <p>This class represents a single toggle mode button.
+The buttons are used by the <a href="../widgets_toggle_toggle_mode_button_container/ToggleModeButtonContainer-class.html">ToggleModeButtonContainer</a>.
+The toggling logic is implemented by <a href="../widgets_toggle_toggle_mode_button_container/ToggleModeButtonContainer-class.html">ToggleModeButtonContainer</a> which utilizes <a href="../models_system_state/SystemState-class.html">SystemState</a>.</p>
 </section>
 
 
@@ -79,10 +79,11 @@ Also uses the <a href="../providers_defibrillation_controller/DefibrillationCont
 
       <dl class="constructor-summary-list">
         <dt id="ToggleModeButton" class="callable">
-          <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/ToggleModeButton.html">ToggleModeButton</a></span><span class="signature">(<span class="parameter" id="-param-key">{<span class="type-annotation">Key?</span> <span class="parameter-name">key</span>}</span>)</span>
+          <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/ToggleModeButton.html">ToggleModeButton</a></span><span class="signature">(<span class="parameter" id="-param-key">{<span class="type-annotation">Key?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="-param-path"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, </span><span class="parameter" id="-param-index"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>}</span>)</span>
         </dt>
         <dd>
            
+          <div class="constructor-modifier features">const</div>
         </dd>
       </dl>
     </section>
@@ -91,17 +92,6 @@ Also uses the <a href="../providers_defibrillation_controller/DefibrillationCont
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="active" class="property">
-  <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/active.html">active</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-ui/Color-class.html">Color</a></span> 
-
-</dt>
-<dd>
-   
-  <div class="features">final</div>
-
-</dd>
-
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> 
@@ -113,24 +103,13 @@ Also uses the <a href="../providers_defibrillation_controller/DefibrillationCont
 
 </dd>
 
-        <dt id="iconLocationMap" class="property">
-  <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/iconLocationMap.html">iconLocationMap</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>&gt;</span></span> 
+        <dt id="index" class="property">
+  <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/index.html">index</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> 
 
 </dt>
 <dd>
-   
-  <div class="features">final</div>
-
-</dd>
-
-        <dt id="inactiveIcon" class="property">
-  <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/inactiveIcon.html">inactiveIcon</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-ui/Color-class.html">Color</a></span> 
-
-</dt>
-<dd>
-   
+  A single button for toggling the mode. 
   <div class="features">final</div>
 
 </dd>
@@ -146,6 +125,17 @@ Also uses the <a href="../providers_defibrillation_controller/DefibrillationCont
 
 </dd>
 
+        <dt id="path" class="property">
+  <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/path.html">path</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+   
+  <div class="features">final</div>
+
+</dd>
+
         <dt id="runtimeType" class="property inherited">
   <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/Type-class.html">Type</a></span> 
@@ -154,17 +144,6 @@ Also uses the <a href="../providers_defibrillation_controller/DefibrillationCont
 <dd class="inherited">
   A representation of the runtime type of the object. 
   <div class="features">read-only, inherited</div>
-
-</dd>
-
-        <dt id="systemState" class="property">
-  <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/systemState.html">systemState</a></span>
-  <span class="signature">&#8594; <a href="../models_system_state/SystemState-class.html">SystemState</a></span> 
-
-</dt>
-<dd>
-   
-  <div class="features">final</div>
 
 </dd>
 
@@ -224,19 +203,6 @@ children. <a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/debugDe
 <dd class="inherited">
   Add additional properties associated with the node. <a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/debugFillProperties.html">[...]</a>
   <div class="features">inherited</div>
-
-</dd>
-
-        <dt id="getToggleButton" class="callable">
-  <span class="name"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/getToggleButton.html">getToggleButton</a></span><span class="signature">(<wbr><span class="parameter" id="getToggleButton-param-index"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="getToggleButton-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, </span><span class="parameter" id="getToggleButton-param-context"><span class="type-annotation">BuildContext</span> <span class="parameter-name">context</span></span>)
-    <span class="returntype parameter">&#8594; dynamic</span>
-  </span>
-  
-
-</dt>
-<dd>
-   
-  
 
 </dd>
 
@@ -386,20 +352,17 @@ tools and by <code>DiagnosticsNode.toStringDeep</code>. <a href="../widgets_togg
     <li class="section-title">
       <a href="../widgets_toggle_toggle_mode_button/ToggleModeButton-class.html#instance-properties">Properties</a>
     </li>
-    <li><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/active.html">active</a></li>
     <li class="inherited"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/hashCode.html">hashCode</a></li>
-    <li><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/iconLocationMap.html">iconLocationMap</a></li>
-    <li><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/inactiveIcon.html">inactiveIcon</a></li>
+    <li><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/index.html">index</a></li>
     <li class="inherited"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/key.html">key</a></li>
+    <li><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/path.html">path</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
-    <li><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/systemState.html">systemState</a></li>
 
     <li class="section-title"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton-class.html#instance-methods">Methods</a></li>
     <li><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/build.html">build</a></li>
     <li class="inherited"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/createElement.html">createElement</a></li>
     <li class="inherited"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/debugDescribeChildren.html">debugDescribeChildren</a></li>
     <li class="inherited"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/debugFillProperties.html">debugFillProperties</a></li>
-    <li><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/getToggleButton.html">getToggleButton</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li class="inherited"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/toDiagnosticsNode.html">toDiagnosticsNode</a></li>
     <li class="inherited"><a href="../widgets_toggle_toggle_mode_button/ToggleModeButton/toString.html">toString</a></li>

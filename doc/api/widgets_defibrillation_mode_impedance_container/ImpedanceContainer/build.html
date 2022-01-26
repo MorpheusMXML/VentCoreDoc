@@ -107,14 +107,16 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
+
   return Container(
-    color: Theme.of(context).cardColor,
+    color: theme.primarySwatch[40],
     margin: const EdgeInsets.all(6),
     child: Column(
       children: [
         Text(
           &quot;Impedance&quot;,
-          style: TextStyle(color: Theme.of(context).dividerColor),
+          style: theme.impedanceTextStyle,
         ),
         Row(
           children: const [

@@ -107,6 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final ScreenController screenController = Get.find&lt;ScreenController&gt;();
 
   return Container(
@@ -115,15 +116,15 @@ Widget build(BuildContext context) {
       style: ElevatedButton.styleFrom(
         fixedSize: Size(800 &#47; MediaQuery.of(context).devicePixelRatio,
             155 &#47; MediaQuery.of(context).devicePixelRatio),
-        primary: const Color(0xffeeeeee),
-        onPrimary: Colors.black,
+        primary: theme.primarySwatch[10],
+        onPrimary: theme.inverseContrastColor,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(75)),
       ),
       onPressed: () =&gt; screenController.scenarioButton(scenario),
       child: Text(
         name,
-        style: const TextStyle(fontSize: 25),
+        style:theme.navigationButtonTextStyle,
       ),
     ),
   );

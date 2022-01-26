@@ -107,6 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final ScreenController screenController = Get.find&lt;ScreenController&gt;();
   String navigateTo = &#39;&#47;&#39; + name.replaceAll(RegExp(r&#39; &#39;), &#39;_&#39;).toLowerCase();
 
@@ -114,9 +115,7 @@ Widget build(BuildContext context) {
       ? ListTile(
           title: Text(
             name,
-            style: const TextStyle(
-              fontSize: 20,
-            ),
+            style: theme.menuTextStyle,
           ),
           onTap: () {
             switch (name) {
@@ -134,10 +133,7 @@ Widget build(BuildContext context) {
       : ListTile(
           title: Text(
             name,
-            style: TextStyle(
-              color: Theme.of(context).disabledColor,
-              fontSize: 20,
-            ),
+            style: theme.menuDisabledTextStyle,
           ),
           onTap: null);
 }</code></pre>

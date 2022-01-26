@@ -55,8 +55,8 @@
 
     
 <section class="desc markdown">
-  <p>initializes <a href="../../models_screen_element_models_smart_adjustment_model/SmartAdjustmentMap/map.html">map</a> with a map over all <a href="../../utilities_enums_sensor/sensorEnumAbsolute.html">sensorEnumAbsolute</a> with a <a href="../../models_screen_element_models_smart_adjustment_model/SmartAdjustmentMapEntry-class.html">SmartAdjustmentMapEntry</a></p>
-<p>Times are set to now, counter values are 0 =&gt; Buttons not pressable</p>
+  <p>Initializes <a href="../../models_screen_element_models_smart_adjustment_model/SmartAdjustmentMap/map.html">map</a> with a map over all <a href="../../utilities_enums_sensor/sensorEnumAbsolute.html">sensorEnumAbsolute</a> with a <a href="../../models_screen_element_models_smart_adjustment_model/SmartAdjustmentMapEntry-class.html">SmartAdjustmentMapEntry</a>.</p>
+<p>Times are set to now, counter values are 0 =&gt; buttons not pressable</p>
 </section>
 
 
@@ -65,8 +65,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">SmartAdjustmentMap() {
   for (var sensorKey in sensorEnumAbsolute.values) {
-    map[sensorKey] =
-        SmartAdjustmentMapEntry(DateTime.now(), DateTime.now(), 0.obs, 0.obs);
+    map[sensorKey] = SmartAdjustmentMapEntry(DateTime.now(), DateTime.now(), 0.obs, 0.obs);
   }
 }</code></pre>
 </section>

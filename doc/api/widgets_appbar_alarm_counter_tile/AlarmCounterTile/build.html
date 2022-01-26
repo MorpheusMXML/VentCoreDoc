@@ -107,7 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  const double fSize = 24;
+  final ThemeData theme = Theme.of(context);
 
   return Obx(
     () {
@@ -130,29 +130,27 @@ Widget build(BuildContext context) {
           ),
           onPressed: generalAlarms.alarmList.length &lt;= 1
               ? null
-              : () =&gt; generalAlarms.listExpanded.value ? generalAlarms.hideOverlay() : generalAlarms.showOverlay(context),
+              : () =&gt;
+                  generalAlarms.listExpanded.value ? generalAlarms.hideOverlay() : generalAlarms.showOverlay(context),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 alarmText,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: fSize,
-                ),
+                style: theme.alarmTextStyle,
               ),
               generalAlarms.alarmList.length == 1
                   ? Container()
                   : generalAlarms.listExpanded.value
-                      ? const Icon(
-                          Icons.arrow_upward_rounded,
-                          color: Colors.black,
+                      ? Icon(
+                          Icons.arrow_drop_up,
+                          color: theme.inverseContrastColor,
                           size: 50 * 0.6,
                         )
-                      : const Icon(
-                          Icons.arrow_downward_rounded,
-                          color: Colors.black,
+                      : Icon(
+                          Icons.arrow_drop_down,
+                          color: theme.inverseContrastColor,
                           size: 50 * 0.6,
                         ),
             ],

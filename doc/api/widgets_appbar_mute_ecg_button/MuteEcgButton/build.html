@@ -109,9 +109,8 @@ and</li>
 Widget build(BuildContext context) {
   return Obx(
     () =&gt; IconButton(
-      onPressed: () =&gt; {
-        if (_soundController.ecgSoundActive.value) {_soundController.stop()} else {_soundController.startSaturationHFSound()}
-      },
+      onPressed: () =&gt;
+          _soundController.ecgSoundActive.value ? _soundController.stop() : _soundController.startSaturationHFSound(),
       icon: Icon(
         _soundController.ecgSoundActive.value ? Icons.volume_mute : Icons.volume_off,
         size: 20,

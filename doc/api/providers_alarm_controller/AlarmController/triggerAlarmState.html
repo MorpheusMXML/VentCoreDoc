@@ -94,16 +94,19 @@
   }
 
   &#47;&#47;&#47;Prevent update because same [alarmStatus] and [alarmMessage] are same
-  if (_systemState.getAlarmStatePriority(sensor) == status.priority &amp;&amp; _systemState.getAlarmStateMessage(sensor) == message.message) {
+  if (_systemState.getAlarmStatePriority(sensor) == status.priority &amp;&amp;
+      _systemState.getAlarmStateMessage(sensor) == message.message) {
     &#47;&#47;&#47;Trigger soundstate for not changed Alerts.
     triggerSoundController(sensor, status);
     return;
   }
 
   &#47;&#47;&#47;Update AlarmState if change is detected
-  if (_systemState.getAlarmStatePriority(sensor) != status.priority || _systemState.getAlarmStateMessage(sensor) != message.message) {
+  if (_systemState.getAlarmStatePriority(sensor) != status.priority ||
+      _systemState.getAlarmStateMessage(sensor) != message.message) {
     &#47;&#47; Check if middle alarm is repeating and needs to change boundaries
-    if (_systemState.getAlarmStatePriority(sensor) == alarmStatus.none.priority &amp;&amp; status.priority == alarmStatus.middle.priority) {
+    if (_systemState.getAlarmStatePriority(sensor) == alarmStatus.none.priority &amp;&amp;
+        status.priority == alarmStatus.middle.priority) {
       evaluateBoundaryAdjustment(sensor, message);
     }
     _systemState.setAlarmState(

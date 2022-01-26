@@ -107,6 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final SystemState systemState = Get.find&lt;SystemState&gt;();
   final GeneralAlarms generalAlarms = systemState.generalAlarms;
 
@@ -121,9 +122,8 @@ Widget build(BuildContext context) {
             &#47;&#47;DropDown Menu (AlarmExpansionTile)
             Flexible(
               flex: StatusBarConstants.flexBarAlarmFieldTile,
-              child: Obx(() =&gt; generalAlarms.alarmList.isEmpty
-                  ? Container()
-                  : AlarmFieldTile(data: generalAlarms.alarmList[0])),
+              child: Obx(() =&gt;
+                  generalAlarms.alarmList.isEmpty ? Container() : AlarmFieldTile(data: generalAlarms.alarmList[0])),
             ),
             const SizedBox(
               width: StatusBarConstants.horizontalMargin * 2,
@@ -141,10 +141,7 @@ Widget build(BuildContext context) {
         flex: StatusBarConstants.flexBarPatientTypeArea,
         child: Text(
           systemState.patientType.displayString,
-          style: TextStyle(
-            color: Theme.of(context).dividerColor,
-            decoration: TextDecoration.none,
-          ),
+          style: theme.statusBarTextStyle,
         ),
       ),
       &#47;&#47; O2 bottly display

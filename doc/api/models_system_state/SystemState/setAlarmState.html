@@ -72,8 +72,7 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void setAlarmState(sensorEnumAbsolute sensor, int? priority, String? message,
-    alarmStatus? status, Color? color) {
+  <pre class="language-dart"><code class="language-dart">void setAlarmState(sensorEnumAbsolute sensor, int? priority, String? message, alarmStatus? status, Color? color) {
   alarmState[sensor] = {
     &#39;priority&#39;: priority ?? alarmState[sensor]![&#39;priority&#39;],
     &#39;message&#39;: message ?? getAlarmStateMessage(sensor),

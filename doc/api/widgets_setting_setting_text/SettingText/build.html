@@ -107,6 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final systemState = Get.find&lt;SystemState&gt;();
 
   return Flexible(
@@ -115,23 +116,17 @@ Widget build(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.baseline, &#47;&#47;gets text in same line
       textBaseline: TextBaseline.ideographic, &#47;&#47;gets text in same line
       children: [
-        Text(
-          name,
-          style: TextStyle(
-            fontSize: 16,
-            color: Theme.of(context).dividerColor,
-          ),
-        ),
+        Text(name, style: theme.settingTextStyle),
         Obx(
           () =&gt; Text(
             systemState.ippvModel.ippvValues[name].toString(),
-            style: TextStyle(
-              fontSize: 32,
-              color: Theme.of(context).dividerColor,
-            ),
+            style: theme.settingTextStyle2,
           ),
         ),
-        Text(rate, style: TextStyle(fontSize: 12, color: Theme.of(context).dividerColor)),
+        Text(
+          rate,
+          style: theme.settingTextStyle3,
+        ),
       ],
     ),
   );

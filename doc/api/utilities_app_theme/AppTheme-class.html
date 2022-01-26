@@ -47,9 +47,17 @@
 <h1><span class="kind-class">AppTheme</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
+    <span class="category utilities cp-20 linked" title="This is part of the Utilities Topic."><a href="../topics/Utilities-topic.html">Utilities</a></span>
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>This class provides the app with a two themes: <a href="../utilities_app_theme/AppTheme/darkTheme.html">darkTheme</a> and <a href="../utilities_app_theme/AppTheme/lightTheme.html">lightTheme</a>.
+By default, the app starts in the <a href="../utilities_app_theme/AppTheme/lightTheme.html">lightTheme</a> and can be toggled to the <a href="../utilities_app_theme/AppTheme/darkTheme.html">darkTheme</a> by clicking on the theme <a href="../widgets_menu_toggle_theme_button/ToggleThemeButton-class.html">ToggleThemeButton</a>.
+The class contains constant values (such as <a href="../utilities_app_theme/AppTheme/heartFreqColor-constant.html">heartFreqColor</a>) that are not changed when toggling the theme.
+Text styles, button styles and some <a href="https://api.dart.dev/stable/2.15.1/dart-ui/Color-class.html">Color</a>s are changed depending on the active theme.
+The theme class is extended by extensions that specify those styles.</p>
+</section>
 
 
 
@@ -178,7 +186,7 @@
 
 </dt>
 <dd>
-   
+  Dark theme of the App (default) 
   <div class="features">read-only</div>
 
 </dd>
@@ -189,7 +197,7 @@
 
 </dt>
 <dd>
-   
+  Light theme of the App (experimental at the moment) 
   <div class="features">read-only</div>
 
 </dd>
@@ -214,21 +222,6 @@
 
   <div>
     <span class="signature"><code><a href="https://api.dart.dev/stable/2.15.1/dart-ui/Color/Color.html">Color</a>(0xFFFF0000)</code></span>
-  </div>
-</dd>
-
-        <dt id="alarmMessageColor" class="constant">
-  <span class="name "><a href="../utilities_app_theme/AppTheme/alarmMessageColor-constant.html">alarmMessageColor</a></span>
-  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/2.15.1/dart-ui/Color-class.html">Color</a></span>
-  
-
-</dt>
-<dd>
-   
-  
-
-  <div>
-    <span class="signature"><code><a href="https://api.dart.dev/stable/2.15.1/dart-ui/Color/Color.html">Color</a>(0xFF000000)</code></span>
   </div>
 </dd>
 
@@ -451,6 +444,10 @@
   <li class="section-title"><a href="../utilities_app_theme/utilities_app_theme-library.html#classes">Classes</a></li>
   <li><a href="../utilities_app_theme/AppTheme-class.html">AppTheme</a></li>
 
+  <li class="section-title"><a href="../utilities_app_theme/utilities_app_theme-library.html#extensions">Extensions</a></li>
+  <li><a href="../utilities_app_theme/CustomButtonStyles.html">CustomButtonStyles</a></li>
+  <li><a href="../utilities_app_theme/CustomColors.html">CustomColors</a></li>
+  <li><a href="../utilities_app_theme/CustomTextStyles.html">CustomTextStyles</a></li>
 
 
 
@@ -492,7 +489,6 @@
 
     <li class="section-title"><a href="../utilities_app_theme/AppTheme-class.html#constants">Constants</a></li>
     <li><a href="../utilities_app_theme/AppTheme/alarmHighColor-constant.html">alarmHighColor</a></li>
-    <li><a href="../utilities_app_theme/AppTheme/alarmMessageColor-constant.html">alarmMessageColor</a></li>
     <li><a href="../utilities_app_theme/AppTheme/alarmMiddleColor-constant.html">alarmMiddleColor</a></li>
     <li><a href="../utilities_app_theme/AppTheme/alarmNoneColor-constant.html">alarmNoneColor</a></li>
     <li><a href="../utilities_app_theme/AppTheme/alarmWarningColor-constant.html">alarmWarningColor</a></li>

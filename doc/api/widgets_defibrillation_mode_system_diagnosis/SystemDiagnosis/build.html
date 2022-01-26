@@ -107,16 +107,16 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  DefibrillationController defibrillationController =
-      Get.find&lt;DefibrillationController&gt;();
+  final ThemeData theme = Theme.of(context);
+  DefibrillationController defibrillationController = Get.find&lt;DefibrillationController&gt;();
 
   return Container(
-    color: Theme.of(context).cardColor,
+    color: theme.primarySwatch[40],
     margin: const EdgeInsets.all(8),
     child: Obx(
       () =&gt; Text(
         defibrillationController.systemDiagnosis.value,
-        style: const TextStyle(fontSize: 20),
+        style: theme.defiDiagnosisTextStyle,
         softWrap: true,
         textAlign: TextAlign.center,
       ),

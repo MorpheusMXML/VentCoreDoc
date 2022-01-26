@@ -107,6 +107,9 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
+  Get.find&lt;ScreenController&gt;().hideAlarmBoundaryOverlays();
+
   List&lt;String&gt; routes = [
     &#39;Start Screen&#39;,
     &#39;Alarm Limit Screen&#39;,
@@ -117,15 +120,9 @@ Widget build(BuildContext context) {
     child: ListView(
       children: [
         DrawerHeader(
-          child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: const [
-            Text(
-              &#39;Menu&#39;,
-              style: TextStyle(
-                fontSize: 28,
-              ),
-            ),
-            ToggleThemeButton()
-          ]),
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text(&#39;Menu&#39;, style: theme.menuHeadlineTextStyle), const ToggleThemeButton()]),
         ),
         ...routes.map((entry) =&gt; AppMenuEntry(name: entry)).toList(),
       ],

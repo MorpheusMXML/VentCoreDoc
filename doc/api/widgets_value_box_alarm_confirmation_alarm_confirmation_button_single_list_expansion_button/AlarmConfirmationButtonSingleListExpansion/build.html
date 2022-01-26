@@ -107,40 +107,31 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   SystemState systemState = Get.find&lt;SystemState&gt;();
 
   return Obx(() {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        fixedSize: Size(AbsoluteAlarmFieldConst.buttonHeight.toDouble(),
-            AbsoluteAlarmFieldConst.width * (3 &#47; 8)),
-        primary: const Color(0xffeeeeee),
-        onPrimary: Colors.black,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(75),
-        ),
-      ),
+      style: theme.alarmConfirmButtonStyle2,
       onPressed: systemState.absAlarmFieldModel.activeList.isEmpty
           ? null
-          : () =&gt; systemState.absAlarmFieldModel.listExpanded.value
-              ? hideOverlay(context)
-              : showOverlay(context),
+          : () =&gt; systemState.absAlarmFieldModel.listExpanded.value ? hideOverlay(context) : showOverlay(context),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
+          Text(
             &quot;Single Alarm Conf&quot;,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: theme.boldTextStyle,
           ),
           systemState.absAlarmFieldModel.listExpanded.value
-              ? const Icon(
+              ? Icon(
                   Icons.arrow_downward_rounded,
-                  color: Colors.black,
+                  color: theme.inverseContrastColor,
                   size: AbsoluteAlarmFieldConst.buttonHeight * 0.6,
                 )
-              : const Icon(
+              : Icon(
                   Icons.arrow_upward_rounded,
-                  color: Colors.black,
+                  color: theme.inverseContrastColor,
                   size: AbsoluteAlarmFieldConst.buttonHeight * 0.6,
                 ),
         ],

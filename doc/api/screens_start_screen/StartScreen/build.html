@@ -66,39 +66,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Describes the part of the user interface represented by this widget.</p>
-<p>The framework calls this method when this widget is inserted into the tree
-in a given <code>BuildContext</code> and when the dependencies of this widget change
-(e.g., an <code>InheritedWidget</code> referenced by this widget changes). This
-method can potentially be called in every frame and should not have any side
-effects beyond building a widget.</p>
-<p>The framework replaces the subtree below this widget with the widget
-returned by this method, either by updating the existing subtree or by
-removing the subtree and inflating a new subtree, depending on whether the
-widget returned by this method can update the root of the existing
-subtree, as determined by calling <code>Widget.canUpdate</code>.</p>
-<p>Typically implementations return a newly created constellation of widgets
-that are configured with information from this widget's constructor and
-from the given <code>BuildContext</code>.</p>
-<p>The given <code>BuildContext</code> contains information about the location in the
-tree at which this widget is being built. For example, the context
-provides the set of inherited widgets for this location in the tree. A
-given widget might be built with multiple different <code>BuildContext</code>
-arguments over time if the widget is moved around the tree or if the
-widget is inserted into the tree in multiple places at once.</p>
-<p>The implementation of this method must only depend on:</p>
-<ul>
-<li>the fields of the widget, which themselves must not change over time,
-and</li>
-<li>any ambient state obtained from the <code>context</code> using
-<code>BuildContext.dependOnInheritedWidgetOfExactType</code>.</li>
-</ul>
-<p>If a widget's <a href="../../screens_start_screen/StartScreen/build.html">build</a> method is to depend on anything else, use a
-<code>StatefulWidget</code> instead.</p>
-<p>See also:</p>
-<ul>
-<li><code>StatelessWidget</code>, which contains the discussion on performance considerations.</li>
-</ul>
+  <p>An <a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a> is created with entries to match the Text written on the buttons to the Image.</p>
 </section>
 
 
@@ -112,13 +80,14 @@ Widget build(BuildContext context) {
     &#39;Child&#39;: &#39;assets&#47;icons&#47;children.svg&#39;,
     &#39;Infant&#39;: &#39;assets&#47;icons&#47;newborn.svg&#39;,
   };
-
   return SingleChildScrollView(
     child: SizedBox(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: Row(
         children: [
+          &#47;&#47;&#47; This first flexible contains the left side of the Start Screen with the Preset-Buttons.
+          &#47;&#47;&#47; The map with the entries for the Buttons is used to create the buttons with matching Text and Image.
           Flexible(
             flex: 2,
             child: Column(
@@ -135,6 +104,8 @@ Widget build(BuildContext context) {
                   .toList(),
             ),
           ),
+
+          &#47;&#47;&#47; This second flexible contains the right side of the Start Screen with the Patient details, Skip&#47;Confirm and AED-Buttons.
           Flexible(
             flex: 3,
             child: Column(

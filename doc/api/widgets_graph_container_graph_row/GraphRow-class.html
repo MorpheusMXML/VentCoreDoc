@@ -47,9 +47,21 @@
 <h1><span class="kind-class">GraphRow</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
+    <span class="category graphcontainer cp-8 linked" title="This is part of the GraphContainer Topic."><a href="../topics/GraphContainer-topic.html">GraphContainer</a></span>
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>Renders the row consisting of a graph (<a href="../widgets_graph_cpr_graph/CprGraph-class.html">CprGraph</a>, <a href="../widgets_graph_history_graph/HistoryGraph-class.html">HistoryGraph</a>, <a href="../widgets_graph_co2_graph/CO2Graph-class.html">CO2Graph</a> and <a href="../widgets_graph_regular_graph/RegularGraph-class.html">RegularGraph</a>) and a <a href="../widgets_value_box_value_box_tile/ValueBoxTile-class.html">ValueBoxTile</a> (optional).</p>
+<p>Uses:</p>
+<ul>
+<li><a href="../widgets_graph_cpr_graph/CprGraph-class.html">CprGraph</a></li>
+<li><a href="../widgets_graph_history_graph/HistoryGraph-class.html">HistoryGraph</a></li>
+<li><a href="../widgets_graph_co2_graph/CO2Graph-class.html">CO2Graph</a></li>
+<li><a href="../widgets_graph_regular_graph/RegularGraph-class.html">RegularGraph</a></li>
+<li><a href="../widgets_value_box_value_box_tile/ValueBoxTile-class.html">ValueBoxTile</a></li>
+</ul>
+</section>
 
 
     <section>
@@ -125,7 +137,7 @@
 
 </dt>
 <dd>
-  renders the actual <a href="../widgets_graph_graph/Graph-class.html">Graph</a> for instance <a href="../widgets_graph_history_graph/HistoryGraph-class.html">HistoryGraph</a> and the <a href="../widgets_value_box_value_box_tile/ValueBoxTile-class.html">ValueBoxTile</a> 
+  Key to identify the corresponding sensor 
   <div class="features">final</div>
 
 </dd>
@@ -189,15 +201,32 @@ children. <a href="../widgets_graph_container_graph_row/GraphRow/debugDescribeCh
 
 </dd>
 
-        <dt id="evaluateValueBoxTile" class="callable">
-  <span class="name"><a href="../widgets_graph_container_graph_row/GraphRow/evaluateValueBoxTile.html">evaluateValueBoxTile</a></span><span class="signature">(<wbr>)
+        <dt id="evaluateGraph" class="callable">
+  <span class="name"><a href="../widgets_graph_container_graph_row/GraphRow/evaluateGraph.html">evaluateGraph</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; Widget</span>
   </span>
   
 
 </dt>
 <dd>
-   
+  Evaluates what type of graph will be shown. The decision depends on the provided sensor.
+<a href="../utilities_enums_sensor/sensorEnumGraph.html">sensorEnumGraph.cpr</a> is should use the <a href="../widgets_graph_cpr_graph/CprGraph-class.html">CprGraph</a>.
+<a href="../utilities_enums_sensor/sensorEnumGraph.html">sensorEnumGraph.nibd</a> is should use the <a href="../widgets_graph_history_graph/HistoryGraph-class.html">HistoryGraph</a>.
+<a href="../utilities_enums_sensor/sensorEnumGraph.html">sensorEnumGraph.co2</a> is should use the <a href="../widgets_graph_co2_graph/CO2Graph-class.html">CO2Graph</a>.
+Every other instance of <a href="../utilities_enums_sensor/sensorEnumGraph.html">sensorEnumGraph</a> should use the <a href="../widgets_graph_regular_graph/RegularGraph-class.html">RegularGraph</a>. 
+  
+
+</dd>
+
+        <dt id="evaluateValueBoxTile" class="callable">
+  <span class="name"><a href="../widgets_graph_container_graph_row/GraphRow/evaluateValueBoxTile.html">evaluateValueBoxTile</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../widgets_value_box_value_box_tile/ValueBoxTile-class.html">ValueBoxTile</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Evaluates what type of <a href="../widgets_value_box_value_box_tile/ValueBoxTile-class.html">ValueBoxTile</a> will be shown. The decision depends on the provided sensor. 
   
 
 </dd>
@@ -358,6 +387,7 @@ tools and by <code>DiagnosticsNode.toStringDeep</code>. <a href="../widgets_grap
     <li class="inherited"><a href="../widgets_graph_container_graph_row/GraphRow/createElement.html">createElement</a></li>
     <li class="inherited"><a href="../widgets_graph_container_graph_row/GraphRow/debugDescribeChildren.html">debugDescribeChildren</a></li>
     <li class="inherited"><a href="../widgets_graph_container_graph_row/GraphRow/debugFillProperties.html">debugFillProperties</a></li>
+    <li><a href="../widgets_graph_container_graph_row/GraphRow/evaluateGraph.html">evaluateGraph</a></li>
     <li><a href="../widgets_graph_container_graph_row/GraphRow/evaluateValueBoxTile.html">evaluateValueBoxTile</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li class="inherited"><a href="../widgets_graph_container_graph_row/GraphRow/toDiagnosticsNode.html">toDiagnosticsNode</a></li>

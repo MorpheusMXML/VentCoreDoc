@@ -52,7 +52,7 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.dart.dev/stable/2.15.1/dart-ui/Color-class.html">Color</a></span>
+<span class="returntype"><a href="https://api.dart.dev/stable/2.15.1/dart-ui/Color-class.html">Color</a>?</span>
 <span class="name ">evaluateBorderColor</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="evaluateBorderColor-param-context"><span class="type-annotation">BuildContext</span> <span class="parameter-name">context</span>, </span></li>
 <li><span class="parameter" id="evaluateBorderColor-param-sensorKey"><span class="type-annotation"><a href="../../utilities_enums_sensor/sensorEnumAbsolute.html">sensorEnumAbsolute</a></span> <span class="parameter-name">sensorKey</span>, </span></li>
 <li><span class="parameter" id="evaluateBorderColor-param-alarmState"><span class="type-annotation"><a href="https://pub.dev/documentation/get/4.5.1/rx_types/RxMap-class.html">RxMap</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../utilities_enums_sensor/sensorEnumAbsolute.html">sensorEnumAbsolute</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">alarmState</span></span></li>
@@ -62,22 +62,28 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Helper method to evaluate the backgroundcolor for alarms (default != [Theme.of(context).primarySwatch<code>50</code>])</p>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Color evaluateBorderColor(
+  <pre class="language-dart"><code class="language-dart">Color? evaluateBorderColor(
     BuildContext context, sensorEnumAbsolute sensorKey, RxMap&lt;sensorEnumAbsolute, Map&lt;String, dynamic&gt;&gt; alarmState) {
+  final ThemeData theme = Theme.of(context);
   alarmStatus? alarm = alarmState[sensorKey]![&quot;status&quot;];
+
   switch (alarm) {
     case alarmStatus.high:
     case alarmStatus.middle:
     case alarmStatus.warning:
       return alarmState[sensorKey]![&quot;color&quot;];
     case alarmStatus.confirmed:
+      return (alarmState[sensorKey]![&quot;color&quot;] as Color).withOpacity(0.65);
     default:
-      return Theme.of(context).focusColor;
+      return theme.primarySwatch[50];
   }
 }</code></pre>
 </section>

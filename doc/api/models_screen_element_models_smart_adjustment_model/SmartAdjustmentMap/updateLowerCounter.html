@@ -61,8 +61,8 @@
     </section>
     
 <section class="desc markdown">
-  <p>updates the <a href="../../models_screen_element_models_smart_adjustment_model/SmartAdjustmentMapEntry/lowerCounter.html">SmartAdjustmentMapEntry.lowerCounter</a> belonging to <code>sensorKey</code></p>
-<p>if in <a href="../../models_screen_element_models_smart_adjustment_model/SmartAdjustmentMap/allowedTimeDifference.html">allowedTimeDifference</a> the counter is updated. If not it is set to 0
+  <p>Updates the <a href="../../models_screen_element_models_smart_adjustment_model/SmartAdjustmentMapEntry/lowerCounter.html">SmartAdjustmentMapEntry.lowerCounter</a> belonging to <code>sensorKey</code>.</p>
+<p>If in <a href="../../models_screen_element_models_smart_adjustment_model/SmartAdjustmentMap/allowedTimeDifference.html">allowedTimeDifference</a> the counter is updated. If not it is set to 0
 <a href="../../models_screen_element_models_smart_adjustment_model/SmartAdjustmentMap/calculatePressable.html">calculatePressable</a> is called afterwards either way</p>
 </section>
 
@@ -72,8 +72,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void updateLowerCounter(sensorEnumAbsolute sensorKey) {
   DateTime dateTime = DateTime.now();
-  if (dateTime.difference(map[sensorKey]!.dateTimeLower).inSeconds &lt;=
-      allowedTimeDifference) {
+  if (dateTime.difference(map[sensorKey]!.dateTimeLower).inSeconds &lt;= allowedTimeDifference) {
     map[sensorKey]!.lowerCounter.value++;
     map[sensorKey]!.dateTimeLower = dateTime;
   } else {

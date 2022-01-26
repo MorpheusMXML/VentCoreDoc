@@ -107,6 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final GlobalKey globalKey = GlobalKey();
   const double aspectRatio = 1.1;
   double fontSize = 17;
@@ -114,10 +115,8 @@ Widget build(BuildContext context) {
   &#47;&#47; could be done via template pattern for better code quality
   if (dataModelGraph == null) {
     &#47;&#47;When NIBD: avoid overflow.
-    if (dataModelAbsolute!.abbreviation ==
-            sensorEnumAbsolute.sysAbsolute.abbreviation ||
-        dataModelAbsolute!.abbreviation ==
-            sensorEnumAbsolute.diaAbsolute.abbreviation) {
+    if (dataModelAbsolute!.abbreviation == sensorEnumAbsolute.sysAbsolute.abbreviation ||
+        dataModelAbsolute!.abbreviation == sensorEnumAbsolute.diaAbsolute.abbreviation) {
       fontSizeCenter = 40;
       fontSize = 14;
     }
@@ -125,10 +124,7 @@ Widget build(BuildContext context) {
       aspectRatio: aspectRatio,
       child: ElevatedButton(
         key: globalKey,
-        style: ButtonStyle(
-            shape: MaterialStateProperty.all(const RoundedRectangleBorder()),
-            backgroundColor:
-                MaterialStateProperty.all(Theme.of(context).cardColor)),
+        style: theme.valueBoxContainerButtonStyle,
         onPressed: () {
           dataModelAbsolute!.expanded = !dataModelAbsolute!.expanded;
           dataModelAbsolute!.expanded
@@ -168,14 +164,10 @@ Widget build(BuildContext context) {
               () =&gt; Text(
                 dataModelAbsolute!.floatRepresentation
                     ? dataModelAbsolute!.sensorKey == sensorEnumAbsolute.mve
-                        ? dataModelAbsolute!.absoluteValue.value
-                            .toStringAsFixed(2)
+                        ? dataModelAbsolute!.absoluteValue.value.toStringAsFixed(2)
                         : &#47;&#47;give mve 2 decimals
-                        dataModelAbsolute!.absoluteValue.value
-                            .toStringAsFixed(1)
-                    : dataModelAbsolute!.absoluteValue.value
-                        .toInt()
-                        .toString(),
+                        dataModelAbsolute!.absoluteValue.value.toStringAsFixed(1)
+                    : dataModelAbsolute!.absoluteValue.value.toInt().toString(),
                 style: TextStyle(
                   color: dataModelAbsolute!.color,
                   fontSize: fontSizeCenter,
@@ -216,7 +208,7 @@ Widget build(BuildContext context) {
       child: Container(
         decoration: ShapeDecoration(
           shape: const RoundedRectangleBorder(),
-          color: Theme.of(context).cardColor,
+          color: theme.primarySwatch[40],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -225,42 +217,36 @@ Widget build(BuildContext context) {
             &#47;&#47; Top
             Padding(
               padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: Text(
-                        dataModelGraph!.graphTitle,
-                        style: TextStyle(
-                          color: dataModelGraph!.color,
-                          fontSize: fontSize,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Flexible(
+                  child: Text(
+                    dataModelGraph!.graphTitle,
+                    style: TextStyle(
+                      color: dataModelGraph!.color,
+                      fontSize: fontSize,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const Spacer(),
-                    Text(
-                      &quot;Graph\nValue&quot;,
-                      style: TextStyle(
-                        color: dataModelGraph!.color,
-                        fontSize: fontSize,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ]),
+                  ),
+                ),
+                const Spacer(),
+                Text(
+                  &quot;Graph\nValue&quot;,
+                  style: TextStyle(
+                    color: dataModelGraph!.color,
+                    fontSize: fontSize,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ]),
             ),
 
             &#47;&#47; Middle
 
             Obx(
               () =&gt; Text(
-                (dataModelGraph!.singleData.value.value &gt; -1.0 &amp;&amp;
-                        dataModelGraph!.singleData.value.value &lt; 1.0)
-                    ? dataModelGraph!.singleData.value.value
-                        .toStringAsFixed(1)
-                    : dataModelGraph!.singleData.value.value
-                        .toInt()
-                        .toString(),
+                (dataModelGraph!.singleData.value.value &gt; -1.0 &amp;&amp; dataModelGraph!.singleData.value.value &lt; 1.0)
+                    ? dataModelGraph!.singleData.value.value.toStringAsFixed(1)
+                    : dataModelGraph!.singleData.value.value.toInt().toString(),
                 style: TextStyle(
                   color: dataModelGraph!.color,
                   fontSize: fontSizeCenter,
@@ -271,27 +257,24 @@ Widget build(BuildContext context) {
             &#47;&#47; Bottom
             Padding(
               padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(),
-                    Text(
-                      dataModelGraph!.yAxisTitle,
-                      style: TextStyle(
-                        color: dataModelGraph!.color,
-                        fontSize: fontSize,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ]),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Container(),
+                Text(
+                  dataModelGraph!.yAxisTitle,
+                  style: TextStyle(
+                    color: dataModelGraph!.color,
+                    fontSize: fontSize,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ]),
             ),
           ],
         ),
       ),
     );
   } else {
-    throw Exception(
-        &quot;ValueBoxContainer was given both dataModelGraph and DataModelAbsolute&quot;);
+    throw Exception(&quot;ValueBoxContainer was given both dataModelGraph and DataModelAbsolute&quot;);
   }
 }</code></pre>
 </section>

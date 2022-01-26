@@ -107,6 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final startScreenController = Get.find&lt;StartScreenController&gt;();
 
   return Container(
@@ -114,9 +115,11 @@ Widget build(BuildContext context) {
     child: Obx(
       () =&gt; ElevatedButton(
         style: ElevatedButton.styleFrom(
-          minimumSize: Size(800 &#47; MediaQuery.of(context).devicePixelRatio, 200 &#47; MediaQuery.of(context).devicePixelRatio),
-          primary: startScreenController.selectedString.value == name ? const Color(0xFF808B96) : const Color(0xFFEEEEEE),
-          onPrimary: Colors.black,
+          minimumSize:
+              Size(800 &#47; MediaQuery.of(context).devicePixelRatio, 200 &#47; MediaQuery.of(context).devicePixelRatio),
+          primary:
+              startScreenController.selectedString.value == name ? theme.primarySwatch[15] : theme.primarySwatch[10],
+          onPrimary: theme.inverseContrastColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(75)),
         ),
 
@@ -125,9 +128,10 @@ Widget build(BuildContext context) {
           startScreenController.settingsButton(name);
         },
 
-        &#47;&#47;&#47;button content
+        &#47;&#47;&#47;The Row contains the elements of the Button in Flexibles to help with positioning.
         child: Row(
           children: [
+            &#47;&#47;&#47;The first Flexible contains the image.
             Flexible(
               flex: 2,
               &#47;&#47;center svg within flexible
@@ -138,6 +142,8 @@ Widget build(BuildContext context) {
                 ],
               ),
             ),
+
+            &#47;&#47;&#47;The second Flexible contains the name of the button.
             Flexible(
               flex: 3,
               &#47;&#47;center text within flexible
@@ -146,12 +152,13 @@ Widget build(BuildContext context) {
                 children: [
                   Text(
                     name,
-                    style: const TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                    style: theme.patientTypeTextStyle,
                   ),
                 ],
               ),
             ),
-            &#47;&#47;empty container in flexible to center text within in button (not best practice)
+
+            &#47;&#47;&#47;The last Flexible contains an empty container to help center the name.
             Flexible(flex: 2, child: Container())
           ],
         ),

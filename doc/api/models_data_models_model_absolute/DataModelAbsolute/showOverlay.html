@@ -67,10 +67,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void showOverlay(ValueBoxContainer valueBoxContainer, GlobalKey globalKey,
-    BuildContext context) {
-  final RenderBox renderBox =
-      globalKey.currentContext!.findRenderObject() as RenderBox;
+  <pre class="language-dart"><code class="language-dart">void showOverlay(ValueBoxContainer valueBoxContainer, GlobalKey globalKey, BuildContext context) {
+  final RenderBox renderBox = globalKey.currentContext!.findRenderObject() as RenderBox;
   double boxHeight = renderBox.size.height;
   double boxWidth = renderBox.size.width;
   double settingsWidth = boxWidth &#47; 3;

@@ -107,19 +107,17 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
+
   return Container(
     alignment: Alignment.centerRight,
     margin: const EdgeInsets.fromLTRB(0, 0, 50, 50),
     child: ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        fixedSize: const Size(200, 60),
-        primary: const Color(0xFFEEEEEE),
-        onPrimary: Colors.black,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(75),
-        ),
+      style: theme.navigationButtonStyle,
+      child: Text(
+        &#39;Exit&#39;,
+        style: theme.navigationButtonTextStyle,
       ),
-      child: const Text(&#39;Exit&#39;, style: TextStyle(fontSize: 20)),
       onPressed: () =&gt; Get.find&lt;ScreenController&gt;().menuExitButton(),
     ),
   );

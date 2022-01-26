@@ -56,16 +56,19 @@
 
         </section>
         
+<section class="desc markdown">
+  <p>Width for the <a href="../../widgets_appbar_alarm_list/AlarmList-class.html">AlarmList</a></p>
+</section>
 
         
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static final double alarmListWidth =
-    (((Get.width - menuButtonWidth) &#47; (flexBarAlarmArea + flexBarO2BottleArea + flexBarPatientTypeArea + flexMuteECGButtonArea)) *
-            flexBarAlarmArea &#47;
-            (flexBarAlarmCounterTile + flexBarAlarmFieldTile) *
-            flexBarAlarmFieldTile) -
-        horizontalMargin;
+  <pre class="language-dart"><code class="language-dart">static final double alarmListWidth = (((Get.width - menuButtonWidth) &#47;
+            (flexBarAlarmArea + flexBarO2BottleArea + flexBarPatientTypeArea + flexMuteECGButtonArea)) *
+        flexBarAlarmArea &#47;
+        (flexBarAlarmCounterTile + flexBarAlarmFieldTile) *
+        flexBarAlarmFieldTile) -
+    horizontalMargin;
 
 </code></pre>
 </section>

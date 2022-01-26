@@ -60,7 +60,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>updates current <a href="../../models_data_models_model_absolute/DataModelAbsolute-class.html">DataModelAbsolute</a> mve on change of Vt (tidal volume) value in <a href="../../models_screen_element_models_ippv_model/IppvModel/ippvValues.html">ippvValues</a></p>
+  <p>Updates current <a href="../../models_data_models_model_absolute/DataModelAbsolute-class.html">DataModelAbsolute</a> mve on change of Vt (tidal volume) value in <a href="../../models_screen_element_models_ippv_model/IppvModel/ippvValues.html">ippvValues</a>.</p>
 </section>
 
 
@@ -68,9 +68,8 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void updateMVe() {
-  Get.find&lt;DataModelAbsolute&gt;(tag: sensorEnumAbsolute.mve.name).updateValue(
-      ((ippvValues[&#39;Freq.&#39;]!.value * (ippvValues[&#39;Vt&#39;]!.value &#47; 1000)))
-          .toDouble());
+  Get.find&lt;DataModelAbsolute&gt;(tag: sensorEnumAbsolute.mve.name)
+      .updateValue(((ippvValues[&#39;Freq.&#39;]!.value * (ippvValues[&#39;Vt&#39;]!.value &#47; 1000))).toDouble());
 }</code></pre>
 </section>
 

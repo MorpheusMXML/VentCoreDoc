@@ -88,8 +88,7 @@
 
   alarmList.sort((a, b) =&gt; b.priority.compareTo(a.priority));
   if (alarm == nonGraphAlarmEnum.vt || alarm == nonGraphAlarmEnum.vf) {
-    Get.find&lt;DefibrillationController&gt;().systemDiagnosis.value =
-        alarm.message;
+    Get.find&lt;DefibrillationController&gt;().systemDiagnosis.value = alarm.message;
   }
 }</code></pre>
 </section>

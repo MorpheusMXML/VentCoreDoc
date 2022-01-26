@@ -107,24 +107,26 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final startScreenController = Get.find&lt;StartScreenController&gt;();
   final screenController = Get.find&lt;ScreenController&gt;();
 
+  &#47;&#47;&#47; The returned Obx contains the behaviour and configuration of the Button
   return Obx(
     () =&gt; Container(
       alignment: Alignment.centerRight,
       margin: const EdgeInsets.fromLTRB(0, 0, 10, 12),
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          fixedSize: const Size(200, 60),
-          onSurface: const Color(0xffeeeeee),
-          primary: const Color(0xffeeeeee),
-          onPrimary: Colors.black,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(75)),
+        style: theme.navigationButtonStyle,
+        onPressed: startScreenController.selectedString.value != &#39;&#39;
+            ? () =&gt; screenController.continueButton(startScreenController.selectedString.value)
+            : null,
+
+        &#47;&#47;&#47; The Child of the container holds the Text on the Button
+        child: Text(
+          &#39;Continue&#39;,
+          style: theme.navigationButtonTextStyle,
         ),
-        onPressed:
-            startScreenController.selectedString.value != &#39;&#39; ? () =&gt; screenController.continueButton(startScreenController.selectedString.value) : null,
-        child: const Text(&#39;Continue&#39;, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
       ),
     ),
   );

@@ -60,8 +60,8 @@
     </section>
     
 <section class="desc markdown">
-  <p>updates the current <a href="../../models_screen_element_models_absolute_alarm_field_model/AbsAlarmFieldModel/activeList.html">activeList</a> so that it only contains the <a href="../../utilities_enums_sensor/sensorEnumAbsolute.html">sensorEnumAbsolute</a>s of not confirmed and active alarms
-if <a href="../../models_screen_element_models_absolute_alarm_field_model/AbsAlarmFieldModel/activeList.html">activeList</a> is empty <a href="../../widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list/AlarmButtonAbsoluteList-class.html">AlarmButtonAbsoluteList</a> will be closed</p>
+  <p>Updates the current <a href="../../models_screen_element_models_absolute_alarm_field_model/AbsAlarmFieldModel/activeList.html">activeList</a> so that it only contains the <a href="../../utilities_enums_sensor/sensorEnumAbsolute.html">sensorEnumAbsolute</a>s of not confirmed and active alarms.</p>
+<p>If <a href="../../models_screen_element_models_absolute_alarm_field_model/AbsAlarmFieldModel/activeList.html">activeList</a> is empty <a href="../../widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list/AlarmButtonAbsoluteList-class.html">AlarmButtonAbsoluteList</a> will be closed.</p>
 </section>
 
 
@@ -79,13 +79,15 @@ if <a href="../../models_screen_element_models_absolute_alarm_field_model/AbsAla
   } else if (systemState.selectedToggleView[2]) {
     activeList.value = defiSet.toList();
   } else {
-    throw Exception(&quot;No Toggle view active while trying to form the set of active absolute value tiles on the current screen&quot;);
+    throw Exception(
+        &quot;No Toggle view active while trying to form the set of active absolute value tiles on the current screen&quot;);
   }
 
   &#47;&#47; if activeList isnt empty, remove sensors from list which are confirmed OR have no active alarm
   if (activeList.isNotEmpty) {
     activeList.removeWhere((sensorKey) =&gt;
-        systemState.alarmState[sensorKey]![&quot;status&quot;] == alarmStatus.none || systemState.alarmState[sensorKey]![&quot;status&quot;] == alarmStatus.confirmed);
+        systemState.alarmState[sensorKey]![&quot;status&quot;] == alarmStatus.none ||
+        systemState.alarmState[sensorKey]![&quot;status&quot;] == alarmStatus.confirmed);
   }
 
   &#47;&#47; if there are not any Elements in list left and list is expanded =&gt; overlay

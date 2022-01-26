@@ -107,11 +107,10 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
+
   return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        fixedSize: const Size(800, 150),
-        primary: Theme.of(context).cardColor.withOpacity(0.5),
-      ),
+      style: theme.graphAdderPopupButtonStyle,
       onPressed: () =&gt; systemState.graphList.addGraph.toggle(),
       child: Obx(
         () =&gt; Row(
@@ -120,17 +119,26 @@ Widget build(BuildContext context) {
               ButtonStyle style;
               systemState.graphList.list.contains(sensor)
                   ? style = ElevatedButton.styleFrom(
-                      fixedSize: const Size(80, 60), side: const BorderSide(width: 2, color: Colors.white), primary: sensor.color, onPrimary: Colors.white)
-                  : style = ElevatedButton.styleFrom(fixedSize: const Size(80, 60), primary: Colors.grey[50], onPrimary: Colors.black);
+                      fixedSize: const Size(80, 60),
+                      side: const BorderSide(width: 2, color: Colors.white),
+                      primary: sensor.color,
+                      onPrimary: Colors.white)
+                  : style = ElevatedButton.styleFrom(
+                      fixedSize: const Size(80, 60),
+                      primary: Colors.grey[50],
+                      onPrimary: theme.inverseContrastColor);
 
               return ElevatedButton(
                   style: style,
-                  onPressed: () =&gt; systemState.graphList.list.contains(sensor)
-                      ? systemState.graphList.graphListRemove(sensor)
-                      : systemState.graphList.graphListAdd(sensor),
+                  onPressed: () {
+                    Get.find&lt;ScreenController&gt;().hideAlarmBoundaryOverlays();
+                    systemState.graphList.list.contains(sensor)
+                        ? systemState.graphList.graphListRemove(sensor)
+                        : systemState.graphList.graphListAdd(sensor);
+                  },
                   child: Text(
                     sensor.graphTitle,
-                    style: const TextStyle(fontSize: 18),
+                    style: theme.graphAdderPopupTextStyle,
                     textAlign: TextAlign.center,
                   ));
             }).toList()),

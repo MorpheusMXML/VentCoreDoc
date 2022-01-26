@@ -61,7 +61,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>beavior when using <a href="../../widgets_toggle_toggle_mode_button/ToggleModeButton-class.html">ToggleModeButton</a></p>
+  <p>beavior when using <a href="../../widgets_toggle_toggle_mode_button_container/ToggleModeButtonContainer-class.html">ToggleModeButtonContainer</a></p>
 </section>
 
 
@@ -69,21 +69,25 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void setSelectedToggleView(int index) {
+  hideAlarmBoundaryOverlays();
   switch (index) {
     case 0:
       systemState.screenStatus = screenStatusEnum.monitorScreen;
       systemState.setSelectedToggleView([true, false, false]);
       systemState.absAlarmFieldModel.evaluateActiveList();
+      systemState.graphList.evaluateActiveGraphAbsolutes();
       break;
     case 1:
       systemState.screenStatus = screenStatusEnum.ventilationScreen;
       systemState.setSelectedToggleView([false, true, false]);
       systemState.absAlarmFieldModel.evaluateActiveList();
+      systemState.graphList.evaluateActiveGraphAbsolutes();
       break;
     case 2:
       systemState.screenStatus = screenStatusEnum.defibrillationScreen;
       systemState.setSelectedToggleView([false, false, true]);
       systemState.absAlarmFieldModel.evaluateActiveList();
+      systemState.graphList.evaluateActiveGraphAbsolutes();
       break;
     default:
       throw Exception(&quot;No screen $index known in toggle view&quot;);
@@ -132,6 +136,7 @@
     <li><a href="../../providers_screen_controller/ScreenController/changeScenario.html">changeScenario</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/continueButton.html">continueButton</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/demoScreenButton.html">demoScreenButton</a></li>
+    <li><a href="../../providers_screen_controller/ScreenController/hideAlarmBoundaryOverlays.html">hideAlarmBoundaryOverlays</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/menuExitButton.html">menuExitButton</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/patientSettingButton.html">patientSettingButton</a></li>

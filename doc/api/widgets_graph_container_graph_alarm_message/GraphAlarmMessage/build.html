@@ -107,6 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final SystemState systemState = Get.find&lt;SystemState&gt;();
 
   return Obx(() {
@@ -115,11 +116,7 @@ Widget build(BuildContext context) {
       width: 400,
       child: Text(
         &#39;${sensorKey.displayString} $alarmMessage&#39;,
-        style: const TextStyle(
-          color: AppTheme.alarmMessageColor,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
+        style: theme.graphAlarmMessageTextStyle,
       ),
     );
   });

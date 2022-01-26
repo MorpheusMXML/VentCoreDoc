@@ -60,7 +60,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>resets <a href="../../widgets_toggle_toggle_mode_button/ToggleModeButton-class.html">ToggleModeButton</a> to default</p>
+  <p>resets <a href="../../widgets_toggle_toggle_mode_button_container/ToggleModeButtonContainer-class.html">ToggleModeButtonContainer</a> to default</p>
 </section>
 
 
@@ -68,6 +68,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void resetToggleView() {
+  hideAlarmBoundaryOverlays();
   systemState.setSelectedToggleView([true, false, false]);
 }</code></pre>
 </section>
@@ -113,6 +114,7 @@
     <li><a href="../../providers_screen_controller/ScreenController/changeScenario.html">changeScenario</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/continueButton.html">continueButton</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/demoScreenButton.html">demoScreenButton</a></li>
+    <li><a href="../../providers_screen_controller/ScreenController/hideAlarmBoundaryOverlays.html">hideAlarmBoundaryOverlays</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/menuExitButton.html">menuExitButton</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../providers_screen_controller/ScreenController/patientSettingButton.html">patientSettingButton</a></li>

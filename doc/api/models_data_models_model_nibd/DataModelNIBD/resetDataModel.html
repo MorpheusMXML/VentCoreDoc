@@ -68,8 +68,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void resetDataModel() {
-  singleData.value =
-      ChartData.asNIBD(time: DateTime.now(), value: &lt;int&gt;[0, 0], counter: 0);
+  singleData.value = ChartData.asNIBD(time: DateTime.now(), value: &lt;int&gt;[0, 0], counter: 0);
   &#47;&#47;clear historical data
   graphData.clear();
 }</code></pre>

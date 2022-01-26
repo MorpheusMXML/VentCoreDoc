@@ -113,7 +113,7 @@ Widget build(BuildContext context) {
     case sensorEnumGraph.nibd:
       return HistoryGraph(sensor: sensor);
     case sensorEnumGraph.co2:
-       return CO2Graph(sensor: sensor);
+      return CO2Graph(sensor: sensor);
     default:
       return RegularGraph(sensor: sensor);
   }

@@ -108,8 +108,9 @@ and</li>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
   final SystemState systemState = Get.find&lt;SystemState&gt;();
+
   return Obx(() {
-    &#47;&#47;&#47;evaluate alarmTypes and see which Boundary is violated
+    &#47;&#47; evaluate alarmTypes and see which boundary is violated
     alarmStatus? alarm = systemState.getAlarmStateStatus(sensor);
     switch (alarm) {
       case alarmStatus.high:
@@ -130,7 +131,7 @@ Widget build(BuildContext context) {
                     const Spacer(flex: 2),
                     GraphAlarmMessage(sensorKey: sensor),
                     const Spacer(flex: 8),
-                    SmartAjdustButton(sensorKey: sensor),
+                    SmartAdjustButton(sensorKey: sensor),
                     const Spacer(flex: 2),
                   ],
                 ),
@@ -143,7 +144,7 @@ Widget build(BuildContext context) {
           children: [
             Expanded(
               child: Container(
-                color: systemState.getAlarmStateColor(sensor),
+                color: systemState.getAlarmStateColor(sensor).withOpacity(0.65),
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
               ),
             ),

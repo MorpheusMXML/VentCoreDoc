@@ -107,11 +107,12 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   DefibrillationController defibrillationController = Get.find&lt;DefibrillationController&gt;();
 
   return Flexible(
     child: Container(
-      color: Theme.of(context).cardColor,
+      color: theme.primarySwatch[40],
       margin: const EdgeInsets.only(left: 8, right: 8),
       child: Obx(
         () =&gt; Row(
@@ -119,66 +120,41 @@ Widget build(BuildContext context) {
           children: defibrillationController.shockClicked.value
               ? [
                   Expanded(
-                    flex: 3,
-                    child: Obx(
-                      () =&gt; defibrillationController.shockClicked.value
-                          ? Slider(
-                              label: defibrillationController.shockPower.value.toString(),
-                              min: 0,
-                              max: 250,
-                              divisions: 10,
-                              onChangeEnd: (value) =&gt; defibrillationController.shockClicked.toggle(),
-                              onChanged: (newValue) =&gt; defibrillationController.shockPower.value = newValue.toInt(),
-                              value: defibrillationController.shockPower.value.toDouble(),
-                            )
-                          : ElevatedButton(
-                              style: ElevatedButton.styleFrom(primary: Colors.transparent),
-                              child: Text(
-                                &#39;${defibrillationController.shockPower}&#39;,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 32,
-                                  color: Colors.red,
-                                ),
-                              ),
-                              onPressed: () =&gt; defibrillationController.shockClicked.toggle(),
-                            ),
+                    child: Slider(
+                      label: defibrillationController.shockPower.value.toString(),
+                      min: 0,
+                      max: 250,
+                      divisions: 10,
+                      onChangeEnd: (value) =&gt; defibrillationController.shockClicked.toggle(),
+                      onChanged: (newValue) =&gt; defibrillationController.shockPower.value = newValue.toInt(),
+                      value: defibrillationController.shockPower.value.toDouble(),
                     ),
-                  ),
+                  )
                 ]
               : [
-                  const Expanded(
+                  Expanded(
                     flex: 3,
                     child: Text(
                       &quot;Shock Power&quot;,
-                      style: TextStyle(
-                        fontSize: 24,
-                      ),
+                      style: theme.shockPowerTextStyle,
                     ),
                   ),
                   Expanded(
                     flex: 3,
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Colors.transparent),
+                      style: theme.shockPowerButtonStyle,
                       child: Text(
                         &#39;${defibrillationController.shockPower}&#39;,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 32,
-                          color: Colors.red,
-                        ),
+                        style: theme.shockPowerButtonTextStyle,
                       ),
                       onPressed: () =&gt; defibrillationController.shockClicked.toggle(),
                     ),
                   ),
-                  const Flexible(
+                  Flexible(
                     flex: 1,
                     child: Text(
                       &quot;J&quot;,
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.red,
-                      ),
+                      style: theme.jouleTextStyle,
                     ),
                   )
                 ],

@@ -57,7 +57,8 @@
         </section>
         
 <section class="desc markdown">
-  <p>contains global information which <code>sensorEnumAbsolute</code> currently is in which <a href="../../utilities_enums_alarm_status/alarmStatus.html">alarmStatus</a>,
+  <p>Contains global information about the status of the <code>sensorEnumAbsolute</code>.</p>
+<p>Includes is in which <a href="../../utilities_enums_alarm_status/alarmStatus.html">alarmStatus</a>,
 is of what priority, corresponds to which color and which alarm message will be printed on request
 this is done via the RxMap with the following keys:
 "priority" for priority
@@ -69,8 +70,7 @@ this is done via the RxMap with the following keys:
         
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">final RxMap&lt;sensorEnumAbsolute, Map&lt;String, dynamic&gt;&gt; alarmState =
-    &lt;sensorEnumAbsolute, Map&lt;String, dynamic&gt;&gt;{}.obs;
+  <pre class="language-dart"><code class="language-dart">final RxMap&lt;sensorEnumAbsolute, Map&lt;String, dynamic&gt;&gt; alarmState = &lt;sensorEnumAbsolute, Map&lt;String, dynamic&gt;&gt;{}.obs;
 
 </code></pre>
 </section>

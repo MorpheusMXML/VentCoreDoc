@@ -61,15 +61,14 @@
     </section>
     
 <section class="desc markdown">
-  <p>Checks if a new added value in this <a href="../../models_data_models_model_absolute/DataModelAbsolute-class.html">DataModelAbsolute</a> should throw an alarm.</p>
+  <p>Checks if a new added value in this <a href="../../models_data_models_model_absolute/DataModelAbsolute-class.html">DataModelAbsolute</a> cause an alarm.</p>
 <p>This function is build to be called in the <a href="../../models_data_models_model_absolute/DataModelAbsolute-class.html">DataModelAbsolute</a>.
-<code>value</code> is checked against:</p>
+This <code>sensor</code> is checked against:</p>
 <ul>
 <li>Boundary Violation</li>
-<li>Value Deviation</li>
-<li>Zero Values</li>
+<li>Warning (Value Deviation)</li>
 </ul>
-<p><code>value</code> doesn´t <a href="../../providers_alarm_controller/AlarmController/triggerAlarmState.html">triggerAlarmState</a> in this categories, it will set back to <a href="../../utilities_enums_alarm_status/alarmStatus.html">alarmStatus.none</a></p>
+<p>If this <code>sensor</code> doesn´t match in this categories, it will set back to <a href="../../utilities_enums_alarm_status/alarmStatus.html">alarmStatus.none</a>.</p>
 </section>
 
 
@@ -99,14 +98,14 @@
   if (value &gt; upper) {
     &#47;&#47;&#47;Checks how serious the upper boundary is exceeded.
     if (sensor.boundaryDeviation != null &amp;&amp; value &lt; upper * (1 + sensor.boundaryDeviation)) {
-      triggerAlarmState(
+      updateAlarmState(
         sensor,
         alarmMessage.upperBoundaryViolated,
         alarmStatus.middle,
       );
       return;
     } else {
-      triggerAlarmState(
+      updateAlarmState(
         sensor,
         alarmMessage.upperBoundaryViolated,
         alarmStatus.high,
@@ -119,14 +118,14 @@
   else if (value &lt; lower) {
     &#47;&#47;&#47;Checks how serious the lower boundary is exceeded. Here we trigger [alarmMessage.lowerBoundaryViolated].
     if (sensor.boundaryDeviation != null &amp;&amp; value &gt; lower * (1 - sensor.boundaryDeviation)) {
-      triggerAlarmState(
+      updateAlarmState(
         sensor,
         alarmMessage.lowerBoundaryViolated,
         alarmStatus.middle,
       );
       return;
     } else {
-      triggerAlarmState(
+      updateAlarmState(
         sensor,
         alarmMessage.lowerBoundaryViolated,
         alarmStatus.high,
@@ -139,7 +138,7 @@
   &#47;&#47;&#47;
   &#47;&#47;&#47;Trigger deviation alarm if previous values deviate more than [sensor.boundaryDeviation] is allowing.
   else if (valueDeviation &gt; allowedValueDeviation) {
-    triggerAlarmState(
+    updateAlarmState(
       sensor,
       alarmMessage.deviation,
       alarmStatus.warning,
@@ -149,7 +148,7 @@
 
   &#47;&#47;&#47;Adjust Priority if no Alarm is detected at all.
   else {
-    triggerAlarmState(
+    updateAlarmState(
       sensor,
       alarmMessage.none,
       alarmStatus.none,
@@ -183,24 +182,25 @@
     <li><a href="../../providers_alarm_controller/AlarmController/AlarmController.html">AlarmController</a></li>
 
 
-    <li class="section-title">
+    <li class="section-title inherited">
       <a href="../../providers_alarm_controller/AlarmController-class.html#instance-properties">Properties</a>
     </li>
-    <li><a href="../../providers_alarm_controller/AlarmController/confirmMap.html">confirmMap</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
     <li class="section-title"><a href="../../providers_alarm_controller/AlarmController-class.html#instance-methods">Methods</a></li>
     <li><a href="../../providers_alarm_controller/AlarmController/endConfirmStatus.html">endConfirmStatus</a></li>
+    <li><a href="../../providers_alarm_controller/AlarmController/evaluateAlarmSound.html">evaluateAlarmSound</a></li>
     <li><a href="../../providers_alarm_controller/AlarmController/evaluateAlarmState.html">evaluateAlarmState</a></li>
     <li><a href="../../providers_alarm_controller/AlarmController/evaluateBoundaryAdjustment.html">evaluateBoundaryAdjustment</a></li>
-    <li><a href="../../providers_alarm_controller/AlarmController/isSensorInConfirmDuration.html">isSensorInConfirmDuration</a></li>
-    <li><a href="../../providers_alarm_controller/AlarmController/listen.html">listen</a></li>
+    <li><a href="../../providers_alarm_controller/AlarmController/evaluateSoundList.html">evaluateSoundList</a></li>
+    <li><a href="../../providers_alarm_controller/AlarmController/initListeners.html">initListeners</a></li>
+    <li><a href="../../providers_alarm_controller/AlarmController/isSensorWithinConfirmDuration.html">isSensorWithinConfirmDuration</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
-    <li><a href="../../providers_alarm_controller/AlarmController/triggerAlarmState.html">triggerAlarmState</a></li>
     <li><a href="../../providers_alarm_controller/AlarmController/triggerConfirm.html">triggerConfirm</a></li>
-    <li><a href="../../providers_alarm_controller/AlarmController/triggerSoundController.html">triggerSoundController</a></li>
+    <li><a href="../../providers_alarm_controller/AlarmController/updateAlarmState.html">updateAlarmState</a></li>
+    <li><a href="../../providers_alarm_controller/AlarmController/updateSoundList.html">updateSoundList</a></li>
 
     <li class="section-title inherited"><a href="../../providers_alarm_controller/AlarmController-class.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/operator_equals.html">operator ==</a></li>

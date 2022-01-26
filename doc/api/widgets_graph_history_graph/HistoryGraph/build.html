@@ -107,17 +107,18 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   DataModelNIBD dataModel = Get.find&lt;DataModelNIBD&gt;(tag: sensor.name);
   return Obx(
     () =&gt; SfCartesianChart(
       tooltipBehavior: TooltipBehavior(enable: true),
-      backgroundColor: Theme.of(context).cardColor,
+      backgroundColor: theme.primarySwatch[40],
       primaryYAxis: NumericAxis(
         plotOffset: 5,
         desiredIntervals: 10,
         majorGridLines: MajorGridLines(
           width: 1,
-          color: Theme.of(context).shadowColor,
+          color: theme.primarySwatch[20],
           dashArray: const &lt;double&gt;[2, 3],
         ),
       ),
@@ -125,31 +126,34 @@ Widget build(BuildContext context) {
         dateFormat: DateFormat.Hm(),
         plotOffset: 10,
         desiredIntervals: 25,
-        majorGridLines: MajorGridLines(width: 0, color: Theme.of(context).shadowColor),
+        majorGridLines: MajorGridLines(
+          width: 0,
+          color: theme.primarySwatch[20],
+        ),
       ),
       series: [
-        &#47;&#47;&#47; Renders scatter chart to display the MAD.
+        &#47;&#47; Renders scatter chart to display the MAD.
         ScatterSeries(
           markerSettings: const MarkerSettings(
               height: 10,
               width: 10,
-
-              &#47;&#47;&#47; Scatter will render in diamond shape
+              &#47;&#47; Scatter renders in a diamond shape
               shape: DataMarkerType.diamond),
           trendlines: &lt;Trendline&gt;[
             Trendline(dashArray: &lt;double&gt;[2, 3], type: TrendlineType.movingAverage, color: Colors.redAccent)
           ],
           color: dataModel.color,
-          &#47;&#47;ARNE Sagt: Löscht du das = Kopf Ab!!!!!!11!
+          &#47;&#47; DO NOT DELETE .value, SyncFusion charts would break in combination with GetX.
           &#47;&#47; ignore: invalid_use_of_protected_member
           dataSource: dataModel.graphData.value,
           xValueMapper: (ChartData data, _) =&gt; data.time,
           yValueMapper: (ChartData data, _) =&gt; data.meanArterialPressure,
         ),
 
-        &#47;&#47;&#47; Renders the Systolic and Diastolic Datapoints as a Hi-Lo Error Bar.
+        &#47;&#47; Renders the systolic and diastolic data points as a Hi-Lo Error Bar.
         HiloSeries(
           enableTooltip: true,
+          &#47;&#47; DO NOT DELETE .value, SyncFusion charts would break in combination with GetX.
           &#47;&#47; ignore: invalid_use_of_protected_member
           dataSource: dataModel.graphData.value,
           color: Colors.red,

@@ -107,13 +107,17 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   final startScreenController = Get.find&lt;StartScreenController&gt;();
 
+  &#47;&#47;&#47; The Obx contains the functionality of the Widget.
   return Obx(
     () =&gt; startScreenController.isPopupVisible.value
         ? Container(
             margin: const EdgeInsets.only(right: 65, bottom: 12),
-            color: Theme.of(context).focusColor,
+            color: theme.primarySwatch[50],
+
+            &#47;&#47;&#47;The Column contains the Popup Sliders and provides their names and units.
             child: Column(
               children: [
                 PopupSlider(name: &#39;Weight&#39;, unit: &#39;kg&#39;, value: startScreenController.weightValue),

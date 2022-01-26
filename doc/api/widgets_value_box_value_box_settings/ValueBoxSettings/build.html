@@ -137,9 +137,7 @@ Widget build(BuildContext context) {
           magnification: 1.5,
           onSelectedItemChanged: (value) =&gt; setFunction(
                 dataModel,
-                dataModel.floatRepresentation
-                    ? value.toDouble() &#47; 10
-                    : value.toDouble(),
+                dataModel.floatRepresentation ? value.toDouble() &#47; 10 : value.toDouble(),
               ),
           children: dataModel.floatRepresentation
               ? [

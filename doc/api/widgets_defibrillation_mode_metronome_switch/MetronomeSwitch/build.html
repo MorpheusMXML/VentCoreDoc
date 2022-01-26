@@ -109,12 +109,14 @@ and</li>
 Widget build(BuildContext context) {
   final DefibrillationController defibrillationController = Get.find&lt;DefibrillationController&gt;();
 
-  return Obx(() =&gt; Switch(
-        value: defibrillationController.metronomeOn.value,
-        onChanged: (changed) {
-          defibrillationController.toggleMetronome(changed);
-        },
-      ));
+  return Obx(
+    () =&gt; Switch(
+      value: defibrillationController.metronomeOn.value,
+      onChanged: (changed) {
+        defibrillationController.toggleMetronome(changed);
+      },
+    ),
+  );
 }</code></pre>
 </section>
 

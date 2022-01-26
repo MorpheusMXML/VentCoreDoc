@@ -47,27 +47,36 @@
 <h1><span class="kind-class">SoundController</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
+    <span class="category providers cp-13 linked" title="This is part of the Providers Topic."><a href="../topics/Providers-topic.html">Providers</a></span>
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>This Class provides the SoundPlaying and Triggering Functionallity.
-Alarms can be Triggered, stopped and the SpO2 / ECG Sound for the Heartfrequency can be started.</p>
+  <p>This class provides the sound production and sound triggering functionallity.
+Alarm sounds can be triggered, stopped and the SpO2 / ecg sound for the heartfrequency can be started.</p>
 <h3 id="class-variables">Class Variables</h3>
 <ul>
-<li><a href="../providers_sound_controller/SoundController/alarmPlayerCache.html">alarmPlayerCache</a> loads a Instance of Type <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioCache-class.html">AudioCache</a> and sets the sounds Folder prefix.</li>
+<li><a href="../providers_sound_controller/SoundController/alarmPlayerCache.html">alarmPlayerCache</a> loads an instance of type <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioCache-class.html">AudioCache</a> and sets the sounds folder prefix.</li>
+<li><a href="../providers_sound_controller/SoundController/ecgPlayerCache.html">ecgPlayerCache</a> loads an instance of type <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioCache-class.html">AudioCache</a> and sets the sounds folder prefix.</li>
+<li><a href="../providers_sound_controller/SoundController/timer.html">timer</a> holds an instance of type <a href="https://api.dart.dev/stable/2.15.1/dart-async/Timer-class.html">Timer</a> to control for example the ECG sound timing.</li>
+<li><a href="../providers_sound_controller/SoundController/alarmTimer.html">alarmTimer</a>, <a href="../providers_sound_controller/SoundController/getDataTimer.html">getDataTimer</a>, <a href="../providers_sound_controller/SoundController/cancelTimerBeep.html">cancelTimerBeep</a> also hold an i</li>
 </ul>
 <ul>
-<li><a href="../providers_sound_controller/SoundController/ecgPlayerCache.html">ecgPlayerCache</a> loads a Instance of Type <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioCache-class.html">AudioCache</a> and sets the sounds Folder prefix.</li>
-<li><a href="../providers_sound_controller/SoundController/timer.html">timer</a> holds a Inscante of Type <a href="https://api.dart.dev/stable/2.15.1/dart-async/Timer-class.html">Timer</a> to control the ECG Sunds Timing</li>
-<li><code>_alarmSoundFiles</code> &amp; <code>_ecgSoundFiles</code> provide a Map where the Sounds for the corresponding Alarm or ECG Sound can be specified.</li>
-<li><a href="../providers_sound_controller/SoundController/alarmPlayer.html">alarmPlayer</a> &amp; <a href="../providers_sound_controller/SoundController/ecgPlayer.html">ecgPlayer</a> hold a late <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioPlayer-class.html">AudioPlayer</a> Instance to controll the Audio after Triggering it.</li>
+<li><code>_alarmSoundFiles</code> &amp; <code>_ecgSoundFiles</code> provide a <a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a> where the sounds for the corresponding alarm or ECG sound can be specified.</li>
+</ul>
+<ul>
+<li><a href="../providers_sound_controller/SoundController/alarmPlayer.html">alarmPlayer</a>, <a href="../providers_sound_controller/SoundController/ecgPlayer.html">ecgPlayer</a> and <a href="../providers_sound_controller/SoundController/defiPlayer.html">defiPlayer</a> hold a late <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioPlayer-class.html">AudioPlayer</a> instance to controll the audio after triggering it.</li>
+<li><a href="../providers_sound_controller/SoundController/alarmVolume.html">alarmVolume</a> is a constant to reduce redundant code and change volume in one place.</li>
 </ul>
 <h3 id="methods">Methods</h3>
 <ul>
-<li><a href="../providers_sound_controller/SoundController/play.html">play(Enum SoundIdentifier)</a> starts the alarm SoundIdentifier.</li>
-<li><a href="../providers_sound_controller/SoundController/stop.html">stop()</a> stops all players.</li>
-<li><a href="../providers_sound_controller/SoundController/saturationHfBeep.html">saturationHfBeep(int BPM, int spO2)</a> calculates according to specified BPM when and how often the ECG Sound should be played.</li>
+<li><a href="../providers_sound_controller/SoundController/play.html">play</a> starts the alarm of given <a href="../providers_sound_controller/SoundIdentifier.html">SoundIdentifier</a>.</li>
+<li><a href="../providers_sound_controller/SoundController/stop.html">stop</a> stops all players.</li>
+<li><a href="../providers_sound_controller/SoundController/saturationHfBeep.html">saturationHfBeep</a> calculates according to specified BPM when and how often the ECG Sound should be played.</li>
+<li><a href="../providers_sound_controller/SoundController/playDefiLoadSound.html">playDefiLoadSound</a> stops all currently active <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioPlayer-class.html">AudioPlayer</a>, then starts the Loading Sound for the Defi.</li>
+<li><a href="../providers_sound_controller/SoundController/playAlarmSound.html">playAlarmSound</a> plays the <a href="../providers_sound_controller/SoundController/alarmPlayer.html">alarmPlayer</a> in a periodic <a href="https://api.dart.dev/stable/2.15.1/dart-core/Duration-class.html">Duration</a>.</li>
+<li><a href="../providers_sound_controller/SoundController/stopAudioPlayer.html">stopAudioPlayer</a> stops a specific given <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioPlayer-class.html">AudioPlayer</a> that is currently playing a Sound.</li>
+<li><a href="../providers_sound_controller/SoundController/stopAlarmTimer.html">stopAlarmTimer</a> stops the <a href="../providers_sound_controller/SoundController/alarmTimer.html">alarmTimer</a> that is currently looping.</li>
 </ul>
 </section>
 
@@ -81,7 +90,7 @@ Alarms can be Triggered, stopped and the SpO2 / ECG Sound for the Heartfrequency
           <span class="name"><a href="../providers_sound_controller/SoundController/SoundController.html">SoundController</a></span><span class="signature">()</span>
         </dt>
         <dd>
-          Constructor for this. Loads the specified Sound files from <code>alarmSoundFiles</code> &amp; <code>ecgecgSoundFiles</code> into the Cache of the Application. 
+          Constructor for this. Loads the specified Sound files from <code>_alarmSoundFiles</code> &amp; <code>ecgecgSoundFiles</code> into the Cache of the Application. 
         </dd>
       </dl>
     </section>
@@ -244,28 +253,6 @@ Alarms can be Triggered, stopped and the SpO2 / ECG Sound for the Heartfrequency
 
 </dd>
 
-        <dt id="soundList" class="property">
-  <span class="name"><a href="../providers_sound_controller/SoundController/soundList.html">soundList</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../providers_sound_controller/SoundListEntry-class.html">SoundListEntry</a></span>&gt;</span></span> 
-
-</dt>
-<dd>
-   
-  <div class="features">final</div>
-
-</dd>
-
-        <dt id="systemState" class="property">
-  <span class="name"><a href="../providers_sound_controller/SoundController/systemState.html">systemState</a></span>
-  <span class="signature">&#8594; <a href="../models_system_state/SystemState-class.html">SystemState</a></span> 
-
-</dt>
-<dd>
-   
-  <div class="features">final</div>
-
-</dd>
-
         <dt id="timer" class="property">
   <span class="name"><a href="../providers_sound_controller/SoundController/timer.html">timer</a></span>
   <span class="signature">&#8596; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Timer-class.html">Timer</a>?</span> 
@@ -291,7 +278,7 @@ Alarms can be Triggered, stopped and the SpO2 / ECG Sound for the Heartfrequency
 
 </dt>
 <dd>
-   
+  internal method, to fix double timers after hot reload 
   
 
 </dd>
@@ -317,20 +304,20 @@ Alarms can be Triggered, stopped and the SpO2 / ECG Sound for the Heartfrequency
 
 </dt>
 <dd>
-  Plays the SoundAlarm fot the AlarmType specified with <code>Enum soundIdentifier</code>. 
+  Plays the SoundAlarm for the AlarmType specified with <code>soundIdentifier</code>. 
   
 
 </dd>
 
-        <dt id="playAlarm" class="callable">
-  <span class="name"><a href="../providers_sound_controller/SoundController/playAlarm.html">playAlarm</a></span><span class="signature">(<wbr><span class="parameter" id="playAlarm-param-priority"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> <span class="parameter-name">priority</span></span>)
+        <dt id="playAlarmSound" class="callable">
+  <span class="name"><a href="../providers_sound_controller/SoundController/playAlarmSound.html">playAlarmSound</a></span><span class="signature">(<wbr><span class="parameter" id="playAlarmSound-param-alarmSound"><span class="type-annotation"><a href="../providers_sound_controller/SoundIdentifier.html">SoundIdentifier</a>?</span> <span class="parameter-name">alarmSound</span>, </span><span class="parameter" id="playAlarmSound-param-timerDuration"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> <span class="parameter-name">timerDuration</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
   </span>
   
 
 </dt>
 <dd>
-  Plays right <code>alarmsound</code> with right <code>priority</code>. 
+  Plays the <a href="../providers_sound_controller/SoundController/alarmPlayer.html">alarmPlayer</a> in a periodic <a href="https://api.dart.dev/stable/2.15.1/dart-core/Duration-class.html">Duration</a> defined by <code>timerDuration</code>. <a href="../providers_sound_controller/SoundController/playAlarmSound.html">[...]</a>
   
 
 </dd>
@@ -343,8 +330,7 @@ Alarms can be Triggered, stopped and the SpO2 / ECG Sound for the Heartfrequency
 
 </dt>
 <dd>
-  Stops all currently active <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioPlayer-class.html">AudioPlayer</a>, then starts the Loading Sound for the Defi.
-When this Loading Sound is completed, the Warning for the Charged and armed Defibrillator is loopes. 
+  Stops all currently active <a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioPlayer-class.html">AudioPlayer</a>, then starts the Loading Sound for the Defi. <a href="../providers_sound_controller/SoundController/playDefiLoadSound.html">[...]</a>
   
 
 </dd>
@@ -371,8 +357,8 @@ The Lower the spO2 saturation, the lower Pitched the ECG Sound. <a href="../prov
 
 </dt>
 <dd>
-  Creates the <a href="https://api.dart.dev/stable/2.15.1/dart-async/Timer/Timer.periodic.html">Timer.periodic()</a>, gets the <a href="../models_data_models_model_absolute/DataModelAbsolute-class.html">DataModelAbsolute</a> for HF and SPO2 and starts Triggers periodically the Saturation HF Beep Update Method.
-This Happens only every 3 Seconds to take it easy on the performance. 
+  Creates the <a href="https://api.dart.dev/stable/2.15.1/dart-async/Timer/Timer.periodic.html">Timer.periodic()</a>, gets the <a href="../models_data_models_model_absolute/DataModelAbsolute-class.html">DataModelAbsolute</a> for HF and SPO2 and starts triggers periodically the saturation HF Beep Update Method.
+This happens only every 3 seconds to take it easy on the performance. 
   
 
 </dd>
@@ -390,8 +376,21 @@ This Happens only every 3 Seconds to take it easy on the performance.
 
 </dd>
 
-        <dt id="stopAlarmPlayer" class="callable">
-  <span class="name"><a href="../providers_sound_controller/SoundController/stopAlarmPlayer.html">stopAlarmPlayer</a></span><span class="signature">(<wbr><span class="parameter" id="stopAlarmPlayer-param-audioPlayer"><span class="type-annotation"><a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioPlayer-class.html">AudioPlayer</a></span> <span class="parameter-name">audioPlayer</span></span>)
+        <dt id="stopAlarmTimer" class="callable">
+  <span class="name"><a href="../providers_sound_controller/SoundController/stopAlarmTimer.html">stopAlarmTimer</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Stops the <a href="../providers_sound_controller/SoundController/alarmTimer.html">alarmTimer</a> that is currently looping the <a href="../providers_sound_controller/SoundController/alarmPlayer.html">alarmPlayer</a>. 
+  
+
+</dd>
+
+        <dt id="stopAudioPlayer" class="callable">
+  <span class="name"><a href="../providers_sound_controller/SoundController/stopAudioPlayer.html">stopAudioPlayer</a></span><span class="signature">(<wbr><span class="parameter" id="stopAudioPlayer-param-audioPlayer"><span class="type-annotation"><a href="https://pub.dev/documentation/audioplayers/0.20.1/audioplayers/AudioPlayer-class.html">AudioPlayer</a>?</span> <span class="parameter-name">audioPlayer</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
   </span>
   
@@ -413,19 +412,6 @@ This Happens only every 3 Seconds to take it easy on the performance.
 <dd class="inherited">
   A string representation of this object. <a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">[...]</a>
   <div class="features">inherited</div>
-
-</dd>
-
-        <dt id="triggerSoundState" class="callable">
-  <span class="name"><a href="../providers_sound_controller/SoundController/triggerSoundState.html">triggerSoundState</a></span><span class="signature">(<wbr><span class="parameter" id="triggerSoundState-param-sensor"><span class="type-annotation">dynamic</span> <span class="parameter-name">sensor</span>, </span><span class="parameter" id="triggerSoundState-param-priority"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> <span class="parameter-name">priority</span></span>)
-    <span class="returntype parameter">&#8594; dynamic</span>
-  </span>
-  
-
-</dt>
-<dd>
-   
-  
 
 </dd>
 
@@ -474,7 +460,6 @@ This Happens only every 3 Seconds to take it easy on the performance.
     <ol>
   <li class="section-title"><a href="../providers_sound_controller/providers_sound_controller-library.html#classes">Classes</a></li>
   <li><a href="../providers_sound_controller/SoundController-class.html">SoundController</a></li>
-  <li><a href="../providers_sound_controller/SoundListEntry-class.html">SoundListEntry</a></li>
 
 
 
@@ -513,22 +498,20 @@ This Happens only every 3 Seconds to take it easy on the performance.
     <li><a href="../providers_sound_controller/SoundController/getDataTimerDuration.html">getDataTimerDuration</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
-    <li><a href="../providers_sound_controller/SoundController/soundList.html">soundList</a></li>
-    <li><a href="../providers_sound_controller/SoundController/systemState.html">systemState</a></li>
     <li><a href="../providers_sound_controller/SoundController/timer.html">timer</a></li>
 
     <li class="section-title"><a href="../providers_sound_controller/SoundController-class.html#instance-methods">Methods</a></li>
     <li><a href="../providers_sound_controller/SoundController/cancelBeepTimer.html">cancelBeepTimer</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../providers_sound_controller/SoundController/play.html">play</a></li>
-    <li><a href="../providers_sound_controller/SoundController/playAlarm.html">playAlarm</a></li>
+    <li><a href="../providers_sound_controller/SoundController/playAlarmSound.html">playAlarmSound</a></li>
     <li><a href="../providers_sound_controller/SoundController/playDefiLoadSound.html">playDefiLoadSound</a></li>
     <li><a href="../providers_sound_controller/SoundController/saturationHfBeep.html">saturationHfBeep</a></li>
     <li><a href="../providers_sound_controller/SoundController/startSaturationHFSound.html">startSaturationHFSound</a></li>
     <li><a href="../providers_sound_controller/SoundController/stop.html">stop</a></li>
-    <li><a href="../providers_sound_controller/SoundController/stopAlarmPlayer.html">stopAlarmPlayer</a></li>
+    <li><a href="../providers_sound_controller/SoundController/stopAlarmTimer.html">stopAlarmTimer</a></li>
+    <li><a href="../providers_sound_controller/SoundController/stopAudioPlayer.html">stopAudioPlayer</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
-    <li><a href="../providers_sound_controller/SoundController/triggerSoundState.html">triggerSoundState</a></li>
 
     <li class="section-title inherited"><a href="../providers_sound_controller/SoundController-class.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/operator_equals.html">operator ==</a></li>

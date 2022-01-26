@@ -107,6 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   SystemState systemState = Get.find&lt;SystemState&gt;();
 
   return Obx(() {
@@ -116,7 +117,7 @@ Widget build(BuildContext context) {
         maxWidth: AbsoluteAlarmFieldConst.width,
       ),
       child: Container(
-        color: Theme.of(context).focusColor,
+        color: theme.primarySwatch[50],
         padding: const EdgeInsets.only(
           left: AbsoluteAlarmFieldConst.horizontalMargin,
           right: AbsoluteAlarmFieldConst.horizontalMargin,

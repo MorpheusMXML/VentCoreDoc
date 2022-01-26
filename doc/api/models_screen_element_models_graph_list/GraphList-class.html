@@ -47,11 +47,12 @@
 <h1><span class="kind-class">GraphList</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
+    <span class="category screenelementmodels cp-15 linked" title="This is part of the ScreenElementModels Topic."><a href="../topics/ScreenElementModels-topic.html">ScreenElementModels</a></span>
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>contains a list <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> over all currently <a href="../widgets_graph_container_graph_view/GraphView-class.html">GraphView</a> represented by the corresponding <a href="../utilities_enums_sensor/sensorEnumGraph.html">sensorEnumGraph</a></p>
+  <p>Contains a list <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> over all currently <a href="../widgets_toggle_graph_view/GraphView-class.html">GraphView</a> represented by the corresponding <a href="../utilities_enums_sensor/sensorEnumGraph.html">sensorEnumGraph</a>.</p>
 </section>
 
 
@@ -79,8 +80,7 @@
 
 </dt>
 <dd>
-  a list containing keys (type <code>sensorEnumAbsolute</code>) of all currently drawn <a href="../widgets_graph_container_graph_view/GraphView-class.html">GraphView</a>s corresponding <a href="../widgets_value_box_value_box_tile/ValueBoxTile-class.html">ValueBoxTile</a>s
-which are currently in an active <a href="../utilities_enums_alarm_status/alarmStatus.html">alarmStatus</a> (not confirmed and not none) 
+  A list containing keys (type <code>sensorEnumAbsolute</code>) of all currently drawn <a href="../widgets_toggle_graph_view/GraphView-class.html">GraphView</a>s corresponding <a href="../widgets_value_box_value_box_tile/ValueBoxTile-class.html">ValueBoxTile</a>s which are currently in an active <a href="../utilities_enums_alarm_status/alarmStatus.html">alarmStatus</a> (not confirmed and not none). 
   <div class="features">read / write</div>
 
 </dd>
@@ -91,7 +91,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  contains information whether a <a href="../widgets_graph_container_graph_view/GraphView-class.html">GraphView</a> has been added to current screen 
+  Contains information whether a <a href="../widgets_toggle_graph_view/GraphView-class.html">GraphView</a> has been added to current screen. 
   <div class="features">read / write</div>
 
 </dd>
@@ -102,7 +102,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  list that determines the order of graphs displayed in defibrillation screen 
+  List that determines the order of graphs displayed in defibrillation screen. 
   <div class="features">read / write</div>
 
 </dd>
@@ -124,7 +124,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  a list containing keys (type <code>sensorEnumGraph</code>) of all currently drawn <a href="../widgets_graph_container_graph_view/GraphView-class.html">GraphView</a> 
+  A list containing keys (type <code>sensorEnumGraph</code>) of all currently drawn <a href="../widgets_toggle_graph_view/GraphView-class.html">GraphView</a>. 
   <div class="features">read / write</div>
 
 </dd>
@@ -135,7 +135,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  list that determines the order of graphs displayed in monitor screen 
+  List that determines the order of graphs displayed in monitor screen. 
   <div class="features">read / write</div>
 
 </dd>
@@ -157,7 +157,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  represents the standard active graphs for each <code>screenStatusEnum</code> that is not <a href="../utilities_enums_screen_status/screenStatusEnum.html">screenStatusEnum.patientSettingScreen</a> (which obviously does not display graphs) 
+  Represents the standard active graphs for each <code>screenStatusEnum</code> that is not <a href="../utilities_enums_screen_status/screenStatusEnum.html">screenStatusEnum.patientSettingScreen</a> (which obviously does not display graphs). 
   <div class="features">read / write</div>
 
 </dd>
@@ -168,7 +168,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  list that determines the order of graphs displayed in ventilation screen 
+  List that determines the order of graphs displayed in ventilation screen. 
   <div class="features">read / write</div>
 
 </dd>
@@ -187,7 +187,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  evaluates the current <a href="../models_screen_element_models_graph_list/GraphList/activeGraphAbsolutes.html">activeGraphAbsolutes</a> 
+  Evaluates the current <a href="../models_screen_element_models_graph_list/GraphList/activeGraphAbsolutes.html">activeGraphAbsolutes</a>. 
   
 
 </dd>
@@ -200,7 +200,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  adds <code>graphKey</code> to current <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> 
+  Adds <code>graphKey</code> to current <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a>. 
   
 
 </dd>
@@ -213,7 +213,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  removes <code>graphKey</code> from current <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> 
+  Removes <code>graphKey</code> from current <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a>. 
   
 
 </dd>
@@ -226,7 +226,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  replaces the current <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> with <code>newList</code> 
+  Replaces the current <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> with <code>newList</code>. 
   
 
 </dd>
@@ -239,7 +239,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  sorts <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> into a order predefined by active screen <a href="../models_screen_element_models_graph_list/GraphList/graphListSort.html">[...]</a>
+  Sorts <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> into a order predefined by active screen. <a href="../models_screen_element_models_graph_list/GraphList/graphListSort.html">[...]</a>
   
 
 </dd>
@@ -265,7 +265,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  resets <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> to respective <a href="../models_screen_element_models_graph_list/GraphList/standardGraphs.html">standardGraphs</a> 
+  Resets <a href="../models_screen_element_models_graph_list/GraphList/list.html">list</a> to respective <a href="../models_screen_element_models_graph_list/GraphList/standardGraphs.html">standardGraphs</a>. 
   
 
 </dd>
@@ -278,7 +278,7 @@ which are currently in an active <a href="../utilities_enums_alarm_status/alarmS
 
 </dt>
 <dd>
-  sets the <a href="../models_screen_element_models_graph_list/GraphList/standardGraphs.html">standardGraphs</a> for respective scenario 
+  Sets the <a href="../models_screen_element_models_graph_list/GraphList/standardGraphs.html">standardGraphs</a> for respective scenario. 
   
 
 </dd>

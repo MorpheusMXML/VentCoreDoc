@@ -107,27 +107,20 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   SystemState systemState = Get.find&lt;SystemState&gt;();
 
   return Obx(
     () =&gt; ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        fixedSize: Size(AbsoluteAlarmFieldConst.buttonHeight.toDouble(),
-            AbsoluteAlarmFieldConst.width * (3 &#47; 8)),
-        primary: const Color(0xffeeeeee),
-        onPrimary: Colors.black,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(75),
-        ),
-      ),
+      style: theme.alarmConfirmButtonStyle2,
       onPressed: systemState.absAlarmFieldModel.activeList.isNotEmpty ||
               systemState.graphList.activeGraphAbsolutes.isNotEmpty
           ? () =&gt; {confirmAllVisibleAlarms()}
           : null,
-      child: const Center(
+      child: Center(
         child: Text(
           &quot;Confirm all Alarms&quot;,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: theme.boldTextStyle,
         ),
       ),
     ),

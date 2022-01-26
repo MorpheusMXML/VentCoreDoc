@@ -107,21 +107,29 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   DataModelGraph dataModel = Get.find&lt;DataModelGraph&gt;(tag: sensor.name);
 
   return Obx(
     () =&gt; SfCartesianChart(
-      backgroundColor: Theme.of(context).cardColor,
+      backgroundColor: theme.primarySwatch[40],
       primaryYAxis: NumericAxis(
-        majorGridLines: MajorGridLines(width: 1, color: Theme.of(context).shadowColor),
+        majorGridLines: MajorGridLines(
+          width: 1,
+          color: theme.primarySwatch[20],
+        ),
       ),
       primaryXAxis: NumericAxis(
-        majorGridLines: MajorGridLines(width: 1, color: Theme.of(context).shadowColor),
+        majorGridLines: MajorGridLines(
+          width: 1,
+          color: theme.primarySwatch[20],
+        ),
       ),
       series: [
+        &#47;&#47; An AreaSeries renders a graph that is filled out with the specified color
         AreaSeries(
             color: dataModel.color,
-            &#47;&#47; DONT DELETE .value, syncfusion would break in combination wiht Getx
+            &#47;&#47; DO NOT DELETE .value, SyncFusion charts would break in combination with GetX.
             &#47;&#47; ignore: invalid_use_of_protected_member
             dataSource: dataModel.graphData.value,
             onRendererCreated: (ChartSeriesController controller) {

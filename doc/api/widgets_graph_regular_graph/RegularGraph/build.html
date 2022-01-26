@@ -107,16 +107,23 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   DataModelGraph dataModel = Get.find&lt;DataModelGraph&gt;(tag: sensor.name);
 
   return Obx(
     () =&gt; SfCartesianChart(
-      backgroundColor: Theme.of(context).cardColor,
+      backgroundColor: theme.primarySwatch[40],
       primaryYAxis: NumericAxis(
-        majorGridLines: MajorGridLines(width: 1, color: Theme.of(context).shadowColor),
+        majorGridLines: MajorGridLines(
+          width: 1,
+          color: theme.primarySwatch[20],
+        ),
       ),
       primaryXAxis: NumericAxis(
-        majorGridLines: MajorGridLines(width: 1, color: Theme.of(context).shadowColor),
+        majorGridLines: MajorGridLines(
+          width: 1,
+          color: theme.primarySwatch[20],
+        ),
       ),
       series: [
         SplineSeries(

@@ -107,12 +107,14 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
+
   return Container(
     alignment: Alignment.center,
     margin: const EdgeInsets.all(32),
     child: Text(
       &#39;Error!\n\n${details.exception}&#39;,
-      style: const TextStyle(color: Colors.blue, fontSize: 24),
+      style: theme.errorMessageTextStyle,
       softWrap: true,
       textAlign: TextAlign.center,
       textDirection: TextDirection.ltr,

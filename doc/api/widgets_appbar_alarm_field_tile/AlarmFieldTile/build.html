@@ -107,12 +107,7 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  const TextStyle textStyle = TextStyle(
-    color: Colors.black,
-    decoration: TextDecoration.none,
-    fontSize: 18,
-    fontWeight: FontWeight.bold,
-  );
+  final ThemeData theme = Theme.of(context);
 
   return Material(
     child: Container(
@@ -130,7 +125,7 @@ Widget build(BuildContext context) {
               padding: const EdgeInsets.only(left: 10),
               child: Text(
                 DateFormat.Hms().format(data.time),
-                style: textStyle,
+                style: theme.alarmFieldTextStyle,
               ),
             ),
           ),
@@ -139,18 +134,13 @@ Widget build(BuildContext context) {
             child: Center(
               child: Text(
                 data.alarm.message,
-                style: textStyle,
+                style: theme.alarmFieldTextStyle,
               ),
             ),
           ),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: const CircleBorder(),
-              primary: AppTheme.alarmNoneColor,
-              onPrimary: Theme.of(context).dividerColor,
-            ),
-            onPressed: () =&gt;
-                Get.find&lt;SystemState&gt;().generalAlarms.removeAlarm(data.alarm),
+            style: theme.alarmFieldButtonStyle,
+            onPressed: () =&gt; Get.find&lt;SystemState&gt;().generalAlarms.removeAlarm(data.alarm),
             child: const Icon(Icons.check),
           ),
         ],
