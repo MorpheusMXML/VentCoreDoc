@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="Graph Topic docs, for the Dart programming language.">
+  <title>Graph Topic - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">uke_mlab</a></li>
+    <li class="self-crumb">Graph Topic</li>
+  </ol>
+  <div class="self-name">Graph</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+<div id="dartdoc-main-content" class="main-content">
+  <h1><span class="kind-category">Graph</span> Topic</h1>
+  
+<section class="desc markdown">
+  <p>The widgets in this topic are responsible for rendering the different graph types of the application.
+Such as, ecg graph, history graph and pleth.
+Note that the graphs excessively use the Syncfusion Flutter package.</p>
+<p>For further information about Syncfusion charts have a look <a href="https://pub.dev/packages/syncfusion_flutter_charts">here</a></p>
+<p><img src="./TopicScreenshots/graph.PNG" alt="GraphScreenshot"></p>
+</section>
+
+
+
+  <section class="summary offset-anchor" id="classes">
+    <h2>Classes</h2>
+
+    <dl>
+      <dt id="CO2Graph">
+  <span class="name "><a href="../widgets_graph_co2_graph/CO2Graph-class.html">CO2Graph</a></span> 
+    <span class="category graph cp-7 linked" title="This is part of the Graph Topic."><a href="../topics/Graph-topic.html">Graph</a></span>
+
+</dt>
+<dd>
+  Creates an <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/SfCartesianChart-class.html">SfCartesianChart</a> with two <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/NumericAxis-class.html">NumericAxis</a> and an <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/AreaSeries-class.html">AreaSeries</a>. <a href="../widgets_graph_co2_graph/CO2Graph-class.html">[...]</a>
+</dd>
+
+      <dt id="CprGraph">
+  <span class="name "><a href="../widgets_graph_cpr_graph/CprGraph-class.html">CprGraph</a></span> 
+    <span class="category graph cp-7 linked" title="This is part of the Graph Topic."><a href="../topics/Graph-topic.html">Graph</a></span>
+
+</dt>
+<dd>
+  Creates an <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/SfCartesianChart-class.html">SfCartesianChart</a> with two <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/NumericAxis-class.html">NumericAxis</a>, two <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/PlotBand-class.html">PlotBand</a>s and a <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/ColumnSeries-class.html">ColumnSeries</a>.
+The graph rendered displays a history of how well the CPR has been performed in relation to the compression depth. <a href="../widgets_graph_cpr_graph/CprGraph-class.html">[...]</a>
+</dd>
+
+      <dt id="GraphAdder">
+  <span class="name "><a href="../widgets_graph_graph_adder/GraphAdder-class.html">GraphAdder</a></span> 
+    <span class="category graph cp-7 linked" title="This is part of the Graph Topic."><a href="../topics/Graph-topic.html">Graph</a></span>
+
+</dt>
+<dd>
+  This widget renders a stylized <code>ElevatedButton</code> to add graphs.
+The plus icon indicates the adding functionality.
+After clicking the button, the <a href="../widgets_graph_graph_adder_popup/GraphAdderPopup-class.html">GraphAdderPopup</a> is rendered. 
+</dd>
+
+      <dt id="GraphAdderPopup">
+  <span class="name "><a href="../widgets_graph_graph_adder_popup/GraphAdderPopup-class.html">GraphAdderPopup</a></span> 
+    <span class="category graph cp-7 linked" title="This is part of the Graph Topic."><a href="../topics/Graph-topic.html">Graph</a></span>
+
+</dt>
+<dd>
+  This widget renders one <code>ElevatedButton</code> for each <a href="../utilities_enums_sensor/sensorEnumGraph.html">sensorEnumGraph</a> on top of an <code>ElevatedButton</code>.
+Clicking the buttons for the <a href="../utilities_enums_sensor/sensorEnumGraph.html">sensorEnumGraph</a> adds (or removes) it from the current list of graphs to be displayed.
+Clicking the button underneath removes the sensor buttons so that only the <a href="../widgets_graph_graph_adder/GraphAdder-class.html">GraphAdder</a> is displayed. 
+</dd>
+
+      <dt id="HistoryGraph">
+  <span class="name "><a href="../widgets_graph_history_graph/HistoryGraph-class.html">HistoryGraph</a></span> 
+    <span class="category graph cp-7 linked" title="This is part of the Graph Topic."><a href="../topics/Graph-topic.html">Graph</a></span>
+
+</dt>
+<dd>
+  Creates an <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/SfCartesianChart-class.html">SfCartesianChart</a> to display a <a href="../widgets_graph_history_graph/HistoryGraph-class.html">HistoryGraph</a>. Example use: NIBD History. <a href="../widgets_graph_history_graph/HistoryGraph-class.html">[...]</a>
+</dd>
+
+      <dt id="RegularGraph">
+  <span class="name "><a href="../widgets_graph_regular_graph/RegularGraph-class.html">RegularGraph</a></span> 
+    <span class="category graph cp-7 linked" title="This is part of the Graph Topic."><a href="../topics/Graph-topic.html">Graph</a></span>
+
+</dt>
+<dd>
+  Creates an <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/SfCartesianChart-class.html">SfCartesianChart</a> with two <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/NumericAxis-class.html">NumericAxis</a> and a <a href="https://pub.dev/documentation/syncfusion_flutter_charts/19.3.57/charts/SplineSeries-class.html">SplineSeries</a>.
+This is the most commonly used graph type. <a href="../widgets_graph_regular_graph/RegularGraph-class.html">[...]</a>
+</dd>
+
+    </dl>
+  </section>
+
+
+
+
+
+
+
+
+</div> <!-- /.main-content -->
+
+<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+  <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">uke_mlab</a></li>
+  <li class="self-crumb">Graph Topic</li>
+</ol>
+
+
+  <h5><span class="package-name">uke_mlab</span> <span class="package-kind">package</span></h5>
+  <ol>
+      <li class="section-title">Topics</li>
+        <li><a href="../topics/AlarmConfirmation-topic.html">AlarmConfirmation</a></li>
+        <li><a href="../topics/AppBar-topic.html">AppBar</a></li>
+        <li><a href="../topics/Constants-topic.html">Constants</a></li>
+        <li><a href="../topics/DataModels-topic.html">DataModels</a></li>
+        <li><a href="../topics/DefibrillationMode-topic.html">DefibrillationMode</a></li>
+        <li><a href="../topics/DemoScreen-topic.html">DemoScreen</a></li>
+        <li><a href="../topics/Enums-topic.html">Enums</a></li>
+        <li><a href="../topics/Graph-topic.html">Graph</a></li>
+        <li><a href="../topics/GraphContainer-topic.html">GraphContainer</a></li>
+        <li><a href="../topics/Info-topic.html">Info</a></li>
+        <li><a href="../topics/IppvSettings-topic.html">IppvSettings</a></li>
+        <li><a href="../topics/Menu-topic.html">Menu</a></li>
+        <li><a href="../topics/Miscellaneous-topic.html">Miscellaneous</a></li>
+        <li><a href="../topics/Providers-topic.html">Providers</a></li>
+        <li><a href="../topics/Scenarios-topic.html">Scenarios</a></li>
+        <li><a href="../topics/ScreenElementModels-topic.html">ScreenElementModels</a></li>
+        <li><a href="../topics/Screens-topic.html">Screens</a></li>
+        <li><a href="../topics/StartScreen-topic.html">StartScreen</a></li>
+        <li><a href="../topics/SystemState-topic.html">SystemState</a></li>
+        <li><a href="../topics/Toggle-topic.html">Toggle</a></li>
+        <li><a href="../topics/Utilities-topic.html">Utilities</a></li>
+        <li><a href="../topics/ValueBox-topic.html">ValueBox</a></li>
+      <li class="section-title">Libraries</li>
+      <li><a href="../utilities_constants_absolute_alarm_field_constants/utilities_constants_absolute_alarm_field_constants-library.html">absolute_alarm_field_constants</a></li>
+      <li><a href="../models_screen_element_models_absolute_alarm_field_model/models_screen_element_models_absolute_alarm_field_model-library.html">absolute_alarm_field_model</a></li>
+      <li><a href="../scenarios_abstract_scenario/scenarios_abstract_scenario-library.html">abstract_scenario</a></li>
+      <li><a href="../widgets_setting_action_button/widgets_setting_action_button-library.html">action_button</a></li>
+      <li><a href="../widgets_start_screen_aed_button/widgets_start_screen_aed_button-library.html">aed_button</a></li>
+      <li><a href="../widgets_graph_container_alarm_confirm_button/widgets_graph_container_alarm_confirm_button-library.html">alarm_confirm_button</a></li>
+      <li><a href="../widgets_value_box_alarm_confirmation_alarm_confirmation_button_confirm_all/widgets_value_box_alarm_confirmation_alarm_confirmation_button_confirm_all-library.html">alarm_confirmation_button_confirm_all</a></li>
+      <li><a href="../widgets_value_box_alarm_confirmation_alarm_confirmation_button_row/widgets_value_box_alarm_confirmation_alarm_confirmation_button_row-library.html">alarm_confirmation_button_row</a></li>
+      <li><a href="../widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list/widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list-library.html">alarm_confirmation_button_single_list</a></li>
+      <li><a href="../widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list_expansion_button/widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list_expansion_button-library.html">alarm_confirmation_button_single_list_expansion_button</a></li>
+      <li><a href="../widgets_value_box_alarm_confirmation_alarm_confirmation_single_list_entry/widgets_value_box_alarm_confirmation_alarm_confirmation_single_list_entry-library.html">alarm_confirmation_single_list_entry</a></li>
+      <li><a href="../providers_alarm_controller/providers_alarm_controller-library.html">alarm_controller</a></li>
+      <li><a href="../widgets_appbar_alarm_counter_tile/widgets_appbar_alarm_counter_tile-library.html">alarm_counter_tile</a></li>
+      <li><a href="../widgets_appbar_alarm_field_tile/widgets_appbar_alarm_field_tile-library.html">alarm_field_tile</a></li>
+      <li><a href="../screens_alarm_limit_screen/screens_alarm_limit_screen-library.html">alarm_limit_screen</a></li>
+      <li><a href="../widgets_appbar_alarm_list/widgets_appbar_alarm_list-library.html">alarm_list</a></li>
+      <li><a href="../utilities_enums_alarm_message/utilities_enums_alarm_message-library.html">alarm_message</a></li>
+      <li><a href="../utilities_enums_alarm_status/utilities_enums_alarm_status-library.html">alarm_status</a></li>
+      <li><a href="../widgets_misc_app_scaffold/widgets_misc_app_scaffold-library.html">app_scaffold</a></li>
+      <li><a href="../utilities_app_theme/utilities_app_theme-library.html">app_theme</a></li>
+      <li><a href="../widgets_graph_co2_graph/widgets_graph_co2_graph-library.html">co2_graph</a></li>
+      <li><a href="../widgets_start_screen_continue_button/widgets_start_screen_continue_button-library.html">continue_button</a></li>
+      <li><a href="../utilities_controller_bindings/utilities_controller_bindings-library.html">controller_bindings</a></li>
+      <li><a href="../widgets_graph_cpr_graph/widgets_graph_cpr_graph-library.html">cpr_graph</a></li>
+      <li><a href="../widgets_defibrillation_mode_defibrillation_button/widgets_defibrillation_mode_defibrillation_button-library.html">defibrillation_button</a></li>
+      <li><a href="../widgets_defibrillation_mode_defibrillation_container/widgets_defibrillation_mode_defibrillation_container-library.html">defibrillation_container</a></li>
+      <li><a href="../providers_defibrillation_controller/providers_defibrillation_controller-library.html">defibrillation_controller</a></li>
+      <li><a href="../widgets_toggle_defibrillation_mode/widgets_toggle_defibrillation_mode-library.html">defibrillation_mode</a></li>
+      <li><a href="../widgets_defibrillation_mode_defibrillation_stats/widgets_defibrillation_mode_defibrillation_stats-library.html">defibrillation_stats</a></li>
+      <li><a href="../screens_demo_screen/screens_demo_screen-library.html">demo_screen</a></li>
+      <li><a href="../widgets_start_screen_details_popup/widgets_start_screen_details_popup-library.html">details_popup</a></li>
+      <li><a href="../widgets_start_screen_details_popup_slider/widgets_start_screen_details_popup_slider-library.html">details_popup_slider</a></li>
+      <li><a href="../widgets_misc_error_message/widgets_misc_error_message-library.html">error_message</a></li>
+      <li><a href="../widgets_demo_screen_exit_button/widgets_demo_screen_exit_button-library.html">exit_button</a></li>
+      <li><a href="../models_screen_element_models_general_alarms/models_screen_element_models_general_alarms-library.html">general_alarms</a></li>
+      <li><a href="../generated_plugin_registrant/generated_plugin_registrant-library.html">generated_plugin_registrant</a></li>
+      <li><a href="../widgets_graph_graph_adder/widgets_graph_graph_adder-library.html">graph_adder</a></li>
+      <li><a href="../widgets_graph_graph_adder_popup/widgets_graph_graph_adder_popup-library.html">graph_adder_popup</a></li>
+      <li><a href="../widgets_graph_container_graph_alarm_border/widgets_graph_container_graph_alarm_border-library.html">graph_alarm_border</a></li>
+      <li><a href="../widgets_graph_container_graph_alarm_message/widgets_graph_container_graph_alarm_message-library.html">graph_alarm_message</a></li>
+      <li><a href="../widgets_graph_container_graph_container/widgets_graph_container_graph_container-library.html">graph_container</a></li>
+      <li><a href="../models_screen_element_models_graph_list/models_screen_element_models_graph_list-library.html">graph_list</a></li>
+      <li><a href="../widgets_graph_container_graph_row/widgets_graph_container_graph_row-library.html">graph_row</a></li>
+      <li><a href="../widgets_toggle_graph_view/widgets_toggle_graph_view-library.html">graph_view</a></li>
+      <li><a href="../widgets_graph_history_graph/widgets_graph_history_graph-library.html">history_graph</a></li>
+      <li><a href="../widgets_defibrillation_mode_impedance_button/widgets_defibrillation_mode_impedance_button-library.html">impedance_button</a></li>
+      <li><a href="../widgets_defibrillation_mode_impedance_container/widgets_defibrillation_mode_impedance_container-library.html">impedance_container</a></li>
+      <li><a href="../widgets_info_info_container/widgets_info_info_container-library.html">info_container</a></li>
+      <li><a href="../widgets_info_info_text/widgets_info_info_text-library.html">info_text</a></li>
+      <li><a href="../widgets_setting_ippv_button/widgets_setting_ippv_button-library.html">ippv_button</a></li>
+      <li><a href="../models_screen_element_models_ippv_model/models_screen_element_models_ippv_model-library.html">ippv_model</a></li>
+      <li><a href="../widgets_defibrillation_mode_load_shock_button/widgets_defibrillation_mode_load_shock_button-library.html">load_shock_button</a></li>
+      <li><a href="../main/main-library.html">main</a></li>
+      <li><a href="../screens_main_screen/screens_main_screen-library.html">main_screen</a></li>
+      <li><a href="../widgets_menu_menu/widgets_menu_menu-library.html">menu</a></li>
+      <li><a href="../widgets_menu_menu_entry/widgets_menu_menu_entry-library.html">menu_entry</a></li>
+      <li><a href="../widgets_defibrillation_mode_metronome_container/widgets_defibrillation_mode_metronome_container-library.html">metronome_container</a></li>
+      <li><a href="../widgets_defibrillation_mode_metronome_switch/widgets_defibrillation_mode_metronome_switch-library.html">metronome_switch</a></li>
+      <li><a href="../models_data_models_model_absolute/models_data_models_model_absolute-library.html">model_absolute</a></li>
+      <li><a href="../models_data_models_model_graph/models_data_models_model_graph-library.html">model_graph</a></li>
+      <li><a href="../models_data_models_model_graphdata/models_data_models_model_graphdata-library.html">model_graphdata</a></li>
+      <li><a href="../models_data_models_model_manager/models_data_models_model_manager-library.html">model_manager</a></li>
+      <li><a href="../models_data_models_model_nibd/models_data_models_model_nibd-library.html">model_nibd</a></li>
+      <li><a href="../widgets_toggle_monitoring_mode/widgets_toggle_monitoring_mode-library.html">monitoring_mode</a></li>
+      <li><a href="../widgets_appbar_mute_ecg_button/widgets_appbar_mute_ecg_button-library.html">mute_ecg_button</a></li>
+      <li><a href="../utilities_enums_non_graph_alarm/utilities_enums_non_graph_alarm-library.html">non_graph_alarm</a></li>
+      <li><a href="../scenarios_patient_scenario/scenarios_patient_scenario-library.html">patient_scenario</a></li>
+      <li><a href="../utilities_enums_patient_type/utilities_enums_patient_type-library.html">patient_type</a></li>
+      <li><a href="../widgets_start_screen_patient_type_button/widgets_start_screen_patient_type_button-library.html">patient_type_button</a></li>
+      <li><a href="../widgets_graph_regular_graph/widgets_graph_regular_graph-library.html">regular_graph</a></li>
+      <li><a href="../widgets_demo_screen_scenario_button/widgets_demo_screen_scenario_button-library.html">scenario_button</a></li>
+      <li><a href="../utilities_enums_scenarios/utilities_enums_scenarios-library.html">scenarios</a></li>
+      <li><a href="../providers_screen_controller/providers_screen_controller-library.html">screen_controller</a></li>
+      <li><a href="../utilities_enums_screen_status/utilities_enums_screen_status-library.html">screen_status</a></li>
+      <li><a href="../utilities_enums_sensor/utilities_enums_sensor-library.html">sensor</a></li>
+      <li><a href="../widgets_setting_setting_container/widgets_setting_setting_container-library.html">setting_container</a></li>
+      <li><a href="../widgets_setting_setting_text/widgets_setting_setting_text-library.html">setting_text</a></li>
+      <li><a href="../widgets_setting_setting_tile/widgets_setting_setting_tile-library.html">setting_tile</a></li>
+      <li><a href="../widgets_defibrillation_mode_shock_power/widgets_defibrillation_mode_shock_power-library.html">shock_power</a></li>
+      <li><a href="../widgets_start_screen_skip_button/widgets_start_screen_skip_button-library.html">skip_button</a></li>
+      <li><a href="../widgets_graph_container_smart_adjustment_button/widgets_graph_container_smart_adjustment_button-library.html">smart_adjustment_button</a></li>
+      <li><a href="../models_screen_element_models_smart_adjustment_model/models_screen_element_models_smart_adjustment_model-library.html">smart_adjustment_model</a></li>
+      <li><a href="../providers_sound_controller/providers_sound_controller-library.html">sound_controller</a></li>
+      <li><a href="../scenarios_standard_scenario/scenarios_standard_scenario-library.html">standard_scenario</a></li>
+      <li><a href="../screens_start_screen/screens_start_screen-library.html">start_screen</a></li>
+      <li><a href="../providers_start_screen_controller/providers_start_screen_controller-library.html">start_screen_controller</a></li>
+      <li><a href="../widgets_appbar_statusbar/widgets_appbar_statusbar-library.html">statusbar</a></li>
+      <li><a href="../utilities_constants_statusbar_constants/utilities_constants_statusbar_constants-library.html">statusbar_constants</a></li>
+      <li><a href="../widgets_defibrillation_mode_sync_container/widgets_defibrillation_mode_sync_container-library.html">sync_container</a></li>
+      <li><a href="../widgets_defibrillation_mode_synchronicity_button/widgets_defibrillation_mode_synchronicity_button-library.html">synchronicity_button</a></li>
+      <li><a href="../widgets_defibrillation_mode_system_diagnosis/widgets_defibrillation_mode_system_diagnosis-library.html">system_diagnosis</a></li>
+      <li><a href="../models_system_state/models_system_state-library.html">system_state</a></li>
+      <li><a href="../models_screen_element_models_theme_model/models_screen_element_models_theme_model-library.html">theme_model</a></li>
+      <li><a href="../widgets_toggle_toggle_mode_button/widgets_toggle_toggle_mode_button-library.html">toggle_mode_button</a></li>
+      <li><a href="../widgets_toggle_toggle_mode_button_container/widgets_toggle_toggle_mode_button_container-library.html">toggle_mode_button_container</a></li>
+      <li><a href="../widgets_menu_toggle_theme_button/widgets_menu_toggle_theme_button-library.html">toggle_theme_button</a></li>
+      <li><a href="../widgets_value_box_value_box_container/widgets_value_box_value_box_container-library.html">value_box_container</a></li>
+      <li><a href="../widgets_value_box_value_box_settings/widgets_value_box_value_box_settings-library.html">value_box_settings</a></li>
+      <li><a href="../widgets_value_box_value_box_tile/widgets_value_box_value_box_tile-library.html">value_box_tile</a></li>
+      <li><a href="../widgets_value_box_value_box_tile_nibd/widgets_value_box_value_box_tile_nibd-library.html">value_box_tile_nibd</a></li>
+      <li><a href="../widgets_toggle_ventilation_mode/widgets_toggle_ventilation_mode-library.html">ventilation_mode</a></li>
+</ol>
+
+</div>
+
+<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  <h5>Graph Topic</h5>
+  <ol>
+
+
+  <li class="section-title"><a href="../topics/Graph-topic.html#classes">Classes</a></li>
+  <li><a href="../widgets_graph_co2_graph/CO2Graph-class.html">CO2Graph</a></li>
+  <li><a href="../widgets_graph_cpr_graph/CprGraph-class.html">CprGraph</a></li>
+  <li><a href="../widgets_graph_graph_adder/GraphAdder-class.html">GraphAdder</a></li>
+  <li><a href="../widgets_graph_graph_adder_popup/GraphAdderPopup-class.html">GraphAdderPopup</a></li>
+  <li><a href="../widgets_graph_history_graph/HistoryGraph-class.html">HistoryGraph</a></li>
+  <li><a href="../widgets_graph_regular_graph/RegularGraph-class.html">RegularGraph</a></li>
+
+
+
+
+
+
+</ol>
+
+</div>
+<!--/sidebar-offcanvas-right-->
+</main>
+
+<footer>
+  <span class="no-break">
+    uke_mlab
+      1.0.0+1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+
