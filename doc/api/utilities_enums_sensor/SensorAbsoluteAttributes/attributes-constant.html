@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the attributes constant from the SensorAbsoluteAttributes extension, for the Dart programming language.">
+  <title>attributes constant - SensorAbsoluteAttributes extension - sensor library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">uke_mlab</a></li>
+    <li><a href="../../utilities_enums_sensor/utilities_enums_sensor-library.html">sensor</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes.html">SensorAbsoluteAttributes</a></li>
+    <li class="self-crumb">attributes constant</li>
+  </ol>
+  <div class="self-name">attributes</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-property">attributes</span> constant 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+        <section class="multi-line-signature">
+          <a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../utilities_enums_sensor/sensorEnumAbsolute.html">sensorEnumAbsolute</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span>
+          const <span class="name ">attributes</span>
+          
+
+        </section>
+        
+
+        
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">static const Map&lt;sensorEnumAbsolute, Map&lt;String, dynamic&gt;&gt; attributes = {
+  sensorEnumAbsolute.hfAbsolute: {
+    &#39;displayString&#39;: &#39;Heart Frequency&#39;,
+    &#39;displayShortString&#39;: &#39;Heart Freq.&#39;,
+    &#39;abbreviation&#39;: &#39;HF&#39;,
+    &#39;unit&#39;: &#39;bpm&#39;,
+    &#39;color&#39;: AppTheme.heartFreqColor,
+    &#39;floatRepresentation&#39;: false,
+    &#39;confirmDuration&#39;: 20,
+    &#39;boundaryDeviation&#39;: 0.1,
+    &#39;upperBound&#39;: {
+      &#39;adult&#39;: 100,
+      &#39;child&#39;: 125,
+      &#39;infant&#39;: 145,
+    },
+    &#39;lowerBound&#39;: {
+      &#39;adult&#39;: 50,
+      &#39;child&#39;: 85,
+      &#39;infant&#39;: 110,
+    },
+  },
+  sensorEnumAbsolute.tempAbsolute: {
+    &#39;displayString&#39;: &#39;Temperature&#39;,
+    &#39;displayShortString&#39;: &#39;Temp&#39;,
+    &#39;abbreviation&#39;: &#39;Temp&#39;,
+    &#39;unit&#39;: &#39;°C&#39;,
+    &#39;color&#39;: AppTheme.tempColor,
+    &#39;floatRepresentation&#39;: true,
+    &#39;boundaryDeviation&#39;: 0.1,
+    &#39;upperBound&#39;: {
+      &#39;adult&#39;: 37.9,
+      &#39;child&#39;: 37.9,
+      &#39;infant&#39;: 37.9,
+    },
+    &#39;lowerBound&#39;: {
+      &#39;adult&#39;: 36.0,
+      &#39;child&#39;: 36.0,
+      &#39;infant&#39;: 36.0,
+    },
+  },
+  sensorEnumAbsolute.spo2Absolute: {
+    &#39;displayString&#39;: &#39;Oxygen Saturation&#39;,
+    &#39;displayShortString&#39;: &#39;SpO2&#39;,
+    &#39;abbreviation&#39;: &#39;SpO2&#39;,
+    &#39;unit&#39;: &#39;%&#39;,
+    &#39;color&#39;: AppTheme.plethColor,
+    &#39;floatRepresentation&#39;: false,
+    &#39;boundaryDeviation&#39;: 0.1,
+    &#39;upperBound&#39;: {
+      &#39;adult&#39;: 100,
+      &#39;child&#39;: 100,
+      &#39;infant&#39;: 100,
+    },
+    &#39;lowerBound&#39;: {
+      &#39;adult&#39;: 92,
+      &#39;child&#39;: 92,
+      &#39;infant&#39;: 92,
+    },
+  },
+  sensorEnumAbsolute.co2Absolute: {
+    &#39;displayString&#39;: &#39;CO2&#39;,
+    &#39;displayShortString&#39;: &#39;CO2&#39;,
+    &#39;abbreviation&#39;: &#39;CO2&#39;,
+    &#39;unit&#39;: &#39;mmHg&#39;,
+    &#39;color&#39;: AppTheme.co2Color,
+    &#39;floatRepresentation&#39;: false,
+    &#39;boundaryDeviation&#39;: 0.1,
+    &#39;upperBound&#39;: {
+      &#39;adult&#39;: 45,
+      &#39;child&#39;: 45,
+      &#39;infant&#39;: 45,
+    },
+    &#39;lowerBound&#39;: {
+      &#39;adult&#39;: 30,
+      &#39;child&#39;: 30,
+      &#39;infant&#39;: 30,
+    },
+    &#39;alarmType&#39;: 2,
+  },
+  sensorEnumAbsolute.pulse: {
+    &#39;displayString&#39;: &#39;Pulse&#39;,
+    &#39;displayShortString&#39;: &#39;Pulse&#39;,
+    &#39;abbreviation&#39;: &#39;PP&#39;,
+    &#39;unit&#39;: &#39;bpm&#39;,
+    &#39;color&#39;: AppTheme.pulseColor,
+    &#39;floatRepresentation&#39;: false,
+    &#39;boundaryDeviation&#39;: 0.1,
+    &#39;upperBound&#39;: {
+      &#39;adult&#39;: 100,
+      &#39;child&#39;: 125,
+      &#39;infant&#39;: 145,
+    },
+    &#39;lowerBound&#39;: {
+      &#39;adult&#39;: 50,
+      &#39;child&#39;: 85,
+      &#39;infant&#39;: 110,
+    },
+  },
+  &#47;&#47; next to temp another float case
+  sensorEnumAbsolute.mve: {
+    &#39;displayString&#39;: &#39;MVe&#39;,
+    &#39;displayShortString&#39;: &#39;MVe&#39;,
+    &#39;abbreviation&#39;: &#39;MVe&#39;,
+    &#39;unit&#39;: &#39;l&#47;min&#39;,
+    &#39;color&#39;: AppTheme.mveColor,
+    &#39;floatRepresentation&#39;: true,
+    &#39;boundaryDeviation&#39;: 0.075,
+    &#39;upperBound&#39;: {
+      &#39;adult&#39;: 9.0,
+      &#39;child&#39;: 8.0,
+      &#39;infant&#39;: 7.0,
+    },
+    &#39;lowerBound&#39;: {
+      &#39;adult&#39;: 3.5,
+      &#39;child&#39;: 3.6,
+      &#39;infant&#39;: 3.7,
+    },
+    &#39;alarmType&#39;: 2,
+  },
+  sensorEnumAbsolute.breathfrequency: {
+    &#39;displayString&#39;: &#39;Breath. Freq.&#39;,
+    &#39;displayShortString&#39;: &#39;Br. Freq.&#39;,
+    &#39;abbreviation&#39;: &#39;AF&#39;,
+    &#39;unit&#39;: &#39;br&#47;min&#39;,
+    &#39;color&#39;: AppTheme.breathFrequencyColor,
+    &#39;floatRepresentation&#39;: false,
+    &#39;boundaryDeviation&#39;: 0.1,
+    &#39;upperBound&#39;: {
+      &#39;adult&#39;: 20,
+      &#39;child&#39;: 28,
+      &#39;infant&#39;: 40,
+    },
+    &#39;lowerBound&#39;: {
+      &#39;adult&#39;: 10,
+      &#39;child&#39;: 13,
+      &#39;infant&#39;: 33,
+    },
+    &#39;alarmType&#39;: 2,
+  },
+  sensorEnumAbsolute.diaAbsolute: {
+    &#39;displayString&#39;: &#39;Diastolic Blood Pressure&#39;,
+    &#39;displayShortString&#39;: &#39;NIBP&#39;,
+    &#39;abbreviation&#39;: &#39;DIA&#39;,
+    &#39;unit&#39;: &#39;mmHg&#39;,
+    &#39;color&#39;: AppTheme.nibdColor,
+    &#39;floatRepresentation&#39;: false,
+    &#39;upperBound&#39;: {
+      &#39;adult&#39;: 100,
+      &#39;child&#39;: 90,
+      &#39;infant&#39;: 80,
+    },
+    &#39;lowerBound&#39;: {
+      &#39;adult&#39;: 40,
+      &#39;child&#39;: 35,
+      &#39;infant&#39;: 30,
+    },
+  },
+  sensorEnumAbsolute.sysAbsolute: {
+    &#39;displayString&#39;: &#39;Systolic Blood Pressure&#39;,
+    &#39;displayShortString&#39;: &#39;NIBP&#39;,
+    &#39;abbreviation&#39;: &#39;SYS&#39;,
+    &#39;unit&#39;: &#39;mmHg&#39;,
+    &#39;color&#39;: AppTheme.nibdColor,
+    &#39;floatRepresentation&#39;: false,
+    &#39;upperBound&#39;: {
+      &#39;adult&#39;: 130,
+      &#39;child&#39;: 100,
+      &#39;infant&#39;: 85,
+    },
+    &#39;lowerBound&#39;: {
+      &#39;adult&#39;: 120,
+      &#39;child&#39;: 85,
+      &#39;infant&#39;: 70,
+    },
+  },
+};
+
+</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">uke_mlab</a></li>
+  <li><a href="../../utilities_enums_sensor/utilities_enums_sensor-library.html">sensor</a></li>
+  <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes.html">SensorAbsoluteAttributes</a></li>
+  <li class="self-crumb">attributes constant</li>
+</ol>
+
+
+    <h5>SensorAbsoluteAttributes extension</h5>
+    <ol>
+
+
+
+
+    <li class="section-title"> <a href="../../utilities_enums_sensor/SensorAbsoluteAttributes.html#instance-properties">Properties</a>
+    </li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/abbreviation.html">abbreviation</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/alarmType.html">alarmType</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/boundaryDeviation.html">boundaryDeviation</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/color.html">color</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/confirmDuration.html">confirmDuration</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/displayShortString.html">displayShortString</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/displayString.html">displayString</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/floatRepresentation.html">floatRepresentation</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/lowerBound.html">lowerBound</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/unit.html">unit</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/upperBound.html">upperBound</a></li>
+
+
+
+
+
+    <li class="section-title"><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes.html#constants">Constants</a></li>
+    <li><a href="../../utilities_enums_sensor/SensorAbsoluteAttributes/attributes-constant.html">attributes</a></li>
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    uke_mlab
+      1.0.0+1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+

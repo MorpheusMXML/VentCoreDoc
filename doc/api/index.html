@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 4.1.0">
+  <meta name="description" content="uke_mlab API docs, for the Dart programming language.">
+  <title>uke_mlab - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href=""
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">uke_mlab package</li>
+  </ol>
+  <div class="self-name">uke_mlab</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <div id="top"></div><!-- PROJECT SHIELDS --><div align="center">
+<p><a href="https://git.informatik.uni-hamburg.de/mast/teaching/mlab/wt202122/uke/-/commits/main/"><img src="https://img.shields.io/badge/commits-1010-orange?style=for-the-badge" alt="Commits"></a>
+<a href="https://git.informatik.uni-hamburg.de/mast/teaching/mlab/wt202122/uke/-/issues"><img src="https://img.shields.io/badge/issues-162-brightgreen?style=for-the-badge" alt="Issues"></a>
+<a href="#contact"><img src="https://img.shields.io/badge/Contact-team-blue?style=for-the-badge" alt="Team"></a>
+<a href="[website-url]"><img src="https://img.shields.io/badge/Website-VentCore-blueviolet?style=for-the-badge" alt="Website"></a></p></div><!-- PROJECT LOGO --><br>
+<div align="center" style="font-family: Jura">
+  <a href="https://git.informatik.uni-hamburg.de/mast/teaching/mlab/wt202122/uke">
+    <img src="./ReadMeFiles/LogoVentCore.png" alt="Logo">
+  </a><!-- DESCRIPTION -->
+<p></p><h2>UKE M-Lab </h2><p></p><p>
+This is the Repository for the M-Lab Course project VentCore. 
+This Course was held during the WS 2021/2022 by the MAST Team of University of Hamburg.
+</p><p><a href=""><strong>Explore the docs »</strong></a>
+<br>
+<br>
+<a href="https://youtu.be/umgHKt3gESU">View Trailer</a>
+·
+<a href="">Visit Website</a>
+·</p><p></p>
+</div>
+<hr><!-- TABLE OF CONTENTS --><details style="font-family:Jura">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#design">Design</a></li>
+    <li><a href="#alarm-handling">Alarm Handling</a></li>
+    <li><a href="#data-processing">Data Processing</a></li>
+    <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#known-issues">Known Issues</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+<hr><!-- ABOUT THE PROJECT --><div align="justify" style="font-family:Jura">
+<h1 id="about-the-project">About The Project</h1>
+<p><img src="./ReadMeFiles/Screenshots/ventilation2-black.png" alt="VentCore"></p>
+<p>This is the repository for the UKE M-Lab prototype of VentCore: A Mock-Up for a possible 3-in-1 Medical device which combines a patient Monitoring, Defibrillation and Ventilation.
+The App in this repository demonstrates the User-Interface and Alarm-Management for such a device in a Tablet-Application. This Tablet-Application was designed for a 10" Inch Screen with the Flutter SDK to run on both, Android and iOS.
+&lt;br/&gt;
+The prototype is build with simulation data designed to mimic real emergency scenarios that where provided by emergency doctors of the <a href="https://www.uke.de/">UKE</a> and the friendly help of <a href="https://www.weinmann-emergency.com/de/">WEINMANN</a>.
+&lt;br/&gt;
+The following sections will guide you through the installation process, documentation and functionalities of the code, the design and <a href="/App/documentation/uke-styleguide-tables.md">Style Guide</a> used as well as the data used an how it was processed.</p><p align="right">(<a href="#top">back to top</a>)</p>
+<h2 id="built-with">Built With</h2>
+<p>As mentioned, this is a Flutter Tablet application written in <strong>dart</strong>. For the Data Processing and creation we used <strong>Python</strong>.</p>
+<ul>
+<li><a href="https://flutter.dev/">Flutter</a></li>
+<li><a href="https://dart.dev/">Dart</a></li>
+<li><a href="https://www.python.org/">Python</a></li>
+</ul><p align="right">(<a href="#top">back to top</a>)</p><!-- GETTING STARTED -->
+<h1 id="getting-started">Getting Started</h1>
+<p>To start the Application and Simulate the Scenarios follow the upcoming steps.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Please make sure, that you've installed a stable Version of the Flutter SDK. Please consider <a href="https://docs.flutter.dev/get-started/install">this link</a>.</p>
+<ul>
+<li>
+<p>Verify your working Installation with:</p>
+<pre class="language-sh"><code class="language-sh">flutter doctor
+</code></pre>
+</li>
+</ul>
+<p>Depending on your operating system make sure to have the simulator(macOS) or Android Emulator(Windows) installed and working.</p><div id="device"></div>
+<h2 id="device-recommendations">Device Recommendations</h2>
+<p>Since this App was designed with a requirement of a 10" Inch tablet screen with a resolution of 1920x1200 pixels, we recommend to use one of the following emulation devices:</p>
+<ul>
+<li><strong>macOS</strong></li>
+</ul>
+<pre class="language-sh"><code class="language-sh">iPad Pro (3rd generation)
+iOS Version 15.2
+</code></pre>
+<ul>
+<li><strong>Windows</strong></li>
+</ul>
+<pre class="language-sh"><code class="language-sh">Pixel C 
+Android Version 11.0 x86
+</code></pre>
+<h2 id="installation">Installation</h2>
+<ol>
+<li>
+<p>Clone the repository.</p>
+<pre class="language-sh"><code class="language-sh">
+git clone https://git.informatik.uni-hamburg.de/mast/teaching/mlab/wt202122/uke
+
+</code></pre>
+</li>
+<li>
+<p>Start the emulator you want to use. <a href="#device">Device Recommendations</a></p>
+</li>
+<li>
+<p>Run Application with terminal in the location on your disk:</p>
+<pre class="language-sh"><code class="language-sh">flutter run lib/main.dart
+</code></pre>
+</li>
+</ol><p align="right">(<a href="#top">back to top</a>)</p>
+<hr><!-- USAGE EXAMPLES -->
+<h1 id="usage">Usage</h1>
+<p>This prototype works as showcase for demonstrating and evaluating of a future 3-in-1 interface with simulated data.
+<br>
+|||
+|---|---|
+|Choose Presets|Explore Patient Scenarios|
+|<img src="./ReadMeFiles/Screenshots/presets.png" alt="StartScreen">|<img src="./ReadMeFiles/Screenshots/scenarios.png" alt="Scenario">|
+|Switch between Modes via Buttons|Set Limits directly and add Graph|
+|<img src="./ReadMeFiles/Screenshots/3in1.png" alt="threemodes">|<img src="./ReadMeFiles/Screenshots/monitoring-add-limit.png" alt="Add">|
+|Ventilation|Defibrillator|
+|<img src="./ReadMeFiles/Screenshots/ventilation2-black.png" alt="product-screenshot">|<img src="./ReadMeFiles/Screenshots/cpr.png" alt="DefiScreen">|
+|High Alarms|Overview of All Alarmlimits|
+|<img src="./ReadMeFiles/Screenshots/red-alarms.png" alt="redalarm">|<img src="./ReadMeFiles/Screenshots/limits.png" alt="limits">|</p>
+<h5 id="for-more-examples-please-refer-to-the-documentationtodolink">For more examples, please refer to the <a href="TODOLINK">Documentation</a></h5><p align="right">(<a href="#top">back to top</a>)</p>
+<hr><!-- DESIGN -->
+<h1 id="design">Design</h1>
+<p>For the design created in Figma please follow this link:</p>
+<ul>
+<li><a href="https://www.figma.com/proto/ase69ABWTPP8L2kVJdHuzq/MLab---UKE-Protoype-UI?node-id=892%3A3234&amp;scaling=scale-down&amp;page-id=892%3A792&amp;starting-point-node-id=892%3A3234&amp;show-proto-sidebar=1">Design Clickdummy</a></li>
+</ul>
+<p>Also have a look at our StyleGuide for the colors used in the prototype.</p>
+<ul>
+<li><a href="../documentation/uke-styleguide-tables.md">Style Guide</a></li>
+</ul><p align="right">(<a href="#top">back to top</a>)</p>
+<hr><!-- ALARM HANDLING -->
+<h1 id="alarm-handling">Alarm Handling</h1>
+<p>For a complete overview, please refer to our <code>AlarmLogic.md</code>(TODO LINK)</p>
+<h3 id="priotising-alarms-in-categories">Priotising alarms in categories</h3>
+<p>Parameter alarms are prioritised according to the severity of their deviations from the set alarm limits. The <code>SensorDeviation</code> is defined in percent for each parameter.</p>
+<h4 id="example">Example:</h4>
+<pre class="language-shell"><code class="language-shell">
+  Parameter: Heartfrequency
+  Upper Limit: 120
+  SensorDeviation: 0.1
+  Middle Alert: 120 &lt; currentValue &lt; 131
+  High Alert: currentValue &gt;131
+
+</code></pre>
+<h3 id="auditory-alarm-according-to-prioritisation">Auditory alarm according to prioritisation</h3>
+<p>Alarms are displayed audibly in descending order of priority.
+<img src="./ReadMeFiles/table-audio-priority.png" alt="Table Audio Priorities"></p>
+<h3 id="auditory-behaviour-of-alarms">Auditory Behaviour of Alarms</h3>
+<h2 id="general-rules">General Rules</h2>
+<p>//TODO: Add Description of Alarm Handling Rules</p><p align="right">(<a href="#top">back to top</a>)</p>
+<h3 id="auditory-alarm-according-to-prioritisation-2">Auditory alarm according to prioritisation</h3>
+<p>Alarms are displayed audibly in descending order of priority.
+<img src="./ReadMeFiles/table-audio-priority.png" alt="Table Audio Priorities"></p>
+<hr><!-- DATA PROCESSING -->
+<h1 id="data-processing">Data Processing</h1>
+<p>Files to consider:</p>
+<ul>
+<li><a href="./SimulationData/data_processing.ipynb">Notebook 1</a></li>
+<li><a href="./SimulationData/weinmanndata.ipynb">Notebook 2</a></li>
+<li><a href="./SimulationData/rawdata.ipynb">Raw Data</a></li>
+</ul>
+<p>Mr. Neuhaus from Weinmann provided us with with data twice, once actual recorded ventilation and ECG data and the second time generated simulation data.</p>
+<p>As the patient scenarios are very complex finding data that fits our needs is near impossible. Even just finding a healthy ECG wave is a very hard task. Thats why we are building our datasets ourselfs.</p>
+<p>The first time we received an "edf" file containing recorded ventilation and ECG data.
+since this was a raw recording and not filtered or treated in any way we had to process the data which we did in <a href="./SimulationData/data_processing.ipynb">Notebook 1</a>.</p>
+<p>We used a python library called <a href="https://mne.tools/stable/index.html">mne</a> to read the "edf" file and extract relevant information.</p>
+<p>Since we immediately wanted to visualize the provided data within our application, we did not bother constructing a complex json file. Thus we built a simple list holding dictionaries for each graph (ECG, paw, pleth, etc.).</p>
+<p>Since the data is raw and unfiltered a lot of noise was present, to filter out the noise Mr. Neuhaus recomended us to use a algorithm called <a href="https://en.wikipedia.org/wiki/Moving_average">simple moving average</a>.
+Our implementation of the simple moving average can be found in this <a href="./SimulationData/data_processing.ipynb">Notebook 1</a> under the section "Simple Moving Average".
+This provided us with a clean ECG wave we could use to display the ECG channel in our application.
+After finishing up the data for our graphs we realized that this is only half the data our application needs to be realistic enough for our customer.</p>
+<p>Thankfully Mr.Neuhaus provided us with clean simulated data. Using this data we redesinged our json datastructure.</p>
+<h3 id="general-data-structure">General Data Structure</h3>
+<p>We were now able to display an ECG wave as a graph. However for a realistic representation of the associated heartfrequency we would have to analyze the number of pqrst complexes in one minute. Which would have taken to much time to implement correctly, we decided against analyzing our graphs. We still lacked a datasource to realisticly display a heartfrequency.</p>
+<p>Our most basic approach was generating semi random numbers and just display those. The problem that arrises with random generated numbers is that a random datapoint is not depended on its predecessor. In the realm of medical data this leads to serious inconsistencies. Since the heartfrequency might be 120 at time x and 75 the next timestep this does not mimic a realistic trend for a heartfrequency (even in the most dramatic cases hf would not drop by that much).</p>
+<p>To tackle this issue we decided to generate our heartfrequency with an algorithm called random walk. A <a href="https://en.wikipedia.org/wiki/Random_walk">random walk</a> generates a list of values each based on the last value to allow for a more realistic trend . Our implementation of a random walk can be found under the section "Random Walk" in the notebook. The relationship between ECG and heartfrequency is not unique and almost every graph brings its associated value (i.e. pleth -&gt; spo2, co2 -&gt; co2Absolute). With our strategy we were able to generate all the datastreams necessary.</p>
+<h3 id="json-structure">Json Structure</h3>
+<p><img src="./ReadMeFiles/Screenshots/datastreams.PNG" alt="Json Structure"></p>
+<p>Every scenario and our standard scenario have a dedicated json file. On the top level one can find a list containing all the (sensor)channels needed, and general information for the scenario such as the duration. A channel can contain data for either a graph or one of the absolute values that are associated to the graphs and channel information. The data just holds a list of all the datapoints. Channel information provides useful descriptions and important parameters such as the enum identifier and the resolution. The resolution is stated in Hz.</p>
+<h3 id="building-scenario-data">Building scenario data</h3>
+<p>With a combination of the random walk and the clean, easily loopable data we recieved, we had the tools to construct any scenario we wanted. Now that we had all the basic components needed we tried to replicate the given patient scenarios as close as possible.</p><p align="right">(<a href="#top">back to top</a>)</p><!-- DOCUMENTATION -->
+<h1 id="documentation">Documentation</h1><!-- TODO: Add Link-->
+<ul>
+<li>
+<p>Please refer to our <a href="">Code Documentation</a></p>
+</li>
+<li>
+<p>Application <a href="/App/documentation/uke-styleguide-tables.md">Styleguide</a></p>
+</li>
+<li>
+<p>Approaches and Logic for <a href="">Alarmmangement</a></p>
+</li>
+<li>
+<p><a href="./App/documentation/UseCase-English.pdf">UseCases</a> for Testing</p>
+</li>
+<li>
+<p><a href="https://www.figma.com/proto/ase69ABWTPP8L2kVJdHuzq/MLab---UKE-Protoype-UI?node-id=892%3A3234&amp;scaling=scale-down&amp;page-id=892%3A792&amp;starting-point-node-id=892%3A3234&amp;show-proto-sidebar=1">Figma-Clickdummy</a></p>
+</li>
+</ul><p align="right">(<a href="#top">back to top</a>)</p><!-- KNOWN ISSUES -->
+<h1 id="known-issues">Known Issues</h1>
+<p><strong>1. Sound Problems with MacOS and Simulator</strong></p>
+<p>If you are using a Mac and you are simulating an iPad over XCode and the Simulator, please make sure, that you have enabled the sound in settings. Also playing sounds with the Mac speakers can lead to sound issues. Please consider using headphones.
+<img src="./ReadMeFiles/Screenshots/image.png" alt="MacOs"></p>
+<hr>
+<p><strong>2. <a href="https://git.informatik.uni-hamburg.de/mast/teaching/mlab/wt202122/uke/-/issues/121">Add-Button ValueTiles for the right side missing</a></strong></p>
+<p>Adding an absolute sensor on the right side of the screen is currently missing.</p>
+<hr>
+<p><strong>3. <code>Audioplayer output in Debug Console</code>(TODO: Link Missing?)</strong></p>
+<p>This seems to be a known issue with the <a href="https://github.com/bluefireteam/audioplayers/issues/707">audioplayer</a>.
+If you want to disable the output, please filter your console. To exclude certain output, use <em><strong>!excludeText</strong></em></p>
+<hr>
+<p><strong>4. <code>Delayed Alarm Sounds</code>(TODO: Link Missing?)</strong></p>
+<p>Alarms sound don't start right away. This seems to be a problem of Audioplayer and Timer. Initial start should be directly.</p>
+<hr>
+<p><strong>5. <code>Alarms disappear too quickly</code>(TODO: Link Missing?)</strong></p>
+<p>Alarms should be visualized at least 10 seconds before it can update to a lower alarm.</p>
+<hr>
+<p><strong>6. <a href="https://git.informatik.uni-hamburg.de/mast/teaching/mlab/wt202122/uke/-/issues/59">Server Issues with Pipeline</a></strong></p>
+<p>The pipeline for the project couldn't be started due to server issues.</p><p align="right">(<a href="#top">back to top</a>)</p>
+<hr><!-- CONTACT -->
+<h1 id="contact">Contact</h1>
+<h5 id="project-supervisor">Project Supervisor</h5>
+<p>Tim Puhlfürß - <a href="mailto:tim.puhlfuerss@uni-hamburg.de"></a><a href="mailto:tim.puhlfuerss@uni-hamburg.de">tim.puhlfuerss@uni-hamburg.de</a></p>
+<h5 id="development-team">Development Team</h5>
+<ul>
+<li>Corvin Biebach - <a href="mailto:corvin.biebach@studium.uni-hamburg.de">corvin.biebach@studium.uni-hamburg.de</a></li>
+<li>Maximilian Brosius - <a href="mailto:mail@maxbrosius.de">mail@maxbrosius.de</a></li>
+<li>Fynn Menk - <a href="mailto:fynn.menk@gmail.com">fynn.menk@gmail.com</a></li>
+<li>Anni Reinert - <a href="mailto:anni@rb-reinert.de">anni.reinert@rb-reinert.de</a></li>
+<li>Noah Scheld - <a href="mailto:nickels12er@gmail.com">nickels12er@gmail.com</a></li>
+<li>Arne Struck - <a href="mailto:arne.struck@studium.uni-hamburg.de">arne.struck@studium.uni-hamburg.de</a></li>
+<li>Mudassar Zahid - <a href="mailto:mudassar.zahid@studium.uni-hamburg.de">mudassar.zahid@studium.uni-hamburg.de</a></li>
+</ul>
+<p>Project Link: <a href="https://git.informatik.uni-hamburg.de/mast/teaching/mlab/wt202122/uke">UHH Informatics GitLab Repository</a></p><p align="right">(<a href="#top">back to top</a>)</p><!-- ACKNOWLEDGMENTS -->
+<h1 id="acknowledgments">Acknowledgments</h1>
+<p>Special Thanks for the friendly help for the Requirements Elicitation and medical questions to:</p>
+<ul>
+<li><a href="mailto:an.mahler@uke.de">Dr. Mahler</a> - Emergency Doctor @ UKE Hamburg</li>
+<li><a href="mailto:w.reip@uke.de">Dr. Reip</a> - Emergency Doctor @ UKE Hamburg</li>
+<li><a href="mailto:p.sasu@uke.de">Dr. Sasu</a> - Emergency Doctor @ UKE Hamburg</li>
+</ul>
+<p>And also for providing simulation / real patient data and helping with DataGeneration for the Showcase.</p>
+<ul>
+<li><a href="mailto:C.Neuhaus@weinmann-emt.de">Christian Neuhaus</a> - WEINMANN Emergency</li>
+</ul><p align="right">(<a href="#top">back to top</a>)</p>
+</div><!-- MARKDOWN LINKS & IMAGES -->
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="absolute_alarm_field_constants">
+  <span class="name"><a href="utilities_constants_absolute_alarm_field_constants/utilities_constants_absolute_alarm_field_constants-library.html">absolute_alarm_field_constants</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="absolute_alarm_field_model">
+  <span class="name"><a href="models_screen_element_models_absolute_alarm_field_model/models_screen_element_models_absolute_alarm_field_model-library.html">absolute_alarm_field_model</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="abstract_scenario">
+  <span class="name"><a href="scenarios_abstract_scenario/scenarios_abstract_scenario-library.html">abstract_scenario</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="action_button">
+  <span class="name"><a href="widgets_setting_action_button/widgets_setting_action_button-library.html">action_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="aed_button">
+  <span class="name"><a href="widgets_start_screen_aed_button/widgets_start_screen_aed_button-library.html">aed_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_confirm_button">
+  <span class="name"><a href="widgets_graph_container_alarm_confirm_button/widgets_graph_container_alarm_confirm_button-library.html">alarm_confirm_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_confirmation_button_confirm_all">
+  <span class="name"><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_button_confirm_all/widgets_value_box_alarm_confirmation_alarm_confirmation_button_confirm_all-library.html">alarm_confirmation_button_confirm_all</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_confirmation_button_row">
+  <span class="name"><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_button_row/widgets_value_box_alarm_confirmation_alarm_confirmation_button_row-library.html">alarm_confirmation_button_row</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_confirmation_button_single_list">
+  <span class="name"><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list/widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list-library.html">alarm_confirmation_button_single_list</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_confirmation_button_single_list_expansion_button">
+  <span class="name"><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list_expansion_button/widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list_expansion_button-library.html">alarm_confirmation_button_single_list_expansion_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_confirmation_single_list_entry">
+  <span class="name"><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_single_list_entry/widgets_value_box_alarm_confirmation_alarm_confirmation_single_list_entry-library.html">alarm_confirmation_single_list_entry</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_controller">
+  <span class="name"><a href="providers_alarm_controller/providers_alarm_controller-library.html">alarm_controller</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_counter_tile">
+  <span class="name"><a href="widgets_appbar_alarm_counter_tile/widgets_appbar_alarm_counter_tile-library.html">alarm_counter_tile</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_field_tile">
+  <span class="name"><a href="widgets_appbar_alarm_field_tile/widgets_appbar_alarm_field_tile-library.html">alarm_field_tile</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_limit_screen">
+  <span class="name"><a href="screens_alarm_limit_screen/screens_alarm_limit_screen-library.html">alarm_limit_screen</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_list">
+  <span class="name"><a href="widgets_appbar_alarm_list/widgets_appbar_alarm_list-library.html">alarm_list</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_message">
+  <span class="name"><a href="utilities_enums_alarm_message/utilities_enums_alarm_message-library.html">alarm_message</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="alarm_status">
+  <span class="name"><a href="utilities_enums_alarm_status/utilities_enums_alarm_status-library.html">alarm_status</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="app_scaffold">
+  <span class="name"><a href="widgets_misc_app_scaffold/widgets_misc_app_scaffold-library.html">app_scaffold</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="app_theme">
+  <span class="name"><a href="utilities_app_theme/utilities_app_theme-library.html">app_theme</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="co2_graph">
+  <span class="name"><a href="widgets_graph_co2_graph/widgets_graph_co2_graph-library.html">co2_graph</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="continue_button">
+  <span class="name"><a href="widgets_start_screen_continue_button/widgets_start_screen_continue_button-library.html">continue_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="controller_bindings">
+  <span class="name"><a href="utilities_controller_bindings/utilities_controller_bindings-library.html">controller_bindings</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="cpr_graph">
+  <span class="name"><a href="widgets_graph_cpr_graph/widgets_graph_cpr_graph-library.html">cpr_graph</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="defibrillation_button">
+  <span class="name"><a href="widgets_defibrillation_mode_defibrillation_button/widgets_defibrillation_mode_defibrillation_button-library.html">defibrillation_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="defibrillation_container">
+  <span class="name"><a href="widgets_defibrillation_mode_defibrillation_container/widgets_defibrillation_mode_defibrillation_container-library.html">defibrillation_container</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="defibrillation_controller">
+  <span class="name"><a href="providers_defibrillation_controller/providers_defibrillation_controller-library.html">defibrillation_controller</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="defibrillation_mode">
+  <span class="name"><a href="widgets_toggle_defibrillation_mode/widgets_toggle_defibrillation_mode-library.html">defibrillation_mode</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="defibrillation_stats">
+  <span class="name"><a href="widgets_defibrillation_mode_defibrillation_stats/widgets_defibrillation_mode_defibrillation_stats-library.html">defibrillation_stats</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="demo_screen">
+  <span class="name"><a href="screens_demo_screen/screens_demo_screen-library.html">demo_screen</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="details_popup">
+  <span class="name"><a href="widgets_start_screen_details_popup/widgets_start_screen_details_popup-library.html">details_popup</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="details_popup_slider">
+  <span class="name"><a href="widgets_start_screen_details_popup_slider/widgets_start_screen_details_popup_slider-library.html">details_popup_slider</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="error_message">
+  <span class="name"><a href="widgets_misc_error_message/widgets_misc_error_message-library.html">error_message</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="exit_button">
+  <span class="name"><a href="widgets_demo_screen_exit_button/widgets_demo_screen_exit_button-library.html">exit_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="general_alarms">
+  <span class="name"><a href="models_screen_element_models_general_alarms/models_screen_element_models_general_alarms-library.html">general_alarms</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="generated_plugin_registrant">
+  <span class="name"><a href="generated_plugin_registrant/generated_plugin_registrant-library.html">generated_plugin_registrant</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="graph">
+  <span class="name"><a href="widgets_graph_graph/widgets_graph_graph-library.html">graph</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="graph_adder">
+  <span class="name"><a href="widgets_graph_graph_adder/widgets_graph_graph_adder-library.html">graph_adder</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="graph_adder_popup">
+  <span class="name"><a href="widgets_graph_graph_adder_popup/widgets_graph_graph_adder_popup-library.html">graph_adder_popup</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="graph_alarm_border">
+  <span class="name"><a href="widgets_graph_container_graph_alarm_border/widgets_graph_container_graph_alarm_border-library.html">graph_alarm_border</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="graph_alarm_message">
+  <span class="name"><a href="widgets_graph_container_graph_alarm_message/widgets_graph_container_graph_alarm_message-library.html">graph_alarm_message</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="graph_container">
+  <span class="name"><a href="widgets_graph_container_graph_container/widgets_graph_container_graph_container-library.html">graph_container</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="graph_list">
+  <span class="name"><a href="models_screen_element_models_graph_list/models_screen_element_models_graph_list-library.html">graph_list</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="graph_row">
+  <span class="name"><a href="widgets_graph_container_graph_row/widgets_graph_container_graph_row-library.html">graph_row</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="graph_view">
+  <span class="name"><a href="widgets_graph_container_graph_view/widgets_graph_container_graph_view-library.html">graph_view</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="history_graph">
+  <span class="name"><a href="widgets_graph_history_graph/widgets_graph_history_graph-library.html">history_graph</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="impedance_button">
+  <span class="name"><a href="widgets_defibrillation_mode_impedance_button/widgets_defibrillation_mode_impedance_button-library.html">impedance_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="impedance_container">
+  <span class="name"><a href="widgets_defibrillation_mode_impedance_container/widgets_defibrillation_mode_impedance_container-library.html">impedance_container</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="info_container">
+  <span class="name"><a href="widgets_info_info_container/widgets_info_info_container-library.html">info_container</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="info_text">
+  <span class="name"><a href="widgets_info_info_text/widgets_info_info_text-library.html">info_text</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="ippv_button">
+  <span class="name"><a href="widgets_setting_ippv_button/widgets_setting_ippv_button-library.html">ippv_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="ippv_model">
+  <span class="name"><a href="models_screen_element_models_ippv_model/models_screen_element_models_ippv_model-library.html">ippv_model</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="load_shock_button">
+  <span class="name"><a href="widgets_defibrillation_mode_load_shock_button/widgets_defibrillation_mode_load_shock_button-library.html">load_shock_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="main">
+  <span class="name"><a href="main/main-library.html">main</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="main_screen">
+  <span class="name"><a href="screens_main_screen/screens_main_screen-library.html">main_screen</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="menu">
+  <span class="name"><a href="widgets_menu_menu/widgets_menu_menu-library.html">menu</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="menu_entry">
+  <span class="name"><a href="widgets_menu_menu_entry/widgets_menu_menu_entry-library.html">menu_entry</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="metronome_container">
+  <span class="name"><a href="widgets_defibrillation_mode_metronome_container/widgets_defibrillation_mode_metronome_container-library.html">metronome_container</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="metronome_switch">
+  <span class="name"><a href="widgets_defibrillation_mode_metronome_switch/widgets_defibrillation_mode_metronome_switch-library.html">metronome_switch</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="model_absolute">
+  <span class="name"><a href="models_data_models_model_absolute/models_data_models_model_absolute-library.html">model_absolute</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="model_graph">
+  <span class="name"><a href="models_data_models_model_graph/models_data_models_model_graph-library.html">model_graph</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="model_graphdata">
+  <span class="name"><a href="models_data_models_model_graphdata/models_data_models_model_graphdata-library.html">model_graphdata</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="model_manager">
+  <span class="name"><a href="models_data_models_model_manager/models_data_models_model_manager-library.html">model_manager</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="model_nibd">
+  <span class="name"><a href="models_data_models_model_nibd/models_data_models_model_nibd-library.html">model_nibd</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="monitoring_mode">
+  <span class="name"><a href="widgets_toggle_monitoring_mode/widgets_toggle_monitoring_mode-library.html">monitoring_mode</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="mute_ecg_button">
+  <span class="name"><a href="widgets_appbar_mute_ecg_button/widgets_appbar_mute_ecg_button-library.html">mute_ecg_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="non_graph_alarm">
+  <span class="name"><a href="utilities_enums_non_graph_alarm/utilities_enums_non_graph_alarm-library.html">non_graph_alarm</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="patient_scenario">
+  <span class="name"><a href="scenarios_patient_scenario/scenarios_patient_scenario-library.html">patient_scenario</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="patient_type">
+  <span class="name"><a href="utilities_enums_patient_type/utilities_enums_patient_type-library.html">patient_type</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="patient_type_button">
+  <span class="name"><a href="widgets_start_screen_patient_type_button/widgets_start_screen_patient_type_button-library.html">patient_type_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="regular_graph">
+  <span class="name"><a href="widgets_graph_regular_graph/widgets_graph_regular_graph-library.html">regular_graph</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="scenario_button">
+  <span class="name"><a href="widgets_demo_screen_scenario_button/widgets_demo_screen_scenario_button-library.html">scenario_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="scenarios">
+  <span class="name"><a href="utilities_enums_scenarios/utilities_enums_scenarios-library.html">scenarios</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="screen_change_button">
+  <span class="name"><a href="utilities_enums_screen_change_button/utilities_enums_screen_change_button-library.html">screen_change_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="screen_controller">
+  <span class="name"><a href="providers_screen_controller/providers_screen_controller-library.html">screen_controller</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="screen_status">
+  <span class="name"><a href="utilities_enums_screen_status/utilities_enums_screen_status-library.html">screen_status</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="sensor">
+  <span class="name"><a href="utilities_enums_sensor/utilities_enums_sensor-library.html">sensor</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="setting_container">
+  <span class="name"><a href="widgets_setting_setting_container/widgets_setting_setting_container-library.html">setting_container</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="setting_text">
+  <span class="name"><a href="widgets_setting_setting_text/widgets_setting_setting_text-library.html">setting_text</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="setting_tile">
+  <span class="name"><a href="widgets_setting_setting_tile/widgets_setting_setting_tile-library.html">setting_tile</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="shock_power">
+  <span class="name"><a href="widgets_defibrillation_mode_shock_power/widgets_defibrillation_mode_shock_power-library.html">shock_power</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="skip_button">
+  <span class="name"><a href="widgets_start_screen_skip_button/widgets_start_screen_skip_button-library.html">skip_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="smart_adjustment_button">
+  <span class="name"><a href="widgets_graph_container_smart_adjustment_button/widgets_graph_container_smart_adjustment_button-library.html">smart_adjustment_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="smart_adjustment_model">
+  <span class="name"><a href="models_screen_element_models_smart_adjustment_model/models_screen_element_models_smart_adjustment_model-library.html">smart_adjustment_model</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="sound_controller">
+  <span class="name"><a href="providers_sound_controller/providers_sound_controller-library.html">sound_controller</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="standard_scenario">
+  <span class="name"><a href="scenarios_standard_scenario/scenarios_standard_scenario-library.html">standard_scenario</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="start_screen">
+  <span class="name"><a href="screens_start_screen/screens_start_screen-library.html">start_screen</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="start_screen_controller">
+  <span class="name"><a href="providers_start_screen_controller/providers_start_screen_controller-library.html">start_screen_controller</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="statusbar">
+  <span class="name"><a href="widgets_appbar_statusbar/widgets_appbar_statusbar-library.html">statusbar</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="statusbar_constants">
+  <span class="name"><a href="utilities_constants_statusbar_constants/utilities_constants_statusbar_constants-library.html">statusbar_constants</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="sync_container">
+  <span class="name"><a href="widgets_defibrillation_mode_sync_container/widgets_defibrillation_mode_sync_container-library.html">sync_container</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="synchronicity_button">
+  <span class="name"><a href="widgets_defibrillation_mode_synchronicity_button/widgets_defibrillation_mode_synchronicity_button-library.html">synchronicity_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="system_diagnosis">
+  <span class="name"><a href="widgets_defibrillation_mode_system_diagnosis/widgets_defibrillation_mode_system_diagnosis-library.html">system_diagnosis</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="system_state">
+  <span class="name"><a href="models_system_state/models_system_state-library.html">system_state</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="theme_model">
+  <span class="name"><a href="models_screen_element_models_theme_model/models_screen_element_models_theme_model-library.html">theme_model</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="toggle_mode_button">
+  <span class="name"><a href="widgets_toggle_toggle_mode_button/widgets_toggle_toggle_mode_button-library.html">toggle_mode_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="toggle_theme_button">
+  <span class="name"><a href="widgets_menu_toggle_theme_button/widgets_menu_toggle_theme_button-library.html">toggle_theme_button</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="value_box_container">
+  <span class="name"><a href="widgets_value_box_value_box_container/widgets_value_box_value_box_container-library.html">value_box_container</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="value_box_settings">
+  <span class="name"><a href="widgets_value_box_value_box_settings/widgets_value_box_value_box_settings-library.html">value_box_settings</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="value_box_tile">
+  <span class="name"><a href="widgets_value_box_value_box_tile/widgets_value_box_value_box_tile-library.html">value_box_tile</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="value_box_tile_nibd">
+  <span class="name"><a href="widgets_value_box_value_box_tile_nibd/widgets_value_box_value_box_tile_nibd-library.html">value_box_tile_nibd</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="ventilation_mode">
+  <span class="name"><a href="widgets_toggle_ventilation_mode/widgets_toggle_ventilation_mode-library.html">ventilation_mode</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li class="self-crumb">uke_mlab package</li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">uke_mlab</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="utilities_constants_absolute_alarm_field_constants/utilities_constants_absolute_alarm_field_constants-library.html">absolute_alarm_field_constants</a></li>
+      <li><a href="models_screen_element_models_absolute_alarm_field_model/models_screen_element_models_absolute_alarm_field_model-library.html">absolute_alarm_field_model</a></li>
+      <li><a href="scenarios_abstract_scenario/scenarios_abstract_scenario-library.html">abstract_scenario</a></li>
+      <li><a href="widgets_setting_action_button/widgets_setting_action_button-library.html">action_button</a></li>
+      <li><a href="widgets_start_screen_aed_button/widgets_start_screen_aed_button-library.html">aed_button</a></li>
+      <li><a href="widgets_graph_container_alarm_confirm_button/widgets_graph_container_alarm_confirm_button-library.html">alarm_confirm_button</a></li>
+      <li><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_button_confirm_all/widgets_value_box_alarm_confirmation_alarm_confirmation_button_confirm_all-library.html">alarm_confirmation_button_confirm_all</a></li>
+      <li><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_button_row/widgets_value_box_alarm_confirmation_alarm_confirmation_button_row-library.html">alarm_confirmation_button_row</a></li>
+      <li><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list/widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list-library.html">alarm_confirmation_button_single_list</a></li>
+      <li><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list_expansion_button/widgets_value_box_alarm_confirmation_alarm_confirmation_button_single_list_expansion_button-library.html">alarm_confirmation_button_single_list_expansion_button</a></li>
+      <li><a href="widgets_value_box_alarm_confirmation_alarm_confirmation_single_list_entry/widgets_value_box_alarm_confirmation_alarm_confirmation_single_list_entry-library.html">alarm_confirmation_single_list_entry</a></li>
+      <li><a href="providers_alarm_controller/providers_alarm_controller-library.html">alarm_controller</a></li>
+      <li><a href="widgets_appbar_alarm_counter_tile/widgets_appbar_alarm_counter_tile-library.html">alarm_counter_tile</a></li>
+      <li><a href="widgets_appbar_alarm_field_tile/widgets_appbar_alarm_field_tile-library.html">alarm_field_tile</a></li>
+      <li><a href="screens_alarm_limit_screen/screens_alarm_limit_screen-library.html">alarm_limit_screen</a></li>
+      <li><a href="widgets_appbar_alarm_list/widgets_appbar_alarm_list-library.html">alarm_list</a></li>
+      <li><a href="utilities_enums_alarm_message/utilities_enums_alarm_message-library.html">alarm_message</a></li>
+      <li><a href="utilities_enums_alarm_status/utilities_enums_alarm_status-library.html">alarm_status</a></li>
+      <li><a href="widgets_misc_app_scaffold/widgets_misc_app_scaffold-library.html">app_scaffold</a></li>
+      <li><a href="utilities_app_theme/utilities_app_theme-library.html">app_theme</a></li>
+      <li><a href="widgets_graph_co2_graph/widgets_graph_co2_graph-library.html">co2_graph</a></li>
+      <li><a href="widgets_start_screen_continue_button/widgets_start_screen_continue_button-library.html">continue_button</a></li>
+      <li><a href="utilities_controller_bindings/utilities_controller_bindings-library.html">controller_bindings</a></li>
+      <li><a href="widgets_graph_cpr_graph/widgets_graph_cpr_graph-library.html">cpr_graph</a></li>
+      <li><a href="widgets_defibrillation_mode_defibrillation_button/widgets_defibrillation_mode_defibrillation_button-library.html">defibrillation_button</a></li>
+      <li><a href="widgets_defibrillation_mode_defibrillation_container/widgets_defibrillation_mode_defibrillation_container-library.html">defibrillation_container</a></li>
+      <li><a href="providers_defibrillation_controller/providers_defibrillation_controller-library.html">defibrillation_controller</a></li>
+      <li><a href="widgets_toggle_defibrillation_mode/widgets_toggle_defibrillation_mode-library.html">defibrillation_mode</a></li>
+      <li><a href="widgets_defibrillation_mode_defibrillation_stats/widgets_defibrillation_mode_defibrillation_stats-library.html">defibrillation_stats</a></li>
+      <li><a href="screens_demo_screen/screens_demo_screen-library.html">demo_screen</a></li>
+      <li><a href="widgets_start_screen_details_popup/widgets_start_screen_details_popup-library.html">details_popup</a></li>
+      <li><a href="widgets_start_screen_details_popup_slider/widgets_start_screen_details_popup_slider-library.html">details_popup_slider</a></li>
+      <li><a href="widgets_misc_error_message/widgets_misc_error_message-library.html">error_message</a></li>
+      <li><a href="widgets_demo_screen_exit_button/widgets_demo_screen_exit_button-library.html">exit_button</a></li>
+      <li><a href="models_screen_element_models_general_alarms/models_screen_element_models_general_alarms-library.html">general_alarms</a></li>
+      <li><a href="generated_plugin_registrant/generated_plugin_registrant-library.html">generated_plugin_registrant</a></li>
+      <li><a href="widgets_graph_graph/widgets_graph_graph-library.html">graph</a></li>
+      <li><a href="widgets_graph_graph_adder/widgets_graph_graph_adder-library.html">graph_adder</a></li>
+      <li><a href="widgets_graph_graph_adder_popup/widgets_graph_graph_adder_popup-library.html">graph_adder_popup</a></li>
+      <li><a href="widgets_graph_container_graph_alarm_border/widgets_graph_container_graph_alarm_border-library.html">graph_alarm_border</a></li>
+      <li><a href="widgets_graph_container_graph_alarm_message/widgets_graph_container_graph_alarm_message-library.html">graph_alarm_message</a></li>
+      <li><a href="widgets_graph_container_graph_container/widgets_graph_container_graph_container-library.html">graph_container</a></li>
+      <li><a href="models_screen_element_models_graph_list/models_screen_element_models_graph_list-library.html">graph_list</a></li>
+      <li><a href="widgets_graph_container_graph_row/widgets_graph_container_graph_row-library.html">graph_row</a></li>
+      <li><a href="widgets_graph_container_graph_view/widgets_graph_container_graph_view-library.html">graph_view</a></li>
+      <li><a href="widgets_graph_history_graph/widgets_graph_history_graph-library.html">history_graph</a></li>
+      <li><a href="widgets_defibrillation_mode_impedance_button/widgets_defibrillation_mode_impedance_button-library.html">impedance_button</a></li>
+      <li><a href="widgets_defibrillation_mode_impedance_container/widgets_defibrillation_mode_impedance_container-library.html">impedance_container</a></li>
+      <li><a href="widgets_info_info_container/widgets_info_info_container-library.html">info_container</a></li>
+      <li><a href="widgets_info_info_text/widgets_info_info_text-library.html">info_text</a></li>
+      <li><a href="widgets_setting_ippv_button/widgets_setting_ippv_button-library.html">ippv_button</a></li>
+      <li><a href="models_screen_element_models_ippv_model/models_screen_element_models_ippv_model-library.html">ippv_model</a></li>
+      <li><a href="widgets_defibrillation_mode_load_shock_button/widgets_defibrillation_mode_load_shock_button-library.html">load_shock_button</a></li>
+      <li><a href="main/main-library.html">main</a></li>
+      <li><a href="screens_main_screen/screens_main_screen-library.html">main_screen</a></li>
+      <li><a href="widgets_menu_menu/widgets_menu_menu-library.html">menu</a></li>
+      <li><a href="widgets_menu_menu_entry/widgets_menu_menu_entry-library.html">menu_entry</a></li>
+      <li><a href="widgets_defibrillation_mode_metronome_container/widgets_defibrillation_mode_metronome_container-library.html">metronome_container</a></li>
+      <li><a href="widgets_defibrillation_mode_metronome_switch/widgets_defibrillation_mode_metronome_switch-library.html">metronome_switch</a></li>
+      <li><a href="models_data_models_model_absolute/models_data_models_model_absolute-library.html">model_absolute</a></li>
+      <li><a href="models_data_models_model_graph/models_data_models_model_graph-library.html">model_graph</a></li>
+      <li><a href="models_data_models_model_graphdata/models_data_models_model_graphdata-library.html">model_graphdata</a></li>
+      <li><a href="models_data_models_model_manager/models_data_models_model_manager-library.html">model_manager</a></li>
+      <li><a href="models_data_models_model_nibd/models_data_models_model_nibd-library.html">model_nibd</a></li>
+      <li><a href="widgets_toggle_monitoring_mode/widgets_toggle_monitoring_mode-library.html">monitoring_mode</a></li>
+      <li><a href="widgets_appbar_mute_ecg_button/widgets_appbar_mute_ecg_button-library.html">mute_ecg_button</a></li>
+      <li><a href="utilities_enums_non_graph_alarm/utilities_enums_non_graph_alarm-library.html">non_graph_alarm</a></li>
+      <li><a href="scenarios_patient_scenario/scenarios_patient_scenario-library.html">patient_scenario</a></li>
+      <li><a href="utilities_enums_patient_type/utilities_enums_patient_type-library.html">patient_type</a></li>
+      <li><a href="widgets_start_screen_patient_type_button/widgets_start_screen_patient_type_button-library.html">patient_type_button</a></li>
+      <li><a href="widgets_graph_regular_graph/widgets_graph_regular_graph-library.html">regular_graph</a></li>
+      <li><a href="widgets_demo_screen_scenario_button/widgets_demo_screen_scenario_button-library.html">scenario_button</a></li>
+      <li><a href="utilities_enums_scenarios/utilities_enums_scenarios-library.html">scenarios</a></li>
+      <li><a href="utilities_enums_screen_change_button/utilities_enums_screen_change_button-library.html">screen_change_button</a></li>
+      <li><a href="providers_screen_controller/providers_screen_controller-library.html">screen_controller</a></li>
+      <li><a href="utilities_enums_screen_status/utilities_enums_screen_status-library.html">screen_status</a></li>
+      <li><a href="utilities_enums_sensor/utilities_enums_sensor-library.html">sensor</a></li>
+      <li><a href="widgets_setting_setting_container/widgets_setting_setting_container-library.html">setting_container</a></li>
+      <li><a href="widgets_setting_setting_text/widgets_setting_setting_text-library.html">setting_text</a></li>
+      <li><a href="widgets_setting_setting_tile/widgets_setting_setting_tile-library.html">setting_tile</a></li>
+      <li><a href="widgets_defibrillation_mode_shock_power/widgets_defibrillation_mode_shock_power-library.html">shock_power</a></li>
+      <li><a href="widgets_start_screen_skip_button/widgets_start_screen_skip_button-library.html">skip_button</a></li>
+      <li><a href="widgets_graph_container_smart_adjustment_button/widgets_graph_container_smart_adjustment_button-library.html">smart_adjustment_button</a></li>
+      <li><a href="models_screen_element_models_smart_adjustment_model/models_screen_element_models_smart_adjustment_model-library.html">smart_adjustment_model</a></li>
+      <li><a href="providers_sound_controller/providers_sound_controller-library.html">sound_controller</a></li>
+      <li><a href="scenarios_standard_scenario/scenarios_standard_scenario-library.html">standard_scenario</a></li>
+      <li><a href="screens_start_screen/screens_start_screen-library.html">start_screen</a></li>
+      <li><a href="providers_start_screen_controller/providers_start_screen_controller-library.html">start_screen_controller</a></li>
+      <li><a href="widgets_appbar_statusbar/widgets_appbar_statusbar-library.html">statusbar</a></li>
+      <li><a href="utilities_constants_statusbar_constants/utilities_constants_statusbar_constants-library.html">statusbar_constants</a></li>
+      <li><a href="widgets_defibrillation_mode_sync_container/widgets_defibrillation_mode_sync_container-library.html">sync_container</a></li>
+      <li><a href="widgets_defibrillation_mode_synchronicity_button/widgets_defibrillation_mode_synchronicity_button-library.html">synchronicity_button</a></li>
+      <li><a href="widgets_defibrillation_mode_system_diagnosis/widgets_defibrillation_mode_system_diagnosis-library.html">system_diagnosis</a></li>
+      <li><a href="models_system_state/models_system_state-library.html">system_state</a></li>
+      <li><a href="models_screen_element_models_theme_model/models_screen_element_models_theme_model-library.html">theme_model</a></li>
+      <li><a href="widgets_toggle_toggle_mode_button/widgets_toggle_toggle_mode_button-library.html">toggle_mode_button</a></li>
+      <li><a href="widgets_menu_toggle_theme_button/widgets_menu_toggle_theme_button-library.html">toggle_theme_button</a></li>
+      <li><a href="widgets_value_box_value_box_container/widgets_value_box_value_box_container-library.html">value_box_container</a></li>
+      <li><a href="widgets_value_box_value_box_settings/widgets_value_box_value_box_settings-library.html">value_box_settings</a></li>
+      <li><a href="widgets_value_box_value_box_tile/widgets_value_box_value_box_tile-library.html">value_box_tile</a></li>
+      <li><a href="widgets_value_box_value_box_tile_nibd/widgets_value_box_value_box_tile_nibd-library.html">value_box_tile_nibd</a></li>
+      <li><a href="widgets_toggle_ventilation_mode/widgets_toggle_ventilation_mode-library.html">ventilation_mode</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    uke_mlab
+      1.0.0+1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+
